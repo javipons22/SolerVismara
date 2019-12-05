@@ -1,0 +1,12 @@
+$azul:#1C3680;
+$azul-claro:#004E93;
+
+@function em($size) {
+    $emSize: $size / 16px;
+    @return #{$emSize}em;
+}
+
+@mixin gradiente { 
+    background: rgb(98,185,255);
+    background: linear-gradient(90deg, rgba(98,185,255,1) 48%, rgba(28,54,128,1) 100%);
+}

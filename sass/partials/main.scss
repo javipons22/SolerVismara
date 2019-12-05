@@ -1,0 +1,58 @@
+
+html {
+    // tamaño movil
+    font-size:9px;
+}
+.top-header {
+    font-family: 'Open Sans', sans-serif;
+    font-weight:600;
+    height: em(20px);
+    width:100%;
+    @include gradiente;
+    color:white;
+    &__container {
+        height:100%;
+        margin: 0 0.5em;
+        display:flex;
+        flex-direction:row;
+        flex-wrap:nowrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__contact-info {
+        display:flex;
+        flex-direction:row;
+        align-items: center;
+        font-size: em(7px);
+        color:white;
+        height:100%;
+        
+        a {
+            color:white;
+            text-decoration: none;
+            display:flex;
+            align-items:center;
+            height:100%;
+        }
+        li {
+            margin-right:em(10px);
+        }
+
+    }
+    &__icon {
+        width: 1em;
+        height:1em;
+        margin:em(5px);
+        path {
+            fill:white;
+        }
+        &--envelope {
+            width:1.2em;
+            height:1.2em;
+        }
+        &--instagram {
+            width:1.1em;
+            height:1.1em;
+        }
+    }
+}
