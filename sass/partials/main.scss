@@ -5,20 +5,28 @@ body {
 
 .container {
     // Espacio de dos lados del contenedor
-    margin: 0 11px;
+    margin: 0 em(11px);
 }
 
 
 
 .header {
     position:fixed;
+    // Para que no aparezca debajo del banner
+    z-index:10;
     top:0;
     right:0;
     left:0;
 }
+
+// TAMAÑOS
 .top-header {
     font-size:23px;
 }
+.main-header {
+    font-size:17px;
+}
+
 
 .top-header {
     font-family: 'Open Sans', sans-serif;
@@ -102,15 +110,19 @@ body {
         position:relative;
     }
     &__button {
-        font-size: em(14px);
+        font-size: em(12px);
         background:none;
         height:70%;
         border-left: 1px solid rgba(0,0,0,0.16);
         color: rgba(0,0,0,0.8);
-        padding: 0 0 0 em(20px);
+        padding: 0 0 0 em(11px);
         display:flex;
         flex-wrap: nowrap;
         align-items:center;
+        &:active,&:focus {
+            background:none;
+            outline: none;
+        }
         // padding: em(12px) em(17px);
         // -webkit-box-shadow: 5px 6px 5px 0px rgba(0,0,0,0.22);
         // -moz-box-shadow: 5px 6px 5px 0px rgba(0,0,0,0.22);
@@ -121,3 +133,68 @@ body {
     }
 }
 
+.banner {
+    margin-top:em(80px);
+    z-index:0;
+    background: rgba(0,0,0,1);
+    
+    &__image-container {
+        width:100%;
+        
+    }
+    &__image {
+        height:100%;
+        width:100%;
+        object-fit: contain;
+        opacity: 0.8;
+    }
+    &__titulo {
+        color:white;
+        background: $azul;
+        padding: em(25px) em(11px);
+        strong {
+            font-weight:600;
+        }
+    }
+}
+
+.servicios {
+    font-weight:600;
+    @include gradiente;
+    color:white;
+    padding:em(15px) em(11px);
+    &__contenedor {
+        display:flex;
+        flex-wrap:wrap;
+        justify-content: space-between;
+    }
+    &__elemento {
+        width:31%;
+        height: em(90px);
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        border:1px solid white;
+        border-radius:5px;
+        margin:em(5px) 0;
+    }
+    &__link {
+        text-align:center;
+        padding: em(10px);
+        text-decoration:none;
+        color:white;
+        width:100%;
+
+    }
+    &__imagen {
+        height:em(45px);
+        path,rect {
+            fill:white;
+        }
+    }
+    &__titulo {
+        display:block;
+        font-size: em(10px);
+        margin-top: em(12px);
+    }
+}
