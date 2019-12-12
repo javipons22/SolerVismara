@@ -6,7 +6,7 @@ html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
+small, strike, strong, sub, tt, var,
 b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
@@ -64,6 +64,7 @@ button, input[type=submit], input[type=reset] {
 
 body {
   font-family: "Montserrat", sans-serif;
+  background: whitesmoke;
 }
 
 .container {
@@ -187,19 +188,19 @@ body {
   margin-top: 5em;
   z-index: 0;
   background: black;
-}
-.banner__image-container {
-  width: 100%;
+  box-sizing: border-box;
 }
 .banner__image {
   height: 100%;
   width: 100%;
-  object-fit: contain;
   opacity: 0.8;
+  display: block;
+  object-fit: cover;
 }
 .banner__titulo {
   color: white;
   background: #1C3680;
+  margin: 0;
   padding: 1.5625em 0.6875em;
 }
 .banner__titulo strong {
@@ -245,6 +246,159 @@ body {
   display: block;
   font-size: 0.625em;
   margin-top: 0.75em;
+}
+
+.buscador {
+  background: whitesmoke;
+  height: 100%;
+  padding: 0.9375em 0.6875em;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  -webkit-box-shadow: 0px 6px 5px 0px rgba(0, 0, 0, 0.16);
+  -moz-box-shadow: 0px 6px 5px 0px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 6px 5px 0px rgba(0, 0, 0, 0.16);
+}
+.buscador__boton {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.buscador__texto {
+  padding: 0.9375em 0.9375em;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  text-transform: uppercase;
+  text-align: left;
+  font-size: 0.625em;
+  font-weight: 500;
+  margin-left: 0.625em;
+  color: rgba(0, 0, 0, 0.8);
+}
+.buscador__icono {
+  height: 1.875em;
+  width: 1.875em;
+}
+.buscador__icono path {
+  fill: rgba(0, 0, 0, 0.8);
+}
+
+.destacados {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.destacados__titulo-seccion {
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 1.1875em;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 40px 0 35px 0;
+}
+.destacados__titulo-seccion::after {
+  content: "";
+  height: 2px;
+  width: 25%;
+  background: #62b9ff;
+  display: block;
+  margin: 0 auto;
+  margin-top: 0.625em;
+}
+
+.propiedad {
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 1.5625em;
+  height: 9.0625em;
+  -webkit-box-shadow: 7px 7px 5px 0px rgba(0, 0, 0, 0.18);
+  -moz-box-shadow: 7px 7px 5px 0px rgba(0, 0, 0, 0.18);
+  box-shadow: 7px 7px 5px 0px rgba(0, 0, 0, 0.18);
+  background: white;
+}
+.propiedad__contenedor-imagen {
+  height: 100%;
+  position: relative;
+  flex-basis: 38%;
+}
+.propiedad__imagen {
+  height: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+.propiedad__badge-destacado {
+  position: absolute;
+  text-transform: uppercase;
+  color: white;
+  font-weight: 600;
+  font-size: 0.6875em;
+  padding: 0.4375em 0.75em;
+  background: #62b9ff;
+  left: 0.625em;
+  top: 0.625em;
+}
+.propiedad__info {
+  padding: 0.9375em 0.625em 0.625em 0.625em;
+  flex-basis: 58%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.propiedad__titulo {
+  font-family: "Open Sans", sans-serif;
+  color: #62b9ff;
+  font-size: 0.9375em;
+  font-weight: 600;
+  margin-bottom: 0.0625em;
+}
+.propiedad__direccion {
+  font-family: "Open Sans", sans-serif;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 0.625em;
+}
+.propiedad__icono {
+  height: 1.5625em;
+  width: 1.5625em;
+}
+.propiedad__icono path {
+  fill: #62b9ff;
+}
+.propiedad__icono--gps, .propiedad__icono--fecha {
+  height: 1.0625em;
+  width: 1.0625em;
+  margin-left: 0.1875em;
+  margin-right: 0.375em;
+}
+.propiedad__icono--gps path, .propiedad__icono--fecha path {
+  fill: rgba(0, 0, 0, 0.65);
+}
+.propiedad__caracteristicas {
+  display: flex;
+  flex-wrap: wrap;
+  align-self: center;
+}
+.propiedad__dato {
+  flex-basis: 48%;
+  font-size: 0.75em;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.3125em;
+}
+.propiedad__dato span {
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 0.75em;
+  margin-left: 0.4375em;
+}
+.propiedad__fecha {
+  color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 0.5625em;
+  border-top: 1px solid rgba(0, 0, 0, 0.16);
+  padding-top: 0.625em;
 }
 
 .menu-wrapper {

@@ -1,9 +1,9 @@
-/* Error: Undefined mixin.
- *    ,
- * 35 |     @include gradiente;
- *    |     ^^^^^^^^^^^^^^^^^^
- *    '
- *   sass/partials/main.scss 35:5  root stylesheet */
+/* Error: Undefined variable.
+ *   ,
+ * 4 |     background:$blanco;
+ *   |                ^^^^^^^
+ *   '
+ *   sass/partials/main.scss 4:16  root stylesheet */
 
 body::before {
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
@@ -13,5 +13,5 @@ body::before {
   padding: 1em;
   margin-bottom: 1em;
   border-bottom: 2px solid black;
-  content: "Error: Undefined mixin.\a    \2577 \a 35 \2502      @include gradiente;\a    \2502      ^^^^^^^^^^^^^^^^^^\a    \2575 \a   sass/partials/main.scss 35:5  root stylesheet";
+  content: "Error: Undefined variable.\a   \2577 \a 4 \2502      background:$blanco;\a   \2502                 ^^^^^^^\a   \2575 \a   sass/partials/main.scss 4:16  root stylesheet";
 }
