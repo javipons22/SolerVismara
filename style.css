@@ -6,7 +6,7 @@ html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, tt, var,
+small, strike, sub, tt, var,
 b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
@@ -203,9 +203,6 @@ body {
   margin: 0;
   padding: 1.5625em 0.6875em;
 }
-.banner__titulo strong {
-  font-weight: 600;
-}
 
 .servicios {
   font-weight: 600;
@@ -399,6 +396,36 @@ body {
   font-size: 0.5625em;
   border-top: 1px solid rgba(0, 0, 0, 0.16);
   padding-top: 0.625em;
+}
+
+.tasaciones {
+  background: #1C3680;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 5.3125em;
+  font-size: 0.8125em;
+  padding: 0 11px;
+}
+.tasaciones__contenedor {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1.25em;
+  justify-content: flex-start;
+}
+.tasaciones__imagen {
+  height: 100%;
+}
+.tasaciones__cta {
+  border: 1px solid white;
+  border-radius: 0.4375em;
+  font-size: 0.8125em;
+  display: block;
+  font-weight: bold;
+  margin-top: 0.625em;
+  padding: 0.5625em 0;
+  text-align: center;
 }
 
 .menu-wrapper {

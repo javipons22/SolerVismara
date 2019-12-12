@@ -151,9 +151,6 @@ body {
         background: $azul;
         margin:0;
         padding: em(25px) em(11px);
-        strong {
-            font-weight:600;
-        }
     }
 }
 
@@ -351,5 +348,35 @@ body {
         font-size:em(9px);
         border-top:1px solid $negro;
         padding-top:em(10px);
+    }
+}
+
+.tasaciones {
+    background:$azul;
+    color:white;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    height: em(85px);
+    font-size:em(13px);
+    padding:0 11px;
+    &__contenedor {
+        display:flex;
+        flex-direction: column;
+        margin-left: em(20px);
+        justify-content: flex-start;
+    }
+    &__imagen {
+        height:100%;
+    }
+    &__cta {
+        border:1px solid white;
+        border-radius: em(7px);
+        font-size: em(13px);
+        display:block;
+        font-weight:bold;
+        margin-top: em(10px);
+        padding: em(9px) 0;
+        text-align: center;
     }
 }
