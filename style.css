@@ -403,16 +403,17 @@ body {
   color: white;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   height: 5.3125em;
   font-size: 0.8125em;
-  padding: 0 11px;
+  padding: 1.0625em 20px;
 }
 .tasaciones__contenedor {
   display: flex;
   flex-direction: column;
   margin-left: 1.25em;
   justify-content: flex-start;
+  flex-grow: 1;
 }
 .tasaciones__imagen {
   height: 100%;
@@ -426,6 +427,58 @@ body {
   margin-top: 0.625em;
   padding: 0.5625em 0;
   text-align: center;
+}
+
+.footer {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 0 1.5625em;
+}
+
+.contacto {
+  color: rgba(255, 255, 255, 0.8);
+  font-family: "Open Sans", sans-serif;
+  padding: 2.5em 0 0 0;
+}
+.contacto__titulo {
+  font-size: 1.1875em;
+  font-weight: 600;
+}
+.contacto__icono {
+  height: 1.25em;
+  width: 1.25em;
+  padding-right: 0.4375em;
+}
+.contacto__icono path {
+  fill: rgba(255, 255, 255, 0.8);
+}
+.contacto__descripcion {
+  font-size: 0.8125em;
+  padding: 1.5625em 0 1.875em 0;
+}
+.contacto__info {
+  font-size: 0.6875em;
+}
+.contacto__info li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.0625em;
+}
+.contacto__mapa {
+  margin: 1.875em 0;
+  width: 100%;
+}
+
+.copyright {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.6875em;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.8);
+  padding: 1.5625em 0;
+}
+.copyright a {
+  display: block;
+  color: #62b9ff;
+  text-decoration: none;
 }
 
 .menu-wrapper {

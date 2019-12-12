@@ -356,15 +356,16 @@ body {
     color:white;
     display:flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     height: em(85px);
     font-size:em(13px);
-    padding:0 11px;
+    padding:em(17px) 20px;
     &__contenedor {
         display:flex;
         flex-direction: column;
         margin-left: em(20px);
         justify-content: flex-start;
+        flex-grow:1;
     }
     &__imagen {
         height:100%;
@@ -379,4 +380,56 @@ body {
         padding: em(9px) 0;
         text-align: center;
     }
+}
+
+.footer {
+    background: $negro-oscuro;
+    padding: 0 em(25px);
+}
+
+.contacto {
+    color:$gris;
+    font-family: 'Open Sans', sans-serif;
+    padding: em(40px) 0 0 0;
+    &__titulo {
+        font-size:em(19px);
+        font-weight: 600;
+        
+    }
+    &__icono {
+        height:em(20px);
+        width:em(20px);
+        padding-right: em(7px);
+        path {
+            fill: $gris;
+        }
+    }
+    &__descripcion {
+        font-size:em(13px);
+        padding: em(25px) 0 em(30px) 0;
+    }
+    &__info {
+        font-size:em(11px);
+        li {
+            display:flex;
+            align-items: center;
+            margin-bottom: em(17px);
+        }
+    }
+    &__mapa {
+        margin: em(30px) 0;
+        width:100%;
+    }
+}
+.copyright {
+    color:$gris;
+    font-size: em(11px);
+    text-align:center;
+    border-top:1px solid $gris;
+    a {
+        display:block;
+        color:$azul-claro;
+        text-decoration: none;
+    }
+    padding: em(25px) 0 ;
 }

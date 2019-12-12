@@ -5,6 +5,7 @@ $negro: rgba(0,0,0,0.16);
 $negro-medio:rgba(0,0,0,0.65);
 $negro-oscuro: rgba(0,0,0,0.8);
 $blanco: rgba(245,245,245,1);
+$gris: rgba(255,255,255,0.8);
 
 @function em($size) {
     $emSize: $size / 16px;
