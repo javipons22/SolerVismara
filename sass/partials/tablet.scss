@@ -1,0 +1,84 @@
+@include mq('lg') {
+    // Cambiar tamaños en estas lineas
+    .banner {
+        font-size: 1.6em;
+    }
+    .servicios {
+        font-size: 1.1em;
+    }
+    .top-header {
+        font-size:28px;
+    }
+    .main-header {
+        font-size:19px;
+    }
+    .tasaciones {
+        font-size: em(15px);
+    }
+    // Fin tamaños
+    .banner {
+        position:relative;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        &__imagen {
+            opacity:0.65;
+        }
+        &__info {
+            position:absolute;
+            display:flex;
+            flex-direction: column;
+            padding:0 em(45px);
+        }
+        &__titulo {
+            background:none;
+            display:inline-block;
+            padding:0;
+            margin:0;
+            color:white;
+        }
+        &__descripcion {
+            margin-top:em(30px);
+            display:inline-block;
+            color:white;
+            width:50%;
+            align-self:flex-end;
+            padding-left: em(30px);
+            border-left: 1px solid white;
+        }
+    }
+    .servicios {
+        &__contenedor {
+            flex-direction: row;
+            flex-wrap:nowrap;
+        }
+        &__elemento {
+            width:15.5%;
+        }
+    }
+    .destacados {
+        &__container {
+            display:flex;
+            flex-direction:row;
+            flex-wrap:wrap;
+            justify-content: space-between;
+        }
+    }
+    .propiedad {
+        flex-basis:49%;
+    }
+    .tasaciones {
+        height: em(65px);
+        display:flex;
+        align-items: center;
+        &__contenedor {
+            max-width:700px;   
+        }
+        &__imagen {
+            height:130%;
+        }
+    }
+    .contacto {
+        width:30%;
+    }
+}

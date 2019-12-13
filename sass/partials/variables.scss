@@ -4,7 +4,7 @@ $color-icono-menu : gray;
 $negro: rgba(0,0,0,0.16);
 $negro-medio:rgba(0,0,0,0.65);
 $negro-oscuro: rgba(0,0,0,0.8);
-$blanco: rgba(245,245,245,1);
+$blanco: rgb(245,245,245);
 $gris: rgba(255,255,255,0.8);
 
 @function em($size) {
@@ -15,4 +15,21 @@ $gris: rgba(255,255,255,0.8);
 @mixin gradiente { 
     background: rgb(98,185,255);
     background: linear-gradient(90deg, rgba(98,185,255,1) 48%, rgba(28,54,128,1) 100%);
+}
+
+// media queries
+$breakpoints:( 'sm':576px, 'lg':768px, 'xl':1124px, 'xxl':1380px );
+@mixin mq($break) {
+    $value: map-get($breakpoints, $break);
+    $sm: map-get($breakpoints, 'sm');
+    @if $value < $sm {
+        @media (max-width: $value) {
+            @content;
+        }
+    }
+    @else {
+        @media (min-width: $value) {
+            @content;
+        }
+    }
 }

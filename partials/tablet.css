@@ -1,0 +1,99 @@
+/* Error: Undefined mixin.
+ *    ,
+ * 1  | / @include mq('lg') {
+ * 2  | |     // Cambiar tamaños en estas lineas
+ * 3  | |     .banner {
+ * 4  | |         font-size: 1.6em;
+ * 5  | |     }
+ * 6  | |     .servicios {
+ * 7  | |         font-size: 1.1em;
+ * 8  | |     }
+ * 9  | |     .top-header {
+ * 10 | |         font-size:28px;
+ * 11 | |     }
+ * 12 | |     .main-header {
+ * 13 | |         font-size:19px;
+ * 14 | |     }
+ * 15 | |     .tasaciones {
+ * 16 | |         font-size: em(15px);
+ * 17 | |     }
+ * 18 | |     // Fin tamaños
+ * 19 | |     .banner {
+ * 20 | |         position:relative;
+ * 21 | |         display:flex;
+ * 22 | |         align-items: center;
+ * 23 | |         justify-content: center;
+ * 24 | |         &__imagen {
+ * 25 | |             opacity:0.65;
+ * 26 | |         }
+ * 27 | |         &__info {
+ * 28 | |             position:absolute;
+ * 29 | |             display:flex;
+ * 30 | |             flex-direction: column;
+ * 31 | |             padding:0 em(45px);
+ * 32 | |         }
+ * 33 | |         &__titulo {
+ * 34 | |             background:none;
+ * 35 | |             display:inline-block;
+ * 36 | |             padding:0;
+ * 37 | |             margin:0;
+ * 38 | |             color:white;
+ * 39 | |         }
+ * 40 | |         &__descripcion {
+ * 41 | |             margin-top:em(30px);
+ * 42 | |             display:inline-block;
+ * 43 | |             color:white;
+ * 44 | |             width:50%;
+ * 45 | |             align-self:flex-end;
+ * 46 | |             padding-left: em(30px);
+ * 47 | |             border-left: 1px solid white;
+ * 48 | |         }
+ * 49 | |     }
+ * 50 | |     .servicios {
+ * 51 | |         &__contenedor {
+ * 52 | |             flex-direction: row;
+ * 53 | |             flex-wrap:nowrap;
+ * 54 | |         }
+ * 55 | |         &__elemento {
+ * 56 | |             width:15.5%;
+ * 57 | |         }
+ * 58 | |     }
+ * 59 | |     .destacados {
+ * 60 | |         &__container {
+ * 61 | |             display:flex;
+ * 62 | |             flex-direction:row;
+ * 63 | |             flex-wrap:wrap;
+ * 64 | |             justify-content: space-between;
+ * 65 | |         }
+ * 66 | |     }
+ * 67 | |     .propiedad {
+ * 68 | |         flex-basis:49%;
+ * 69 | |     }
+ * 70 | |     .tasaciones {
+ * 71 | |         height: em(65px);
+ * 72 | |         display:flex;
+ * 73 | |         align-items: center;
+ * 74 | |         &__contenedor {
+ * 75 | |             max-width:700px;   
+ * 76 | |         }
+ * 77 | |         &__imagen {
+ * 78 | |             height:130%;
+ * 79 | |         }
+ * 80 | |     }
+ * 81 | |     .contacto {
+ * 82 | |         width:30%;
+ * 83 | |     }
+ * 84 | \ }
+ *    '
+ *   sass/partials/tablet.scss 1:1  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined mixin.\a    \2577 \a 1  \2502  \250c  @include mq('lg') {\a 2  \2502  \2502      // Cambiar tamaños en estas lineas\a 3  \2502  \2502      .banner {\a 4  \2502  \2502          font-size: 1.6em;\a 5  \2502  \2502      }\a 6  \2502  \2502      .servicios {\a 7  \2502  \2502          font-size: 1.1em;\a 8  \2502  \2502      }\a 9  \2502  \2502      .top-header {\a 10 \2502  \2502          font-size:28px;\a 11 \2502  \2502      }\a 12 \2502  \2502      .main-header {\a 13 \2502  \2502          font-size:19px;\a 14 \2502  \2502      }\a 15 \2502  \2502      .tasaciones {\a 16 \2502  \2502          font-size: em(15px);\a 17 \2502  \2502      }\a 18 \2502  \2502      // Fin tamaños\a 19 \2502  \2502      .banner {\a 20 \2502  \2502          position:relative;\a 21 \2502  \2502          display:flex;\a 22 \2502  \2502          align-items: center;\a 23 \2502  \2502          justify-content: center;\a 24 \2502  \2502          &__imagen {\a 25 \2502  \2502              opacity:0.65;\a 26 \2502  \2502          }\a 27 \2502  \2502          &__info {\a 28 \2502  \2502              position:absolute;\a 29 \2502  \2502              display:flex;\a 30 \2502  \2502              flex-direction: column;\a 31 \2502  \2502              padding:0 em(45px);\a 32 \2502  \2502          }\a 33 \2502  \2502          &__titulo {\a 34 \2502  \2502              background:none;\a 35 \2502  \2502              display:inline-block;\a 36 \2502  \2502              padding:0;\a 37 \2502  \2502              margin:0;\a 38 \2502  \2502              color:white;\a 39 \2502  \2502          }\a 40 \2502  \2502          &__descripcion {\a 41 \2502  \2502              margin-top:em(30px);\a 42 \2502  \2502              display:inline-block;\a 43 \2502  \2502              color:white;\a 44 \2502  \2502              width:50%;\a 45 \2502  \2502              align-self:flex-end;\a 46 \2502  \2502              padding-left: em(30px);\a 47 \2502  \2502              border-left: 1px solid white;\a 48 \2502  \2502          }\a 49 \2502  \2502      }\a 50 \2502  \2502      .servicios {\a 51 \2502  \2502          &__contenedor {\a 52 \2502  \2502              flex-direction: row;\a 53 \2502  \2502              flex-wrap:nowrap;\a 54 \2502  \2502          }\a 55 \2502  \2502          &__elemento {\a 56 \2502  \2502              width:15.5%;\a 57 \2502  \2502          }\a 58 \2502  \2502      }\a 59 \2502  \2502      .destacados {\a 60 \2502  \2502          &__container {\a 61 \2502  \2502              display:flex;\a 62 \2502  \2502              flex-direction:row;\a 63 \2502  \2502              flex-wrap:wrap;\a 64 \2502  \2502              justify-content: space-between;\a 65 \2502  \2502          }\a 66 \2502  \2502      }\a 67 \2502  \2502      .propiedad {\a 68 \2502  \2502          flex-basis:49%;\a 69 \2502  \2502      }\a 70 \2502  \2502      .tasaciones {\a 71 \2502  \2502          height: em(65px);\a 72 \2502  \2502          display:flex;\a 73 \2502  \2502          align-items: center;\a 74 \2502  \2502          &__contenedor {\a 75 \2502  \2502              max-width:700px;   \a 76 \2502  \2502          }\a 77 \2502  \2502          &__imagen {\a 78 \2502  \2502              height:130%;\a 79 \2502  \2502          }\a 80 \2502  \2502      }\a 81 \2502  \2502      .contacto {\a 82 \2502  \2502          width:30%;\a 83 \2502  \2502      }\a 84 \2502  \2514  }\a    \2575 \a   sass/partials/tablet.scss 1:1  root stylesheet";
+}

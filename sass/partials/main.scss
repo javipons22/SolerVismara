@@ -6,7 +6,9 @@ body {
 
 .container {
     // Espacio de dos lados del contenedor
-    margin: 0 em(11px);
+    //margin: 0 em(11px);
+    width:95%;
+    margin:0 auto;
 }
 
 
@@ -135,11 +137,11 @@ body {
 }
 
 .banner {
-    margin-top:em(80px);
+    margin-top:80px;
     z-index:0;
     background: rgba(0,0,0,1);
     box-sizing: border-box;
-    &__image {
+    &__imagen {
         height:100%;
         width:100%;
         opacity: 0.8;
@@ -150,7 +152,12 @@ body {
         color:white;
         background: $azul;
         margin:0;
-        padding: em(25px) em(11px);
+        // Aca se cambia el "container" del banner (14px de cada lado)
+        padding: em(25px) 14px;
+    }
+    &__descripcion {
+        display:none;
+        font-size: em(10px);
     }
 }
 
@@ -158,7 +165,7 @@ body {
     font-weight:600;
     @include gradiente;
     color:white;
-    padding:em(15px) em(11px);
+    padding:em(15px) 0;
     &__contenedor {
         display:flex;
         flex-wrap:wrap;
@@ -233,16 +240,14 @@ body {
 }
 
 .destacados {
-    display:flex;
-    flex-direction:column;
-    justify-content: center;
+    padding:40px 0;
     &__titulo-seccion {
         color:$negro-oscuro;
         font-size:em(19px);
         font-weight:600;
         text-transform: uppercase;
         text-align:center;
-        padding: 40px 0 35px 0;
+        padding: 0 0 35px 0;
         &::after {
             content:'';
             height:2px;
@@ -252,6 +257,11 @@ body {
             margin:0 auto;
             margin-top:em(10px);
         }
+    }
+    &__container {
+        display:flex;
+        flex-direction:column;
+        justify-content: center;
     }
 }
 
@@ -265,6 +275,10 @@ body {
     -moz-box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.18);
     box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.18);
     background:white;
+    &--last {
+        // el ultimo elemento no tiene margin
+        margin-bottom: 0;
+    }
     &__contenedor-imagen {
         height:100%;
         position:relative;
@@ -354,13 +368,16 @@ body {
 .tasaciones {
     background:$azul;
     color:white;
-    display:flex;
-    align-items: center;
-    justify-content: flex-start;
-    height: em(85px);
     font-size:em(13px);
-    padding:em(17px) 20px;
+    padding:em(17px) 0;
     &__contenedor {
+        display:flex;
+        align-items: center;
+        justify-content: flex-start;
+        height: em(85px);
+        max-width:490px;
+    }
+    &__contenido {
         display:flex;
         flex-direction: column;
         margin-left: em(20px);
@@ -384,13 +401,12 @@ body {
 
 .footer {
     background: $negro-oscuro;
-    padding: 0 em(25px);
 }
 
 .contacto {
     color:$gris;
     font-family: 'Open Sans', sans-serif;
-    padding: em(40px) 0 0 0;
+    padding: em(40px) em(35px) 0 em(35px);
     &__titulo {
         font-size:em(19px);
         font-weight: 600;
@@ -405,7 +421,7 @@ body {
         }
     }
     &__descripcion {
-        font-size:em(13px);
+        font-size:em(12px);
         padding: em(25px) 0 em(30px) 0;
     }
     &__info {
@@ -422,10 +438,12 @@ body {
     }
 }
 .copyright {
+    font-family: 'Open Sans', sans-serif;
     color:$gris;
     font-size: em(11px);
     text-align:center;
     border-top:1px solid $gris;
+    margin: 0 14px;
     a {
         display:block;
         color:$azul-claro;
