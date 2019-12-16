@@ -496,6 +496,43 @@ body {
   text-decoration: none;
 }
 
+.navegacion {
+  border-top: 5px solid #62b9ff;
+  border-bottom: 5px solid #62b9ff;
+  display: none;
+  position: absolute;
+  background: whitesmoke;
+  margin: 0;
+  right: 0;
+  top: 70px;
+  width: 100%;
+  border-radius: 5px 0 0 5px;
+}
+.navegacion__contenedor {
+  display: flex;
+  flex-direction: column;
+}
+.navegacion__link {
+  white-space: nowrap;
+  overflow: hidden;
+  text-decoration: none;
+  color: black;
+  padding: 1.5625em 1.5625em;
+  width: 100%;
+  text-align: right;
+}
+.navegacion__elemento {
+  overflow: hidden;
+  font-size: 0.75em;
+  display: flex;
+  justify-content: flex-end;
+  border-radius: 5px;
+  width: 100%;
+}
+.navegacion__elemento:nth-child(2n) {
+  background: #dde;
+}
+
 @media (min-width: 768px) {
   .banner {
     font-size: 1.6em;
@@ -582,6 +619,67 @@ body {
 
   .contacto {
     width: 30%;
+  }
+
+  .navegacion {
+    display: flex;
+    background: none;
+    position: relative;
+    top: 0;
+    right: 0;
+    border: none;
+    padding: 0;
+    margin: 0;
+    width: auto;
+  }
+  .navegacion__contenedor {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    background: #62b9ff;
+    background: linear-gradient(90deg, #62b9ff 48%, #1c3680 100%);
+    font-size: 0.8125em;
+    padding: 0;
+    margin: 0;
+  }
+  .navegacion__contenedor::before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 2.1875em 2.1875em;
+    border-color: transparent transparent #62b9ff transparent;
+    transform: translateX(-99%);
+  }
+  .navegacion__link {
+    text-decoration: none;
+    color: white;
+    padding: 0.6875em 1.5625em;
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  .navegacion__elemento {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    font-size: 0.75em;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    border: none;
+    width: auto;
+  }
+  .navegacion__elemento--first {
+    margin-top: 0;
+    justify-content: flex-start;
+  }
+  .navegacion__elemento:nth-child(2n) {
+    background: none;
+  }
+
+  .main-header__button {
+    display: none;
   }
 }
 .menu-wrapper {

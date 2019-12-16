@@ -136,6 +136,8 @@ body {
     }
 }
 
+
+
 .banner {
     margin-top:80px;
     z-index:0;
@@ -450,4 +452,42 @@ body {
         text-decoration: none;
     }
     padding: em(25px) 0 ;
+}
+
+.navegacion {
+    border-top: 5px solid $azul-claro;
+    border-bottom: 5px solid $azul-claro;
+    display:none;
+    position:absolute;
+    background:$blanco;
+    margin:0;
+    right:0;
+    top: 70px;
+    width:100%;
+    border-radius: 5px 0 0 5px;
+    &__contenedor {
+        display:flex;
+        flex-direction:column;
+    }
+    &__link {
+        white-space: nowrap;
+        overflow: hidden;
+        text-decoration:none;
+        color:black;
+        padding: em(25px) em(25px);
+        width:100%;
+        text-align:right;
+    }
+    &__elemento {
+        overflow: hidden;
+        font-size: em(12px);
+        display:flex;
+        justify-content: flex-end;
+        border-radius:5px;
+        width:100%;
+        &:nth-child(2n) {
+            background: #dde;
+        }
+        
+    }
 }

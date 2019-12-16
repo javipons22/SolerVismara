@@ -81,4 +81,64 @@
     .contacto {
         width:30%;
     }
+
+    .navegacion {
+        display:flex;
+        background:none;
+        position:relative;
+        top:0;
+        right:0;
+        border:none;
+        padding:0;
+        margin:0;
+        width: auto;
+        &__contenedor {
+            display:flex;
+            flex-direction:row;
+            align-items: center;
+            flex-wrap:nowrap;
+            @include gradiente;
+            font-size:em(13px);
+            padding:0;
+            margin:0;
+            &::before {
+                content:"";
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 0 0 em(35px) em(35px);
+                border-color: transparent transparent rgba(98,185,255,1) transparent;
+                transform: translateX(-99%);
+            }
+        }
+        &__link {
+            text-decoration:none;
+            color:white;
+            padding: em(11px) em(25px);
+            border-right:1px solid rgba(255,255,255,0.3);
+        }
+        &__elemento {
+            display:flex;
+            justify-content: center;
+            margin:0;
+            padding:0;
+            font-size: em(12px);
+            display:flex;
+            justify-content: center;
+            flex-direction:row;
+            border:none;
+            width:auto;
+            &--first {
+                margin-top: 0;
+                justify-content: flex-start;
+            }
+            &:nth-child(2n) {
+                background: none;
+            }
+            
+        }
+    }
+    .main-header__button {
+        display:none;
+    }
 }
