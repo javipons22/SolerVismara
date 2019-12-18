@@ -7,6 +7,7 @@ $negro-oscuro: rgba(0,0,0,0.8);
 $blanco: rgb(245,245,245);
 $blanco-oscuro: #e6e6e6;
 $gris: rgba(255,255,255,0.8);
+$container-width: 980px;
 
 @function em($size) {
     $emSize: $size / 16px;
@@ -19,7 +20,7 @@ $gris: rgba(255,255,255,0.8);
 }
 
 // media queries
-$breakpoints:( 'sm':576px, 'lg':768px, 'xl':1024px, 'xxl':1380px );
+$breakpoints:( 'sm':576px, 'lg':768px, 'xl':1025px, 'xxl':1440px );
 @mixin mq($break) {
     $value: map-get($breakpoints, $break);
     $sm: map-get($breakpoints, 'sm');
