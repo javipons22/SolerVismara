@@ -141,4 +141,16 @@
     .main-header__button {
         display:none;
     }
+
+    .buscador {
+        &__formulario {
+            padding-top: em(20px);
+        }
+        &__elemento-select {
+            flex-basis: 23%;
+        }
+        &__elemento-boton { 
+            flex-basis: 23%;
+        }
+    }
 }

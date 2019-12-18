@@ -205,19 +205,18 @@ body {
 }
 
 .buscador {
-    background: $blanco;
+    background: $blanco-oscuro;
     height:100%;
-    padding: em(15px) em(11px);
     display:flex;
-    justify-content: space-around;
-    align-items:center;
+    flex-direction: column;
     -webkit-box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.16);
     -moz-box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.16);
     box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.16);
     &__boton {
         display:flex;
-        justify-content: space-around;
+        justify-content: center;
         align-items:center;
+        padding: em(15px) em(11px);
     }
     &__texto {
         padding: em(15px) em(15px);
@@ -238,6 +237,41 @@ body {
         path {
             fill:$negro-oscuro;
         }
+    }
+    &__formulario {
+        display:flex;
+        flex-direction: row;
+        flex-wrap:wrap;
+        justify-content: space-between;
+        padding: em(10px) 0 em(20px) 0;
+
+    }
+    &__elemento-select {
+        flex-basis:47%;
+        font-size: em(13px);
+        background:white;
+        font-family: 'Open Sans', sans-serif;
+        color: gray;
+        border:none;
+        border-radius:2px;
+        padding: em(10px) em(10px);
+        margin: em(10px) 0;
+        & option:hover {
+            box-shadow: 0 0 10px 100px #1882A8 inset;
+        }
+    }
+
+    &__elemento-boton {
+        flex-basis:47%;
+        font-size: em(13px);
+        background:$azul-claro;
+        font-family: 'Montserrat', sans-serif;
+        font-weight:600;
+        color: white;
+        border:none;
+        border-radius:5px;
+        padding: em(10px) em(10px);
+        margin: em(7px) 0;
     }
 }
 
