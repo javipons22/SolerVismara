@@ -1,0 +1,14 @@
+@include mq('4k') {
+    html {
+        font-size:21px;
+    }
+    .container {
+        max-width:1420px;
+    }
+    .top-header {
+        font-size:1.7em;
+    }
+    .main-header {
+        font-size:1.3em;
+    }
+}

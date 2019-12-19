@@ -1,0 +1,29 @@
+/* Error: Undefined mixin.
+ *    ,
+ * 1  | / @include mq('4k') {
+ * 2  | |     html {
+ * 3  | |         font-size:21px;
+ * 4  | |     }
+ * 5  | |     .container {
+ * 6  | |         max-width:1420px;
+ * 7  | |     }
+ * 8  | |     .top-header {
+ * 9  | |         font-size:1.7em;
+ * 10 | |     }
+ * 11 | |     .main-header {
+ * 12 | |         font-size:1.3em;
+ * 13 | |     }
+ * 14 | \ }
+ *    '
+ *   sass/partials/4k.scss 1:1  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined mixin.\a    \2577 \a 1  \2502  \250c  @include mq('4k') {\a 2  \2502  \2502      html {\a 3  \2502  \2502          font-size:21px;\a 4  \2502  \2502      }\a 5  \2502  \2502      .container {\a 6  \2502  \2502          max-width:1420px;\a 7  \2502  \2502      }\a 8  \2502  \2502      .top-header {\a 9  \2502  \2502          font-size:1.7em;\a 10 \2502  \2502      }\a 11 \2502  \2502      .main-header {\a 12 \2502  \2502          font-size:1.3em;\a 13 \2502  \2502      }\a 14 \2502  \2514  }\a    \2575 \a   sass/partials/4k.scss 1:1  root stylesheet";
+}

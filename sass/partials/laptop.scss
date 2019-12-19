@@ -1,7 +1,13 @@
 @include mq('xl') {
     // Cambiar tamaños en estas lineas
+    .buscador {
+        font-size:1.2em;
+    }
+    .destacados {
+        font-size: 1.15em;
+    }
     .banner {
-        font-size: 2.0em;
+        font-size: 2em;
     }
     .servicios {
         font-size: 1.1em;
@@ -14,6 +20,9 @@
     }
     .tasaciones {
         font-size: em(15px);
+    }
+    .contacto,.links,.recientes {
+        font-size: 1.15em;
     }
     .container {
         // Espacio de dos lados del contenedor
@@ -31,7 +40,8 @@
         box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.16);
         &__logo {
             img {
-                height:em(55px);
+                height:em(50px);
+                margin: em(5px) 0 ;
                 position:relative;
                 transform:translateX(-7%);
             }
@@ -48,9 +58,58 @@
         }
         &__titulo {
             padding:0;
+            font-size: em(18px);
+            max-width:75%;
         }
         &__descripcion {
             font-size:em(9px);
         }
+    }
+    .servicios {
+        &__contenedor {
+            justify-content: space-between;
+        }
+        &__elemento {
+            font-size:1.1em;
+            width:16.6%;
+            border:none;
+            border-radius:0;
+            border-right:1px solid white;
+            &--first {
+                border-left:1px solid white;
+            }
+        }
+        &__link {
+            width:100%;
+        }
+    }
+
+    .destacados {
+        padding:60px 0;
+        &__titulo-seccion {
+            font-size:em(21px);
+            padding-bottom:40px;
+            &::after {
+                content:'';
+                height:2px;
+                width:5%;
+            }
+        }
+    }
+    .propiedad {
+        margin-bottom:em(30px);
+        height:em(160px);
+    }
+    .tasaciones {
+        &__titulo {
+            font-size: em(20px);
+        }
+        &__cta {
+            font-size: em(16px);
+        }
+    }
+    .contacto {
+        padding-left:0;
+        padding-right:0;
     }
 }

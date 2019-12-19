@@ -1,10 +1,10 @@
 @include mq('lg') {
     // Cambiar tamaños en estas lineas
+    .buscador {
+        font-size:1.1em;
+    }
     .banner {
         font-size: 1.6em;
-    }
-    .servicios {
-        font-size: 1.1em;
     }
     .top-header {
         font-size:28px;
@@ -78,8 +78,11 @@
             height:130%;
         }
     }
-    .contacto {
-        width:30%;
+    .contacto,.links,.recientes {
+        flex-basis:32%;
+        padding-left:0;
+        padding-right:0;
+        padding-top:0;
     }
 
     .navegacion {
@@ -152,5 +155,37 @@
         &__elemento-boton { 
             flex-basis: 23%;
         }
+    }
+    .tasaciones {
+        &__contenido {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+        &__titulo {
+            flex-grow: 1;
+            text-align:center;
+            letter-spacing: em(1.85px);
+        }
+        &__cta {
+            margin:0;
+            padding:em(15px) em(35px);
+        }
+    }
+    .footer {
+        padding-top: em(50px);
+        &__container {
+            flex-direction: row;
+        }
+    }
+    .links {
+        display:flex;
+        border-right: 1px solid #888;
+        border-left: 1px solid #888;
+        margin-right: em(50px);
+        padding-left: em(50px);
+    }
+    .copyright {
+        margin-top: em(50px);
     }
 }

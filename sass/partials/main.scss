@@ -140,7 +140,7 @@ body {
 
 .banner {
     margin-top:80px;
-    z-index:0;
+
     background: rgba(0,0,0,1);
     box-sizing: border-box;
     &__imagen {
@@ -248,7 +248,7 @@ body {
     }
     &__elemento-select {
         flex-basis:47%;
-        font-size: em(13px);
+        font-size: em(11px);
         background:white;
         font-family: 'Open Sans', sans-serif;
         color: gray;
@@ -437,15 +437,22 @@ body {
 
 .footer {
     background: $negro-oscuro;
+    &__container {
+        display:flex;
+        flex-direction: column;
+    }
 }
 
-.contacto {
+.contacto,.links, .recientes {
+    display:flex;
+    flex-direction: column;
     color:$gris;
     font-family: 'Open Sans', sans-serif;
     padding: em(40px) em(35px) 0 em(35px);
     &__titulo {
-        font-size:em(19px);
+        font-size:em(17px);
         font-weight: 600;
+        padding-bottom: em(25px);
         
     }
     &__icono {
@@ -458,14 +465,17 @@ body {
     }
     &__descripcion {
         font-size:em(12px);
-        padding: em(25px) 0 em(30px) 0;
+        padding: 0 0 em(30px) 0;
     }
     &__info {
         font-size:em(11px);
         li {
             display:flex;
-            align-items: center;
+            align-items: flex-start;
             margin-bottom: em(17px);
+        }
+        a {
+            color:$gris;
         }
     }
     &__mapa {
@@ -473,12 +483,42 @@ body {
         width:100%;
     }
 }
+.links {
+    display:none;
+
+    &__info {
+        margin-left: em(30px);
+        >li {
+            flex-direction: column;
+            margin-bottom: em(30px);
+            position:relative;
+            &::before {
+                content:">";
+                color:$gris;
+                display:inline-block;
+                position:absolute;
+                left: em(-13px);
+            }
+        }
+        li ul {
+            padding-top: em(30px);
+            padding-left:em(65px);
+        }
+        li ul li {
+            margin-bottom: em(26px);
+        }
+        li ul li:last-child {
+            margin:0;
+            
+        }
+    }
+}
 .copyright {
     font-family: 'Open Sans', sans-serif;
     color:$gris;
     font-size: em(11px);
     text-align:center;
-    border-top:1px solid $gris;
+    border-top:1px solid #888;
     margin: 0 14px;
     a {
         display:block;
@@ -522,6 +562,5 @@ body {
         &:nth-child(2n) {
             background: #dde;
         }
-        
     }
 }
