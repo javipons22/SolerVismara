@@ -108,8 +108,20 @@
             font-size: em(16px);
         }
     }
+    .links {
+        display:flex;
+        border-right: 1px solid #888;
+        border-left: 1px solid #888;
+        margin-right: em(50px);
+        padding-left: em(50px);
+    }
     .contacto {
         padding-left:0;
         padding-right:0;
+    }
+    .propiedad-reciente {
+        &__contenido {
+            font-size: 0.95em;
+        }
     }
 }

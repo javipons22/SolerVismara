@@ -1,3 +1,7 @@
+//@todo
+// Cambiar icono baños
+
+
 
 body {
     font-family: 'Montserrat', sans-serif;
@@ -512,6 +516,48 @@ body {
             
         }
     }
+}
+
+.recientes {
+    &__info {
+        display:flex;
+        flex-direction: column;
+    }
+}
+
+.propiedad-reciente {
+    &__link {
+        width:100%;
+        display:flex;
+        align-items: stretch;
+        flex-wrap:nowrap;
+        text-decoration: none;
+        margin: em(25px) 0 em(11px) 0;
+    }
+    &__contenido {
+        font-size:em(17px);
+        margin-left: em(25px);
+        display:flex;
+        align-self:stretch;
+        flex-direction:column;
+        justify-content: space-between;
+    }
+    &__titulo {
+        font-size: 1.3em;
+        color: $azul-claro;
+        text-decoration: none;
+    }
+    &__imagen {
+        width:18%;
+        object-fit: cover;
+    }
+    &__fecha {
+        font-size:0.9em;
+    }
+    &__precio {
+        font-size:1.10em;
+    }
+
 }
 .copyright {
     font-family: 'Open Sans', sans-serif;
