@@ -54,3 +54,4 @@
 <!-- fin main header -->
 </header>
 <!-- fin header -->
+<main class="contenido-main">

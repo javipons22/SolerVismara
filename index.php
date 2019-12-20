@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <?php $img_path = get_site_url() . "/wp-content/uploads/img";?>
-
+<main class="contenido-main">
     <!-- inicio banner -->
     <section class="banner">
         <img class="banner__imagen" src="<?php echo $img_path; ?>/banner.jpg" alt="imagen banner">
@@ -238,4 +238,5 @@
         </div>
     </section>
     <!-- fin seccion tasaciones -->
+</main>
 <?php get_footer(); ?>

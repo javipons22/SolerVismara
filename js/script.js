@@ -11,6 +11,7 @@ jQuery(document).ready(function($){
         $('.buscador__formulario').slideToggle();
     });
 
+    // Todas las funciones se ejecutan al cambiar el tamaño de la pantalla
     $(window).resize(function() {
         // This will fire each time the window is resized:
         if ($(window).width() >= 768) {
@@ -22,5 +23,11 @@ jQuery(document).ready(function($){
             $('.buscador__boton').show();
             $('.buscador__formulario').hide();
         }
+        // Cuando hacemos resize que tambien cambie el espacio del top del sitio
+        var height1 = $('.main-header').height();
+        var height2 = $('.top-header').height();
+        $('body').css('margin-top',(height1 + height2) + 'px');
+
     }).resize();
+
 });

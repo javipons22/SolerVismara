@@ -1,4 +1,5 @@
 <?php $img_path = get_site_url() . "/wp-content/uploads/img";?>
+</main>
 <!-- footer -->
 <footer class="footer">
         <div class="footer__container container">
