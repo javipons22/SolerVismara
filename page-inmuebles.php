@@ -25,7 +25,6 @@ $the_query = new WP_Query( $args );
 	<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 	<article class="propiedad">
 			<div class="propiedad__contenedor-imagen">
-				<span class="propiedad__badge-destacado">destacado</span>
 				<img src="<?php echo $img_path; ?>/1.jpg" class="propiedad__imagen" alt="imagen propiedad">
 			</div>
 			<div class="propiedad__info">
@@ -41,7 +40,7 @@ $the_query = new WP_Query( $args );
 						<img class="icon propiedad__icono" src="<?php echo $img_path; ?>/bed.svg" alt="icono cama"><span><?php the_field('dormitorios');?> Dormitorios</span>
 					</span>
 					<span class="propiedad__dato">
-						<img class="icon propiedad__icono" src="<?php echo $img_path; ?>/toilet.svg" alt="icono baño"><span><?php the_field('banos');?> Baños</span>
+						<img class="icon propiedad__icono" src="<?php echo $img_path; ?>/shower.svg" alt="icono baño"><span><?php the_field('banos');?> Baños</span>
 					</span>
 					<span class="propiedad__dato">
 						<img class="icon propiedad__icono" src="<?php echo $img_path; ?>/car.svg" alt="icono auto"><span>Garage</span>
