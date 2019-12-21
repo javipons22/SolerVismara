@@ -79,19 +79,8 @@ button, input[type=submit], input[type=reset] {
 }
 
 body {
-  display: flex;
-  flex-direction: column;
   font-family: "Montserrat", sans-serif;
   background: whitesmoke;
-}
-
-body, html {
-  width: 100%;
-  height: 100%;
-}
-
-.contenido-main {
-  flex-grow: 2;
 }
 
 .container {
@@ -277,7 +266,6 @@ body, html {
 
 .buscador {
   background: #e6e6e6;
-  height: 100%;
   display: flex;
   flex-direction: column;
   -webkit-box-shadow: 0px 6px 5px 0px rgba(0, 0, 0, 0.16);
@@ -442,7 +430,7 @@ body, html {
 .propiedad__caracteristicas {
   display: flex;
   flex-wrap: wrap;
-  align-self: center;
+  align-self: flex-start;
 }
 .propiedad__dato {
   flex-basis: 48%;
@@ -913,7 +901,7 @@ body, html {
   }
 
   .banner {
-    height: 100vh;
+    height: 90vh;
   }
   .banner__info {
     max-width: 1170px;

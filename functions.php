@@ -15,3 +15,59 @@ function wpt_theme_js() {
 add_action( 'wp_enqueue_scripts', 'wpt_theme_js' );
 
 ?>
+
+<?php
+function my_pre_get_posts( $query ) {
+	
+	// do not modify queries in the admin
+	if( is_admin() ) {
+		
+		return $query;
+		
+	}
+	
+	
+	// only modify queries for 'inm' post type
+	if( isset($query->query_vars['post_type']) && $query->query_vars['post_type'] == 'inm' ) {
+		
+		// allow the url to alter the query
+		if( isset($_GET['operacion']) ) {
+			$operacion = array(
+				'key'=> 'operacion',
+				'value'=> $_GET['operacion'],
+				'compare' => '='
+			);
+			// 'meta_query'	=> array(
+			// 	'relation'		=> 'OR',
+			// 	array(
+			// 		'key'		=> 'location',
+			// 		'value'		=> 'Melbourne',
+			// 		'compare'	=> 'LIKE'
+			// 	),
+			// 	array(
+			// 		'key'		=> 'location',
+			// 		'value'		=> 'Sydney',
+			// 		'compare'	=> 'LIKE'
+			// 	)
+			// )	
+		}
+		if( isset($_GET['banos']) ) {
+			$banos = array(
+				'key'=> 'banos',
+				'value'=> $_GET['banos'],
+				'compare' => '='
+			);
+		}
+		$query->set('meta_query', array('relation' =>'ASDF' , $operacion,$banos)); 
+		
+	}
+	
+	
+	// return
+	return $query;
+
+}
+
+add_action('pre_get_posts', 'my_pre_get_posts');
+
+?>
