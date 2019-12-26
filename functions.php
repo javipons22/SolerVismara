@@ -11,6 +11,7 @@ add_action( 'wp_enqueue_scripts', 'wpt_theme_styles' );
 function wpt_theme_js() {
 	wp_enqueue_script( 'svgInject_js', get_template_directory_uri() . '/js/svg-inject.min.js', '' , '' , true );//el ultimo parametro es dependence , version y si debe aparecer en el footer(false)
 	wp_enqueue_script('main_js', get_template_directory_uri() . '/js/script.js', array('jquery') , '' , true);
+	wp_enqueue_script('upload_js', get_template_directory_uri() . '/js/upload.js', array('jquery') , '' , true);
 	//wp_enqueue_script('upload_js', get_template_directory_uri() . '/js/upload.js', array('jquery') , '' , true);
 }
 add_action( 'wp_enqueue_scripts', 'wpt_theme_js' );
@@ -60,4 +61,19 @@ function my_pre_get_posts( $query ) {
 
 add_action('pre_get_posts', 'my_pre_get_posts');
 
+?>
+
+<?php 
+// Imagenes Multiples funcion
+function my_handle_attachment($file_handler,$post_id,$set_thu=false) {
+	// check to make sure its a successful upload
+	if ($_FILES[$file_handler]['error'] !== UPLOAD_ERR_OK) __return_false();
+  
+	require_once(ABSPATH . "wp-admin" . '/includes/image.php');
+	require_once(ABSPATH . "wp-admin" . '/includes/file.php');
+	require_once(ABSPATH . "wp-admin" . '/includes/media.php');
+  
+	$attach_id = media_handle_upload( $file_handler, $post_id );
+	return $attach_id;
+}
 ?>

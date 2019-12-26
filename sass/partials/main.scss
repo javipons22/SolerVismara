@@ -608,3 +608,64 @@ body {
         }
     }
 }
+
+.upload-form {
+    display:flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: space-between;
+    font-family: 'Open Sans', sans-serif;
+    color:$negro-medio;
+
+    &__elemento {
+        flex-basis:20%;
+        flex-grow:1;
+        border:1px solid $negro-medio;
+        border-radius:em(5px);
+        padding:em(15px);
+        margin:em(5px);
+        &--operaciones , &--tipos ,&--extras , &--provincia {
+            display:flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            input[type='text'] {
+                margin-top:em(15px);
+            }
+        }
+        &--titulo {
+            flex-basis: 100%;
+            width:100%;
+        }
+        
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size:em(18px);
+            font-weight:bold;
+        }
+        span {
+            display:block;
+            font-size:em(12px);
+            margin-bottom: em(10px);
+        }
+        input[type='radio'],input[type='checkbox'] {
+            margin-bottom:em(5px) 0;
+        }
+        input[type='text'], input[type='number']  {
+            width:70%;
+            padding: em(10px) em(15px);
+        }
+        input[type='submit'] {
+            color:white;
+            background:$azul-claro;
+            padding: em(10px);
+        }
+    }
+    .error {
+        width:100%;
+        padding: em(30px) em(15px);
+        margin: 5px;
+        color:red;
+        background:rgba(255, 0, 0,0.3);
+
+    }
+}

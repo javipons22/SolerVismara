@@ -25,7 +25,14 @@ $the_query = new WP_Query( $args );
 	<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 	<article class="propiedad">
 			<div class="propiedad__contenedor-imagen">
-				<img src="<?php echo $img_path; ?>/1.jpg" class="propiedad__imagen" alt="imagen propiedad">
+			<?php
+				$image = get_field('imagen_principal');
+				$size = 'full'; // (thumbnail, medium, large, full or custom size)
+				$class= array( "class" => "propiedad__imagen" );
+				if( $image ) {
+					echo wp_get_attachment_image( $image, $size,false,$class );
+				}
+			?>
 			</div>
 			<div class="propiedad__info">
 				<div class="propiedad__contenedor-titulo">
@@ -34,7 +41,7 @@ $the_query = new WP_Query( $args );
 				</div>
 				<div class="propiedad__caracteristicas">
 					<span class="propiedad__dato">
-						<img class="icon propiedad__icono" src="<?php echo $img_path; ?>/area.svg" alt="icono area"><span><?php the_field('metros');?>m<sup>2</sup></span>
+						<img class="icon propiedad__icono" src="<?php echo $img_path; ?>/area.svg" alt="icono area"><span><?php the_field('area');?> m<sup>2</sup></span>
 					</span>
 					<span class="propiedad__dato">
 						<img class="icon propiedad__icono" src="<?php echo $img_path; ?>/bed.svg" alt="icono cama"><span><?php the_field('dormitorios');?> Dormitorios</span>

@@ -123,7 +123,7 @@
                             <img class="icon propiedad__icono" src="<?php echo $img_path; ?>/bed.svg" alt="icono cama"><span>3 Dormitorios</span>
                         </span>
                         <span class="propiedad__dato">
-                            <img class="icon propiedad__icono" src="<?php echo $img_path; ?>/toilet.svg" alt="icono baño"><span>2 Baños</span>
+                            <img class="icon propiedad__icono" src="<?php echo $img_path; ?>/shower.svg" alt="icono baño"><span>2 Baños</span>
                         </span>
                         <span class="propiedad__dato">
                             <img class="icon propiedad__icono" src="<?php echo $img_path; ?>/car.svg" alt="icono auto"><span>Garage</span>

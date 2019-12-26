@@ -654,6 +654,64 @@ body {
   background: #dde;
 }
 
+.upload-form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-family: "Open Sans", sans-serif;
+  color: rgba(0, 0, 0, 0.65);
+}
+.upload-form__elemento {
+  flex-basis: 20%;
+  flex-grow: 1;
+  border: 1px solid rgba(0, 0, 0, 0.65);
+  border-radius: 0.3125em;
+  padding: 0.9375em;
+  margin: 0.3125em;
+}
+.upload-form__elemento--operaciones, .upload-form__elemento--tipos, .upload-form__elemento--extras, .upload-form__elemento--provincia {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.upload-form__elemento--operaciones input[type=text], .upload-form__elemento--tipos input[type=text], .upload-form__elemento--extras input[type=text], .upload-form__elemento--provincia input[type=text] {
+  margin-top: 0.9375em;
+}
+.upload-form__elemento--titulo {
+  flex-basis: 100%;
+  width: 100%;
+}
+.upload-form__elemento h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.125em;
+  font-weight: bold;
+}
+.upload-form__elemento span {
+  display: block;
+  font-size: 0.75em;
+  margin-bottom: 0.625em;
+}
+.upload-form__elemento input[type=radio], .upload-form__elemento input[type=checkbox] {
+  margin-bottom: 0.3125em 0;
+}
+.upload-form__elemento input[type=text], .upload-form__elemento input[type=number] {
+  width: 70%;
+  padding: 0.625em 0.9375em;
+}
+.upload-form__elemento input[type=submit] {
+  color: white;
+  background: #62b9ff;
+  padding: 0.625em;
+}
+.upload-form .error {
+  width: 100%;
+  padding: 1.875em 0.9375em;
+  margin: 5px;
+  color: red;
+  background: rgba(255, 0, 0, 0.3);
+}
+
 @media (min-width: 768px) {
   .buscador {
     font-size: 1.1em;
