@@ -60,13 +60,14 @@ $query = new WP_Query($args);
             <h2>TITULO(*)</h2>
             <span>Escribe el titulo que quieres que aparezca. Ej. "Lindo departamento en el centro"</span>
             <br>
-            <input type="text" name="titulo" placeholder="Escribe Titulo...">
+            <input type="text" id="titulo" name="titulo" placeholder="Escribe Titulo...">
         </div>
         <div class="upload-form__elemento upload-form__elemento--operaciones">
             <h2>OPERACION(*)</h2>
             <span>Elige uno</span>
             <br>
             <div>
+                <input name="operacion" value="0" type="hidden">
                 <?php 
                 foreach ($operaciones as $operacion) {
                     echo '<input id="'. $operacion .'" type="radio" name="operacion" value=' . $operacion .'>' . $operacion . '<br>';
@@ -84,6 +85,7 @@ $query = new WP_Query($args);
             <span>Elige uno</span>
             <br>
             <div>
+                <input name="tipo" value="0" type="hidden">
                 <?php
                 foreach ($tipos as $tipo) {
                     echo '<input id="'. $tipo .'" type="radio" name="tipo" value=' . $tipo .'>' . $tipo . '<br>';
@@ -116,6 +118,7 @@ $query = new WP_Query($args);
             <span>Elige la provincia</span>
             <br>
             <div>
+                <input name="provincia" value="0" type="hidden">
                 <?php 
                 foreach ($provincias as $provincia) {
                     echo '<input id="'. $provincia .'" type="radio" name="provincia" value=' . $provincia .'>' . $provincia . '<br>';
@@ -131,37 +134,40 @@ $query = new WP_Query($args);
             <h2>BARRIO</h2>
             <span>Escribe el barrio en el que se ubica el inmueble</span>
             <br>
-            <input type="text" name="barrio" placeholder="Escribe barrio...">
+            <input id="barrio" type="text" name="barrio" placeholder="Escribe barrio...">
         </div>
         <div class="upload-form__elemento upload-form__elemento--direccion">
             <h2>DIRECCION(*)</h2>
             <span>Escribe la dirección del inmueble</span>
             <br>
-            <input type="text" name="direccion" placeholder="Escribe dirección...">
+            <input name="direccion" value="0" type="hidden">
+            <input id="direccion" type="text" name="direccion" placeholder="Escribe dirección...">
         </div>
         <div class="upload-form__elemento upload-form__elemento--dormitorios">
             <h2>DORMITORIOS</h2>
             <span>Selecciona la cantidad de dormitorios (si no tiene dejar 0)</span>
             <br>
-            <input type="number" name="dormitorios" value="0" min="0" max="10">
+            <input id="dormitorios" type="number" name="dormitorios" value="0" min="0" max="10">
         </div>
         <div class="upload-form__elemento upload-form__elemento--banos">
             <h2>BAÑOS</h2>
             <span>Selecciona la cantidad de baños (si no tiene dejar 0)</span>
             <br>
-            <input type="number" name="banos" value="0" min="0" max="10">
+            <input id="banos" type="number" name="banos" value="0" min="0" max="10">
         </div>
         <div class="upload-form__elemento upload-form__elemento--area">
             <h2>AREA(*)</h2>
             <span>Metros cuadrados de area</span>
             <br>
-            <input type="number" name="area" min="0" max="100000">
+            <input name="area" value="0" type="hidden">
+            <input id="area" type="number" name="area" min="0" max="100000">
+            m<sup>2</sup>
         </div>
         <div class="upload-form__elemento upload-form__elemento--area">
             <h2>PRECIO(*)</h2>
             <span>Precio del inmueble</span>
             <br>
-            $<input type="number" name="precio" >
+            $<input id="precio" type="number" name="precio">
         </div>
         <div class="upload-form__elemento upload-form__elemento--imagen">
             <h2>IMAGEN PRINCIPAL(*)</h2>
@@ -179,7 +185,7 @@ $query = new WP_Query($args);
 	        <?php //wp_nonce_field( 'my_image_upload2', 'my_image_upload_nonce' ); ?>
 	        <!-- <input id="submit_my_image_upload" name="submit_my_image_upload" type="submit" value="Upload" /> -->
         </div>
-        <div class="upload-form__elemento upload-form__elemento--boton-submit">
+        <div class="upload-form__elemento upload-form__elemento--boton-final">
 	        <input id="submit_form" name="submit_form" type="button" value="SUBIR PROPIEDAD" />
         </div>
         

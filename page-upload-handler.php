@@ -8,9 +8,19 @@
 	<?php 
 		foreach ($_POST as $name => $val) 
 		{
-		?>
-		<input type="hidden" name="<?php echo $name?>" value="<?php echo $val?>">
-		<?php
+			if ( is_array($val) ) { // En caso de ser array . ej. Extra hacer un input por cada valor
+				foreach ($val as $valor) {
+
+					?>
+						<input type="hidden" name="extra[]" value="<?php echo $valor?>">
+					<?php
+				}
+			} else {
+				?>
+				<input type="hidden" name="<?php echo $name?>" value="<?php echo $val?>">
+				<?php
+			}
+		
 		}
 	?>
 </form>
@@ -45,7 +55,7 @@
 	$camposValidar = array('titulo','operacion','tipo','provincia','area','precio','direccion');
 	foreach ($_POST as $name => $val)
 	{
-		if (in_array($name,$camposValidar) && !$val)
+		if (in_array($name,$camposValidar) && ($val == "0" || strlen($val) == 0))
 		{
 			?>
 			<script>

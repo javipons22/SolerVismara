@@ -3,7 +3,7 @@
     .buscador {
         font-size:1.2em;
     }
-    .destacados {
+    .destacados,.inmuebles {
         font-size: 1.15em;
     }
     .banner {
@@ -97,7 +97,15 @@
     }
     .propiedad {
         margin-bottom:em(30px);
-        height:em(160px);
+        max-height:em(195px);
+        &__dato {
+            flex-basis: 32%;
+        }
+    }
+    .inmuebles{
+        &__icono {
+            padding:em(15px) em(10px);
+        }
     }
     .tasaciones {
         &__titulo {

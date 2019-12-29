@@ -207,7 +207,8 @@ body {
     }
 }
 
-.buscador {
+// .buscador-aside es para la pagina inmuebles
+.buscador,.buscador-aside {
     background: $blanco-oscuro;
     display:flex;
     flex-direction: column;
@@ -277,7 +278,8 @@ body {
     }
 }
 
-.destacados {
+// ".inmuebles" es para la pagina inmuebles
+.destacados, .inmuebles {
     padding:40px 0;
     &__titulo-seccion {
         color:$negro-oscuro;
@@ -302,25 +304,128 @@ body {
         justify-content: center;
     }
 }
+.pag-inmuebles {
+    display:flex;
+    flex-direction:column;
+    padding-top:em(40px);
+    margin:0 auto;
+}
+
+.inmuebles {
+    padding-top:0;
+    padding-bottom:0;
+    &__top-bar {
+        width:100%;
+        background:white;
+        border-radius: em(10px) 0 0 em(10px);
+        margin-bottom: em(40px);
+        display:flex;
+        flex-direction:row;
+        flex-wrap:nowrap;
+        align-items:center;
+        justify-content: space-between;
+    }
+    &__icono {
+        background: $azul-claro;
+        padding:15px;
+        height:20px;
+        border-radius: em(10px) 0 0 em(10px);
+        path {
+            fill: white;
+        }
+    }
+    &__titulo {
+        color:$azul-claro;
+        font-family: 'Open Sans', sans-serif;
+        flex-grow: 100;
+        margin-left: em(10px);
+    }
+    &__elemento-select {
+        flex-basis:30%;
+        font-size: em(12px);
+        background:white;
+        font-family: 'Open Sans', sans-serif;
+        color: rgba(0,0,0,0.30);
+        border:1px solid rgba(0,0,0,0.30);
+        border-radius:3px;
+        padding: em(10px) em(10px);
+        margin: em(10px) 0;
+        margin-right: em(10px);
+        & option:hover {
+            box-shadow: 0 0 10px 100px #1882A8 inset;
+        }
+    }
+}
+// .buscador-aside es para la pagina inmuebles
+.buscador-aside {
+    margin: em(25px) auto;
+    padding: em(25px) em(20px);
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    flex-basis: 45%;
+    order:1;
+    background: white;
+    h1 {
+        font-size:em(20px);
+        font-family: 'Open Sans', sans-serif;
+        font-weight:700;
+        text-transform: uppercase;
+        color : $negro-oscuro;
+        span {
+            font-weight:400;
+        }
+    }
+    &__formulario {
+        padding:em(30px) 0 0 0;
+    }
+    &__elemento-select {
+        flex-basis:47%;
+        font-size: em(13px);
+        background:white;
+        font-family: 'Open Sans', sans-serif;
+        color: rgba(0,0,0,0.30);
+        border:1px solid rgba(0,0,0,0.30);
+        border-radius:2px;
+        padding: em(10px) em(10px);
+        margin: em(10px) 0;
+        & option:hover {
+            box-shadow: 0 0 10px 100px #1882A8 inset;
+        }
+    }
+
+    &__elemento-boton {
+        flex-basis:47%;
+        font-size: em(13px);
+        background:$azul-claro;
+        font-family: 'Montserrat', sans-serif;
+        font-weight:600;
+        color: white;
+        border:none;
+        border-radius:5px;
+        padding: em(10px) em(10px);
+        margin: em(7px) 0;
+    }
+}
 
 .propiedad {
     font-family: 'Open Sans', sans-serif;
     display:flex;
     justify-content: flex-start;
     margin-bottom:em(25px);
-    height:em(145px);
-    -webkit-box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.18);
-    -moz-box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.18);
-    box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.18);
+    max-height:em(190px);
     background:white;
+    text-decoration:none;
     &--last {
         // el ultimo elemento no tiene margin
         margin-bottom: 0;
     }
     &__contenedor-imagen {
-        height:100%;
         position:relative;
         flex-basis:38%;
+    }
+    &__contenedor-titulo {
+        margin-bottom: em(15px);
     }
     &__imagen {
         height:100%;
@@ -341,7 +446,7 @@ body {
         top: em(10px);
     }
     &__info {
-        padding:em(15px) em(10px) em(10px) em(10px);
+        padding:em(15px) em(10px) em(10px) em(20px);
         flex-basis: 58%;
         display:flex;
         flex-direction: column;
@@ -376,9 +481,11 @@ body {
         }
     }
     &__caracteristicas {
+        width:100%;
         display:flex;
         flex-wrap: wrap;
         align-self: flex-start;
+        margin-bottom: em(15px);
     }
     &__dato {
         flex-basis:48%;
@@ -616,6 +723,7 @@ body {
     justify-content: space-between;
     font-family: 'Open Sans', sans-serif;
     color:$negro-medio;
+    margin: em(100px) 0;
 
     &__elemento {
         flex-basis:20%;
@@ -636,6 +744,12 @@ body {
             flex-basis: 100%;
             width:100%;
         }
+        &--boton-final {
+            border:none;
+            padding-left:0;
+            padding-right:0;
+            border-radius:em(5px);
+        }
         
         h2 {
             font-family: 'Montserrat', sans-serif;
@@ -654,10 +768,18 @@ body {
             width:70%;
             padding: em(10px) em(15px);
         }
-        input[type='submit'] {
+        input[type='submit'],input[type='button'] {
             color:white;
             background:$azul-claro;
             padding: em(10px);
+            border:none;
+        }
+        input[type='button'] {
+            font-size: em(20px);
+            font-weight:bold;
+            letter-spacing: em(5px);
+            width:100%;
+            cursor:pointer;
         }
     }
     .error {

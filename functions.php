@@ -42,12 +42,24 @@ function my_pre_get_posts( $query ) {
 				return $operacion;
 			}
 		}
+		if (isset($_GET['order'])) {
+			if ($_GET['order'] == 'bajo') {
+				$query->set('meta_key', 'precio' );
+				$query->set('orderby', array('meta_value' => 'ASC'));
+			} else if($_GET['order'] == 'alto') {
+				$query->set('meta_key', 'precio' );
+				$query->set('orderby', array('meta_value' => 'DESC'));
+			} else {
+				$query->set('orderby', array('date' => 'DESC'));
+			}
+			
+		}
 		$query->set('meta_query', 
 			array(
-				'relation' =>'ASDF' ,
+				'relation' =>'AND' ,
 				setCustomQuery('operacion','='),
-				setCustomQuery('banos','='),
-				setCustomQuery('dormitorios','=')
+				setCustomQuery('banos','>='),
+				setCustomQuery('dormitorios','>=')
 				)
 		); 
 		

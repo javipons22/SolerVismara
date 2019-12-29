@@ -69,123 +69,153 @@
  * 67  | |     .propiedad {
  * 68  | |         flex-basis:49%;
  * 69  | |     }
- * 70  | |     .tasaciones {
- * 71  | |         height: em(65px);
- * 72  | |         display:flex;
- * 73  | |         align-items: center;
- * 74  | |         &__contenedor {
- * 75  | |             max-width:700px;   
- * 76  | |         }
- * 77  | |         &__imagen {
- * 78  | |             height:130%;
- * 79  | |         }
- * 80  | |     }
- * 81  | |     .contacto,.links,.recientes {
- * 82  | |         flex-basis:40%;
- * 83  | |         padding-left:0;
- * 84  | |         padding-right:0;
- * 85  | |         padding-top:0;
- * 86  | |     }
- * 87  | | 
- * 88  | |     .navegacion {
- * 89  | |         display:flex;
- * 90  | |         background:none;
- * 91  | |         position:relative;
- * 92  | |         top:0;
- * 93  | |         right:0;
- * 94  | |         border:none;
- * 95  | |         padding:0;
- * 96  | |         margin:0;
- * 97  | |         width: auto;
- * 98  | |         &__contenedor {
- * 99  | |             display:flex;
- * 100 | |             flex-direction:row;
- * 101 | |             align-items: center;
- * 102 | |             flex-wrap:nowrap;
- * 103 | |             @include gradiente;
- * 104 | |             font-size:em(13px);
- * 105 | |             padding:0;
- * 106 | |             margin:0;
- * 107 | |             &::before {
- * 108 | |                 content:"";
- * 109 | |                 width: 0;
- * 110 | |                 height: 0;
- * 111 | |                 border-style: solid;
- * 112 | |                 border-width: 0 0 em(35px) em(35px);
- * 113 | |                 border-color: transparent transparent rgba(98,185,255,1) transparent;
- * 114 | |                 transform: translateX(-99%);
- * 115 | |             }
- * 116 | |         }
- * 117 | |         &__link {
- * 118 | |             text-decoration:none;
- * 119 | |             color:white;
- * 120 | |             padding: em(11px) em(25px);
- * 121 | |             border-right:1px solid rgba(255,255,255,0.3);
- * 122 | |         }
- * 123 | |         &__elemento {
- * 124 | |             display:flex;
- * 125 | |             justify-content: center;
- * 126 | |             margin:0;
- * 127 | |             padding:0;
- * 128 | |             font-size: em(12px);
+ * 70  | |     .pag-inmuebles {
+ * 71  | |         flex-direction:row;
+ * 72  | |         position:relative;
+ * 73  | |     }
+ * 74  | |     .inmuebles{
+ * 75  | |         flex-basis:61%;
+ * 76  | |         &__titulo {
+ * 77  | |             width:100%;
+ * 78  | |         }
+ * 79  | |         &__icono {
+ * 80  | |             width:em(40px);
+ * 81  | |         }
+ * 82  | |         &__top-bar {
+ * 83  | |             margin-bottom: em(20px);
+ * 84  | |         }
+ * 85  | |     }
+ * 86  | |     .buscador-aside {
+ * 87  | |         position:sticky;
+ * 88  | |         top:135px;
+ * 89  | |         left:0;
+ * 90  | |         margin-top:0;
+ * 91  | |         margin: 0 0 em(34px) em(15px);
+ * 92  | |         border-radius: 0 7px 7px 0;
+ * 93  | |         flex-shrink: 1;
+ * 94  | |         height:100%;
+ * 95  | |         &__formulario {
+ * 96  | |             font-size: 0.9em;
+ * 97  | |         }
+ * 98  | | 
+ * 99  | |     }
+ * 100 | |     .tasaciones {
+ * 101 | |         height: em(65px);
+ * 102 | |         display:flex;
+ * 103 | |         align-items: center;
+ * 104 | |         &__contenedor {
+ * 105 | |             max-width:700px;   
+ * 106 | |         }
+ * 107 | |         &__imagen {
+ * 108 | |             height:130%;
+ * 109 | |         }
+ * 110 | |     }
+ * 111 | |     .contacto,.links,.recientes {
+ * 112 | |         flex-basis:40%;
+ * 113 | |         padding-left:0;
+ * 114 | |         padding-right:0;
+ * 115 | |         padding-top:0;
+ * 116 | |     }
+ * 117 | | 
+ * 118 | |     .navegacion {
+ * 119 | |         display:flex;
+ * 120 | |         background:none;
+ * 121 | |         position:relative;
+ * 122 | |         top:0;
+ * 123 | |         right:0;
+ * 124 | |         border:none;
+ * 125 | |         padding:0;
+ * 126 | |         margin:0;
+ * 127 | |         width: auto;
+ * 128 | |         &__contenedor {
  * 129 | |             display:flex;
- * 130 | |             justify-content: center;
- * 131 | |             flex-direction:row;
- * 132 | |             border:none;
- * 133 | |             width:auto;
- * 134 | |             &--first {
- * 135 | |                 margin-top: 0;
- * 136 | |                 justify-content: flex-start;
- * 137 | |             }
- * 138 | |             &:nth-child(2n) {
- * 139 | |                 background: none;
- * 140 | |             }
- * 141 | |             
- * 142 | |         }
- * 143 | |     }
- * 144 | |     .main-header__button {
- * 145 | |         display:none;
- * 146 | |     }
- * 147 | | 
- * 148 | |     .buscador {
- * 149 | |         &__formulario {
- * 150 | |             padding-top: em(20px);
- * 151 | |         }
- * 152 | |         &__elemento-select {
- * 153 | |             flex-basis: 23%;
- * 154 | |         }
- * 155 | |         &__elemento-boton { 
- * 156 | |             flex-basis: 23%;
- * 157 | |         }
- * 158 | |     }
- * 159 | |     .tasaciones {
- * 160 | |         &__contenido {
- * 161 | |             flex-direction: row;
- * 162 | |             align-items: center;
- * 163 | |             justify-content: space-between;
- * 164 | |         }
- * 165 | |         &__titulo {
- * 166 | |             flex-grow: 1;
- * 167 | |             text-align:center;
- * 168 | |             letter-spacing: em(1.85px);
- * 169 | |         }
- * 170 | |         &__cta {
- * 171 | |             margin:0;
- * 172 | |             padding:em(15px) em(35px);
- * 173 | |         }
- * 174 | |     }
- * 175 | |     .footer {
- * 176 | |         padding-top: em(50px);
- * 177 | |         &__container {
- * 178 | |             flex-direction: row;
- * 179 | |             justify-content: space-around;
- * 180 | |         }
- * 181 | |     }
- * 182 | |     
- * 183 | |     .copyright {
- * 184 | |         margin-top: em(50px);
- * 185 | |     }
- * 186 | \ }
+ * 130 | |             flex-direction:row;
+ * 131 | |             align-items: center;
+ * 132 | |             flex-wrap:nowrap;
+ * 133 | |             @include gradiente;
+ * 134 | |             font-size:em(13px);
+ * 135 | |             padding:0;
+ * 136 | |             margin:0;
+ * 137 | |             &::before {
+ * 138 | |                 content:"";
+ * 139 | |                 width: 0;
+ * 140 | |                 height: 0;
+ * 141 | |                 border-style: solid;
+ * 142 | |                 border-width: 0 0 em(35px) em(35px);
+ * 143 | |                 border-color: transparent transparent rgba(98,185,255,1) transparent;
+ * 144 | |                 transform: translateX(-99%);
+ * 145 | |             }
+ * 146 | |         }
+ * 147 | |         &__link {
+ * 148 | |             text-decoration:none;
+ * 149 | |             color:white;
+ * 150 | |             padding: em(11px) em(25px);
+ * 151 | |             border-right:1px solid rgba(255,255,255,0.3);
+ * 152 | |         }
+ * 153 | |         &__elemento {
+ * 154 | |             display:flex;
+ * 155 | |             justify-content: center;
+ * 156 | |             margin:0;
+ * 157 | |             padding:0;
+ * 158 | |             font-size: em(12px);
+ * 159 | |             display:flex;
+ * 160 | |             justify-content: center;
+ * 161 | |             flex-direction:row;
+ * 162 | |             border:none;
+ * 163 | |             width:auto;
+ * 164 | |             &--first {
+ * 165 | |                 margin-top: 0;
+ * 166 | |                 justify-content: flex-start;
+ * 167 | |             }
+ * 168 | |             &:nth-child(2n) {
+ * 169 | |                 background: none;
+ * 170 | |             }
+ * 171 | |             
+ * 172 | |         }
+ * 173 | |     }
+ * 174 | |     .main-header__button {
+ * 175 | |         display:none;
+ * 176 | |     }
+ * 177 | | 
+ * 178 | |     .buscador {
+ * 179 | |         &__formulario {
+ * 180 | |             padding-top: em(20px);
+ * 181 | |         }
+ * 182 | |         &__elemento-select {
+ * 183 | |             flex-basis: 23%;
+ * 184 | |         }
+ * 185 | |         &__elemento-boton { 
+ * 186 | |             flex-basis: 23%;
+ * 187 | |         }
+ * 188 | |     }
+ * 189 | |     .tasaciones {
+ * 190 | |         &__contenido {
+ * 191 | |             flex-direction: row;
+ * 192 | |             align-items: center;
+ * 193 | |             justify-content: space-between;
+ * 194 | |         }
+ * 195 | |         &__titulo {
+ * 196 | |             flex-grow: 1;
+ * 197 | |             text-align:center;
+ * 198 | |             letter-spacing: em(1.85px);
+ * 199 | |         }
+ * 200 | |         &__cta {
+ * 201 | |             margin:0;
+ * 202 | |             padding:em(15px) em(35px);
+ * 203 | |         }
+ * 204 | |     }
+ * 205 | |     .footer {
+ * 206 | |         padding-top: em(50px);
+ * 207 | |         &__container {
+ * 208 | |             flex-direction: row;
+ * 209 | |             justify-content: space-around;
+ * 210 | |         }
+ * 211 | |     }
+ * 212 | |     
+ * 213 | |     .copyright {
+ * 214 | |         margin-top: em(50px);
+ * 215 | |     }
+ * 216 | \ }
  *     '
  *   sass/partials/tablet.scss 1:1  root stylesheet */
 
@@ -197,5 +227,5 @@ body::before {
   padding: 1em;
   margin-bottom: 1em;
   border-bottom: 2px solid black;
-  content: "Error: Undefined mixin.\a     \2577 \a 1   \2502  \250c  @include mq('lg') {\a 2   \2502  \2502      // Cambiar tamaños en estas lineas\a 3   \2502  \2502      .buscador {\a 4   \2502  \2502          font-size:1.1em;\a 5   \2502  \2502      }\a 6   \2502  \2502      .banner {\a 7   \2502  \2502          font-size: 1.6em;\a 8   \2502  \2502      }\a 9   \2502  \2502      .top-header {\a 10  \2502  \2502          font-size:28px;\a 11  \2502  \2502      }\a 12  \2502  \2502      .main-header {\a 13  \2502  \2502          font-size:19px;\a 14  \2502  \2502      }\a 15  \2502  \2502      .tasaciones {\a 16  \2502  \2502          font-size: em(15px);\a 17  \2502  \2502      }\a 18  \2502  \2502      // Fin tamaños\a 19  \2502  \2502      .banner {\a 20  \2502  \2502          position:relative;\a 21  \2502  \2502          display:flex;\a 22  \2502  \2502          align-items: center;\a 23  \2502  \2502          justify-content: center;\a 24  \2502  \2502          &__imagen {\a 25  \2502  \2502              opacity:0.65;\a 26  \2502  \2502          }\a 27  \2502  \2502          &__info {\a 28  \2502  \2502              position:absolute;\a 29  \2502  \2502              display:flex;\a 30  \2502  \2502              flex-direction: column;\a 31  \2502  \2502              padding:0 em(45px);\a 32  \2502  \2502          }\a 33  \2502  \2502          &__titulo {\a 34  \2502  \2502              background:none;\a 35  \2502  \2502              display:inline-block;\a 36  \2502  \2502              padding:0;\a 37  \2502  \2502              margin:0;\a 38  \2502  \2502              color:white;\a 39  \2502  \2502          }\a 40  \2502  \2502          &__descripcion {\a 41  \2502  \2502              margin-top:em(30px);\a 42  \2502  \2502              display:inline-block;\a 43  \2502  \2502              color:white;\a 44  \2502  \2502              width:50%;\a 45  \2502  \2502              align-self:flex-end;\a 46  \2502  \2502              padding-left: em(30px);\a 47  \2502  \2502              border-left: 1px solid white;\a 48  \2502  \2502          }\a 49  \2502  \2502      }\a 50  \2502  \2502      .servicios {\a 51  \2502  \2502          &__contenedor {\a 52  \2502  \2502              flex-direction: row;\a 53  \2502  \2502              flex-wrap:nowrap;\a 54  \2502  \2502          }\a 55  \2502  \2502          &__elemento {\a 56  \2502  \2502              width:15.5%;\a 57  \2502  \2502          }\a 58  \2502  \2502      }\a 59  \2502  \2502      .destacados {\a 60  \2502  \2502          &__container {\a 61  \2502  \2502              display:flex;\a 62  \2502  \2502              flex-direction:row;\a 63  \2502  \2502              flex-wrap:wrap;\a 64  \2502  \2502              justify-content: space-between;\a 65  \2502  \2502          }\a 66  \2502  \2502      }\a 67  \2502  \2502      .propiedad {\a 68  \2502  \2502          flex-basis:49%;\a 69  \2502  \2502      }\a 70  \2502  \2502      .tasaciones {\a 71  \2502  \2502          height: em(65px);\a 72  \2502  \2502          display:flex;\a 73  \2502  \2502          align-items: center;\a 74  \2502  \2502          &__contenedor {\a 75  \2502  \2502              max-width:700px;   \a 76  \2502  \2502          }\a 77  \2502  \2502          &__imagen {\a 78  \2502  \2502              height:130%;\a 79  \2502  \2502          }\a 80  \2502  \2502      }\a 81  \2502  \2502      .contacto,.links,.recientes {\a 82  \2502  \2502          flex-basis:40%;\a 83  \2502  \2502          padding-left:0;\a 84  \2502  \2502          padding-right:0;\a 85  \2502  \2502          padding-top:0;\a 86  \2502  \2502      }\a 87  \2502  \2502  \a 88  \2502  \2502      .navegacion {\a 89  \2502  \2502          display:flex;\a 90  \2502  \2502          background:none;\a 91  \2502  \2502          position:relative;\a 92  \2502  \2502          top:0;\a 93  \2502  \2502          right:0;\a 94  \2502  \2502          border:none;\a 95  \2502  \2502          padding:0;\a 96  \2502  \2502          margin:0;\a 97  \2502  \2502          width: auto;\a 98  \2502  \2502          &__contenedor {\a 99  \2502  \2502              display:flex;\a 100 \2502  \2502              flex-direction:row;\a 101 \2502  \2502              align-items: center;\a 102 \2502  \2502              flex-wrap:nowrap;\a 103 \2502  \2502              @include gradiente;\a 104 \2502  \2502              font-size:em(13px);\a 105 \2502  \2502              padding:0;\a 106 \2502  \2502              margin:0;\a 107 \2502  \2502              &::before {\a 108 \2502  \2502                  content:\"\";\a 109 \2502  \2502                  width: 0;\a 110 \2502  \2502                  height: 0;\a 111 \2502  \2502                  border-style: solid;\a 112 \2502  \2502                  border-width: 0 0 em(35px) em(35px);\a 113 \2502  \2502                  border-color: transparent transparent rgba(98,185,255,1) transparent;\a 114 \2502  \2502                  transform: translateX(-99%);\a 115 \2502  \2502              }\a 116 \2502  \2502          }\a 117 \2502  \2502          &__link {\a 118 \2502  \2502              text-decoration:none;\a 119 \2502  \2502              color:white;\a 120 \2502  \2502              padding: em(11px) em(25px);\a 121 \2502  \2502              border-right:1px solid rgba(255,255,255,0.3);\a 122 \2502  \2502          }\a 123 \2502  \2502          &__elemento {\a 124 \2502  \2502              display:flex;\a 125 \2502  \2502              justify-content: center;\a 126 \2502  \2502              margin:0;\a 127 \2502  \2502              padding:0;\a 128 \2502  \2502              font-size: em(12px);\a 129 \2502  \2502              display:flex;\a 130 \2502  \2502              justify-content: center;\a 131 \2502  \2502              flex-direction:row;\a 132 \2502  \2502              border:none;\a 133 \2502  \2502              width:auto;\a 134 \2502  \2502              &--first {\a 135 \2502  \2502                  margin-top: 0;\a 136 \2502  \2502                  justify-content: flex-start;\a 137 \2502  \2502              }\a 138 \2502  \2502              &:nth-child(2n) {\a 139 \2502  \2502                  background: none;\a 140 \2502  \2502              }\a 141 \2502  \2502              \a 142 \2502  \2502          }\a 143 \2502  \2502      }\a 144 \2502  \2502      .main-header__button {\a 145 \2502  \2502          display:none;\a 146 \2502  \2502      }\a 147 \2502  \2502  \a 148 \2502  \2502      .buscador {\a 149 \2502  \2502          &__formulario {\a 150 \2502  \2502              padding-top: em(20px);\a 151 \2502  \2502          }\a 152 \2502  \2502          &__elemento-select {\a 153 \2502  \2502              flex-basis: 23%;\a 154 \2502  \2502          }\a 155 \2502  \2502          &__elemento-boton { \a 156 \2502  \2502              flex-basis: 23%;\a 157 \2502  \2502          }\a 158 \2502  \2502      }\a 159 \2502  \2502      .tasaciones {\a 160 \2502  \2502          &__contenido {\a 161 \2502  \2502              flex-direction: row;\a 162 \2502  \2502              align-items: center;\a 163 \2502  \2502              justify-content: space-between;\a 164 \2502  \2502          }\a 165 \2502  \2502          &__titulo {\a 166 \2502  \2502              flex-grow: 1;\a 167 \2502  \2502              text-align:center;\a 168 \2502  \2502              letter-spacing: em(1.85px);\a 169 \2502  \2502          }\a 170 \2502  \2502          &__cta {\a 171 \2502  \2502              margin:0;\a 172 \2502  \2502              padding:em(15px) em(35px);\a 173 \2502  \2502          }\a 174 \2502  \2502      }\a 175 \2502  \2502      .footer {\a 176 \2502  \2502          padding-top: em(50px);\a 177 \2502  \2502          &__container {\a 178 \2502  \2502              flex-direction: row;\a 179 \2502  \2502              justify-content: space-around;\a 180 \2502  \2502          }\a 181 \2502  \2502      }\a 182 \2502  \2502      \a 183 \2502  \2502      .copyright {\a 184 \2502  \2502          margin-top: em(50px);\a 185 \2502  \2502      }\a 186 \2502  \2514  }\a     \2575 \a   sass/partials/tablet.scss 1:1  root stylesheet";
+  content: "Error: Undefined mixin.\a     \2577 \a 1   \2502  \250c  @include mq('lg') {\a 2   \2502  \2502      // Cambiar tamaños en estas lineas\a 3   \2502  \2502      .buscador {\a 4   \2502  \2502          font-size:1.1em;\a 5   \2502  \2502      }\a 6   \2502  \2502      .banner {\a 7   \2502  \2502          font-size: 1.6em;\a 8   \2502  \2502      }\a 9   \2502  \2502      .top-header {\a 10  \2502  \2502          font-size:28px;\a 11  \2502  \2502      }\a 12  \2502  \2502      .main-header {\a 13  \2502  \2502          font-size:19px;\a 14  \2502  \2502      }\a 15  \2502  \2502      .tasaciones {\a 16  \2502  \2502          font-size: em(15px);\a 17  \2502  \2502      }\a 18  \2502  \2502      // Fin tamaños\a 19  \2502  \2502      .banner {\a 20  \2502  \2502          position:relative;\a 21  \2502  \2502          display:flex;\a 22  \2502  \2502          align-items: center;\a 23  \2502  \2502          justify-content: center;\a 24  \2502  \2502          &__imagen {\a 25  \2502  \2502              opacity:0.65;\a 26  \2502  \2502          }\a 27  \2502  \2502          &__info {\a 28  \2502  \2502              position:absolute;\a 29  \2502  \2502              display:flex;\a 30  \2502  \2502              flex-direction: column;\a 31  \2502  \2502              padding:0 em(45px);\a 32  \2502  \2502          }\a 33  \2502  \2502          &__titulo {\a 34  \2502  \2502              background:none;\a 35  \2502  \2502              display:inline-block;\a 36  \2502  \2502              padding:0;\a 37  \2502  \2502              margin:0;\a 38  \2502  \2502              color:white;\a 39  \2502  \2502          }\a 40  \2502  \2502          &__descripcion {\a 41  \2502  \2502              margin-top:em(30px);\a 42  \2502  \2502              display:inline-block;\a 43  \2502  \2502              color:white;\a 44  \2502  \2502              width:50%;\a 45  \2502  \2502              align-self:flex-end;\a 46  \2502  \2502              padding-left: em(30px);\a 47  \2502  \2502              border-left: 1px solid white;\a 48  \2502  \2502          }\a 49  \2502  \2502      }\a 50  \2502  \2502      .servicios {\a 51  \2502  \2502          &__contenedor {\a 52  \2502  \2502              flex-direction: row;\a 53  \2502  \2502              flex-wrap:nowrap;\a 54  \2502  \2502          }\a 55  \2502  \2502          &__elemento {\a 56  \2502  \2502              width:15.5%;\a 57  \2502  \2502          }\a 58  \2502  \2502      }\a 59  \2502  \2502      .destacados {\a 60  \2502  \2502          &__container {\a 61  \2502  \2502              display:flex;\a 62  \2502  \2502              flex-direction:row;\a 63  \2502  \2502              flex-wrap:wrap;\a 64  \2502  \2502              justify-content: space-between;\a 65  \2502  \2502          }\a 66  \2502  \2502      }\a 67  \2502  \2502      .propiedad {\a 68  \2502  \2502          flex-basis:49%;\a 69  \2502  \2502      }\a 70  \2502  \2502      .pag-inmuebles {\a 71  \2502  \2502          flex-direction:row;\a 72  \2502  \2502          position:relative;\a 73  \2502  \2502      }\a 74  \2502  \2502      .inmuebles{\a 75  \2502  \2502          flex-basis:61%;\a 76  \2502  \2502          &__titulo {\a 77  \2502  \2502              width:100%;\a 78  \2502  \2502          }\a 79  \2502  \2502          &__icono {\a 80  \2502  \2502              width:em(40px);\a 81  \2502  \2502          }\a 82  \2502  \2502          &__top-bar {\a 83  \2502  \2502              margin-bottom: em(20px);\a 84  \2502  \2502          }\a 85  \2502  \2502      }\a 86  \2502  \2502      .buscador-aside {\a 87  \2502  \2502          position:sticky;\a 88  \2502  \2502          top:135px;\a 89  \2502  \2502          left:0;\a 90  \2502  \2502          margin-top:0;\a 91  \2502  \2502          margin: 0 0 em(34px) em(15px);\a 92  \2502  \2502          border-radius: 0 7px 7px 0;\a 93  \2502  \2502          flex-shrink: 1;\a 94  \2502  \2502          height:100%;\a 95  \2502  \2502          &__formulario {\a 96  \2502  \2502              font-size: 0.9em;\a 97  \2502  \2502          }\a 98  \2502  \2502  \a 99  \2502  \2502      }\a 100 \2502  \2502      .tasaciones {\a 101 \2502  \2502          height: em(65px);\a 102 \2502  \2502          display:flex;\a 103 \2502  \2502          align-items: center;\a 104 \2502  \2502          &__contenedor {\a 105 \2502  \2502              max-width:700px;   \a 106 \2502  \2502          }\a 107 \2502  \2502          &__imagen {\a 108 \2502  \2502              height:130%;\a 109 \2502  \2502          }\a 110 \2502  \2502      }\a 111 \2502  \2502      .contacto,.links,.recientes {\a 112 \2502  \2502          flex-basis:40%;\a 113 \2502  \2502          padding-left:0;\a 114 \2502  \2502          padding-right:0;\a 115 \2502  \2502          padding-top:0;\a 116 \2502  \2502      }\a 117 \2502  \2502  \a 118 \2502  \2502      .navegacion {\a 119 \2502  \2502          display:flex;\a 120 \2502  \2502          background:none;\a 121 \2502  \2502          position:relative;\a 122 \2502  \2502          top:0;\a 123 \2502  \2502          right:0;\a 124 \2502  \2502          border:none;\a 125 \2502  \2502          padding:0;\a 126 \2502  \2502          margin:0;\a 127 \2502  \2502          width: auto;\a 128 \2502  \2502          &__contenedor {\a 129 \2502  \2502              display:flex;\a 130 \2502  \2502              flex-direction:row;\a 131 \2502  \2502              align-items: center;\a 132 \2502  \2502              flex-wrap:nowrap;\a 133 \2502  \2502              @include gradiente;\a 134 \2502  \2502              font-size:em(13px);\a 135 \2502  \2502              padding:0;\a 136 \2502  \2502              margin:0;\a 137 \2502  \2502              &::before {\a 138 \2502  \2502                  content:\"\";\a 139 \2502  \2502                  width: 0;\a 140 \2502  \2502                  height: 0;\a 141 \2502  \2502                  border-style: solid;\a 142 \2502  \2502                  border-width: 0 0 em(35px) em(35px);\a 143 \2502  \2502                  border-color: transparent transparent rgba(98,185,255,1) transparent;\a 144 \2502  \2502                  transform: translateX(-99%);\a 145 \2502  \2502              }\a 146 \2502  \2502          }\a 147 \2502  \2502          &__link {\a 148 \2502  \2502              text-decoration:none;\a 149 \2502  \2502              color:white;\a 150 \2502  \2502              padding: em(11px) em(25px);\a 151 \2502  \2502              border-right:1px solid rgba(255,255,255,0.3);\a 152 \2502  \2502          }\a 153 \2502  \2502          &__elemento {\a 154 \2502  \2502              display:flex;\a 155 \2502  \2502              justify-content: center;\a 156 \2502  \2502              margin:0;\a 157 \2502  \2502              padding:0;\a 158 \2502  \2502              font-size: em(12px);\a 159 \2502  \2502              display:flex;\a 160 \2502  \2502              justify-content: center;\a 161 \2502  \2502              flex-direction:row;\a 162 \2502  \2502              border:none;\a 163 \2502  \2502              width:auto;\a 164 \2502  \2502              &--first {\a 165 \2502  \2502                  margin-top: 0;\a 166 \2502  \2502                  justify-content: flex-start;\a 167 \2502  \2502              }\a 168 \2502  \2502              &:nth-child(2n) {\a 169 \2502  \2502                  background: none;\a 170 \2502  \2502              }\a 171 \2502  \2502              \a 172 \2502  \2502          }\a 173 \2502  \2502      }\a 174 \2502  \2502      .main-header__button {\a 175 \2502  \2502          display:none;\a 176 \2502  \2502      }\a 177 \2502  \2502  \a 178 \2502  \2502      .buscador {\a 179 \2502  \2502          &__formulario {\a 180 \2502  \2502              padding-top: em(20px);\a 181 \2502  \2502          }\a 182 \2502  \2502          &__elemento-select {\a 183 \2502  \2502              flex-basis: 23%;\a 184 \2502  \2502          }\a 185 \2502  \2502          &__elemento-boton { \a 186 \2502  \2502              flex-basis: 23%;\a 187 \2502  \2502          }\a 188 \2502  \2502      }\a 189 \2502  \2502      .tasaciones {\a 190 \2502  \2502          &__contenido {\a 191 \2502  \2502              flex-direction: row;\a 192 \2502  \2502              align-items: center;\a 193 \2502  \2502              justify-content: space-between;\a 194 \2502  \2502          }\a 195 \2502  \2502          &__titulo {\a 196 \2502  \2502              flex-grow: 1;\a 197 \2502  \2502              text-align:center;\a 198 \2502  \2502              letter-spacing: em(1.85px);\a 199 \2502  \2502          }\a 200 \2502  \2502          &__cta {\a 201 \2502  \2502              margin:0;\a 202 \2502  \2502              padding:em(15px) em(35px);\a 203 \2502  \2502          }\a 204 \2502  \2502      }\a 205 \2502  \2502      .footer {\a 206 \2502  \2502          padding-top: em(50px);\a 207 \2502  \2502          &__container {\a 208 \2502  \2502              flex-direction: row;\a 209 \2502  \2502              justify-content: space-around;\a 210 \2502  \2502          }\a 211 \2502  \2502      }\a 212 \2502  \2502      \a 213 \2502  \2502      .copyright {\a 214 \2502  \2502          margin-top: em(50px);\a 215 \2502  \2502      }\a 216 \2502  \2514  }\a     \2575 \a   sass/partials/tablet.scss 1:1  root stylesheet";
 }

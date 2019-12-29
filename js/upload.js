@@ -1,6 +1,20 @@
 // Se agrega jQuery de este modo para wordpress
 jQuery(document).ready(function($){
 
+    // Cambiar input de orden al recibir un query
+    var urlParams = new URLSearchParams(window.location.search);
+    var query = urlParams.getAll('order');
+    try{
+        if(query) {
+            document.getElementById(query[0]).selected = 'selected';
+        }
+    } catch (e) {
+        console.log(e.message);
+    }
+
+    document.getElementById("formulario-order").addEventListener("change", function(){
+        this.submit();
+    });
     // Si se hace submit con el boton "submit_form" cambiar el action y hacer submit
     // Si son otros botones hacer submit en la misma pagina
     $("#submit_form").click(function() {
@@ -8,10 +22,13 @@ jQuery(document).ready(function($){
         $('#upload-form').submit();
     });
 
-    let campos = ['operacion','tipo','extra','provincias'];
-
-    campos.forEach(element => {
+    let campos1 = ['operacion','tipo','extra','provincia'];
+    let campos2 = ['titulo','barrio','direccion','dormitorios','banos','area','precio'];
+    campos1.forEach(element => {
         checkRadio(element);
+    });
+    campos2.forEach(element => {
+        setValue(element);
     });
 
     function checkRadio(elemento) {
@@ -26,6 +43,14 @@ jQuery(document).ready(function($){
             }
         }
         
+    }
+
+    function setValue(elemento) {
+        let seleccion = seleccionados[elemento];
+        console.log(seleccion);
+        if(seleccion && document.getElementById(elemento)) {
+            document.getElementById(elemento).value = seleccion;
+        }  
     }
     
 });
