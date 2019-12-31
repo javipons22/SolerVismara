@@ -12,6 +12,7 @@ function wpt_theme_js() {
 	wp_enqueue_script( 'svgInject_js', get_template_directory_uri() . '/js/svg-inject.min.js', '' , '' , true );//el ultimo parametro es dependence , version y si debe aparecer en el footer(false)
 	wp_enqueue_script('main_js', get_template_directory_uri() . '/js/script.js', array('jquery') , '' , true);
 	wp_enqueue_script('upload_js', get_template_directory_uri() . '/js/upload.js', array('jquery') , '' , true);
+	//wp_enqueue_script('slideshow_js', get_template_directory_uri() . '/js/slideshow.js', array('jquery') , '' , true);
 	//wp_enqueue_script('upload_js', get_template_directory_uri() . '/js/upload.js', array('jquery') , '' , true);
 }
 add_action( 'wp_enqueue_scripts', 'wpt_theme_js' );
@@ -31,37 +32,40 @@ function my_pre_get_posts( $query ) {
 	
 	// only modify queries for 'inm' post type
 	if( isset($query->query_vars['post_type']) && $query->query_vars['post_type'] == 'inm' ) {
-		
-		function setCustomQuery($key,$compare) {
-			if( isset($_GET[$key]) ) {
-				$operacion = array(
-					'key'=> $key,
-					'value'=> $_GET[$key],
-					'compare' => $compare
-				);
-				return $operacion;
+		if (!function_exists('setBusqueda')) {
+			function setBusqueda($key,$compare) {
+				if( isset($_GET[$key]) ) {
+					$operacion = array(
+						'key'=> $key,
+						'value'=> $_GET[$key],
+						'compare' => $compare
+					);
+					return $operacion;
+				}
 			}
 		}
-		if (isset($_GET['order'])) {
-			if ($_GET['order'] == 'bajo') {
-				$query->set('meta_key', 'precio' );
-				$query->set('orderby', array('meta_value' => 'ASC'));
-			} else if($_GET['order'] == 'alto') {
-				$query->set('meta_key', 'precio' );
-				$query->set('orderby', array('meta_value' => 'DESC'));
-			} else {
-				$query->set('orderby', array('date' => 'DESC'));
+		if($query->is_main_query()) {
+			if (isset($_GET['order'])) {
+				if ($_GET['order'] == 'bajo') {
+					$query->set('meta_key', 'precio' );
+					$query->set('orderby', array('meta_value_num' => 'ASC'));
+				} else if($_GET['order'] == 'alto') {
+					$query->set('meta_key', 'precio' );
+					$query->set('orderby', array('meta_value_num' => 'DESC'));
+				} else {
+					$query->set('orderby', array('date' => 'DESC'));
+				}
+				
 			}
-			
+			$query->set('meta_query', 
+				array(
+					'relation' =>'AND' ,
+					setBusqueda('operacion','='),
+					setBusqueda('banos','>='),
+					setBusqueda('dormitorios','>=')
+					)
+			); 
 		}
-		$query->set('meta_query', 
-			array(
-				'relation' =>'AND' ,
-				setCustomQuery('operacion','='),
-				setCustomQuery('banos','>='),
-				setCustomQuery('dormitorios','>=')
-				)
-		); 
 		
 	}
 	

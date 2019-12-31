@@ -6,36 +6,37 @@
             <div class="recientes">
                 <h2 class="recientes__titulo">LO MÁS RECIENTE</h2>
                 <ul class="recientes__info">
+                    <?php
+                    // args
+                    $args2 = array(
+                    'posts_per_page' => 3,
+                    'post_type'		=> 'inm',
+                    'orderby'        => 'date',
+                    );
+                    // query
+                    $the_query2 = new WP_Query( $args2 );
+                    ?>
+                    <?php if( $the_query2->have_posts() ): ?>
+		            <?php while ( $the_query2->have_posts() ) : $the_query2->the_post(); ?>
                     <li class="propiedad-reciente">
                         <a href="#1" class="propiedad-reciente__link">
-                            <img class="propiedad-reciente__imagen" src="<?php echo $img_path; ?>/1.jpg">
+                            <?php
+                                $image = get_field('imagen_principal');
+                                $size = 'full'; // (thumbnail, medium, large, full or custom size)
+                                $class= array( "class" => "propiedad-reciente__imagen" );
+                                if( $image ) {
+                                    echo wp_get_attachment_image( $image, $size, false ,$class );
+                                }
+				            ?>
+                           
                             <div class="propiedad-reciente__contenido">
-                                <h2 class="propiedad-reciente__titulo">Beautiful Single Home 1</h2>
-                                <span class="propiedad-reciente__fecha">19 de Diciembre 2019</span>
-                                <span class="propiedad-reciente__precio">$250000</span>
+                                <h2 class="propiedad-reciente__titulo"><?php the_title();?></h2>
+                                <span class="propiedad-reciente__fecha"><?php echo get_the_date();?></span>
+                                <span class="propiedad-reciente__precio">$<?php the_field('precio');?></span>
                             </div>
                         </a>
                     </li>
-                    <li class="propiedad-reciente">
-                        <a href="#2" class="propiedad-reciente__link">
-                            <img class="propiedad-reciente__imagen" src="<?php echo $img_path; ?>/2.jpg">
-                            <div class="propiedad-reciente__contenido">
-                                <h2 class="propiedad-reciente__titulo">Departamento 2</h2>
-                                <span class="propiedad-reciente__fecha">10 de Diciembre 2019</span>
-                                <span class="propiedad-reciente__precio">$2500000</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="propiedad-reciente">
-                        <a href="#3" class="propiedad-reciente__link">
-                            <img class="propiedad-reciente__imagen" src="<?php echo $img_path; ?>/3.jpg">
-                            <div class="propiedad-reciente__contenido">
-                                <h2 class="propiedad-reciente__titulo">Campo 1</h2>
-                                <span class="propiedad-reciente__fecha">19 de Octubre 2019</span>
-                                <span class="propiedad-reciente__precio">$150000</span>
-                            </div>
-                        </a>
-                    </li>
+                    <?php endwhile; endif;?>
                 </ul>
             </div>
             <div class="links">

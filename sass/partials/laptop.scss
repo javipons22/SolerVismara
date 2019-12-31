@@ -101,6 +101,9 @@
         &__dato {
             flex-basis: 32%;
         }
+        &-index {
+            max-height:em(145px);  
+        }
     }
     .inmuebles{
         &__icono {
@@ -130,5 +133,16 @@
         &__contenido {
             font-size: 0.95em;
         }
+    }
+    .buscador-aside {
+        font-size:1em;
+        position:sticky;
+        top:155px;
+    }
+    #slider {
+        font-size:1.17em;
+    }
+    .info-inmueble {
+        max-width:60%;
     }
 }

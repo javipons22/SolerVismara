@@ -15,6 +15,7 @@ $args = array(
 //$wp_query = new WP_Query($args);
 
 // query
+global $the_query;
 $the_query = new WP_Query( $args );
 ?>
 <div class="pag-inmuebles container">
@@ -126,8 +127,8 @@ $the_query = new WP_Query( $args );
 		</article>
 	<?php 
 	endwhile;?>
-
- 	<?php endif;?>
+	<?php //wp_reset_postdata(); ?>
+	 <?php endif;?>
 	<!-- fin propiedad 1 -->
 		<!-- fin destacados container -->
 		</div>
@@ -136,6 +137,4 @@ $the_query = new WP_Query( $args );
 </div>
 
 
-		
-		
 <?php get_footer(); ?>

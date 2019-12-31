@@ -15,6 +15,9 @@
     .tasaciones {
         font-size: em(15px);
     }
+    .propiedad__caracteristicas--sized {
+        font-size: 1.32em;
+    }
     // Fin tamaños
     .banner {
         position:relative;
@@ -67,7 +70,7 @@
     .propiedad {
         flex-basis:49%;
     }
-    .pag-inmuebles {
+    .pag-inmuebles ,.pag-single{
         flex-direction:row;
         position:relative;
     }
@@ -88,7 +91,7 @@
         top:135px;
         left:0;
         margin-top:0;
-        margin: 0 0 em(34px) em(15px);
+        margin: 0 0 0 em(15px);
         border-radius: 0 7px 7px 0;
         flex-shrink: 1;
         height:100%;
@@ -212,5 +215,12 @@
     
     .copyright {
         margin-top: em(50px);
+    }
+    #slider {
+        font-size:0.8em;
+    }
+    .info-inmueble {
+        max-width:60%;
+        flex-grow:1;
     }
 }

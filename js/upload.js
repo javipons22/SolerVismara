@@ -11,10 +11,14 @@ jQuery(document).ready(function($){
     } catch (e) {
         console.log(e.message);
     }
-
-    document.getElementById("formulario-order").addEventListener("change", function(){
-        this.submit();
-    });
+    try {
+        document.getElementById("formulario-order").addEventListener("change", function(){
+            this.submit();
+        });
+    } catch(e) {
+        console.log(e.message);
+    }
+    
     // Si se hace submit con el boton "submit_form" cambiar el action y hacer submit
     // Si son otros botones hacer submit en la misma pagina
     $("#submit_form").click(function() {
@@ -32,7 +36,13 @@ jQuery(document).ready(function($){
     });
 
     function checkRadio(elemento) {
-        let seleccion = seleccionados[elemento];
+        try {
+            var seleccion = seleccionados[elemento];
+        } catch(e) {
+            var seleccion = "";
+            console.log(e.message);
+        }
+        
             if (Array.isArray(seleccion)) {
                 seleccion.forEach(e => {
                     document.getElementById(e).checked = true;
@@ -46,8 +56,13 @@ jQuery(document).ready(function($){
     }
 
     function setValue(elemento) {
-        let seleccion = seleccionados[elemento];
-        console.log(seleccion);
+        try {
+            var seleccion = seleccionados[elemento];
+        } catch(e) {
+            var seleccion = "";
+            console.log(e.message);
+        }
+        
         if(seleccion && document.getElementById(elemento)) {
             document.getElementById(elemento).value = seleccion;
         }  

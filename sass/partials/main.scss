@@ -6,6 +6,7 @@
 body {
     font-family: 'Montserrat', sans-serif;
     background:$blanco;
+    color:$negro-oscuro;
 }
 
 
@@ -35,6 +36,19 @@ body {
     font-size:17px;
 }
 
+#slider {
+    font-size:0.8em;
+}
+
+.propiedad__caracteristicas--sized {
+    font-size: 1.25em;
+}
+
+.footer {
+    font-size:0.9em;
+}
+
+// FIN TAMAÑOS
 
 .top-header {
     font-family: 'Open Sans', sans-serif;
@@ -304,12 +318,98 @@ body {
         justify-content: center;
     }
 }
-.pag-inmuebles {
+.pag-inmuebles , .pag-single{
     display:flex;
     flex-direction:column;
-    padding-top:em(40px);
+    padding:em(40px) 0;
     margin:0 auto;
 }
+
+.info-inmueble {
+    justify-content: center;
+    flex-direction:column;
+    align-items:center;
+    font-family: 'Open Sans', sans-serif;
+    &__heading {
+        width:100%;
+        display:flex;
+        align-items:center;
+        background:white;
+        box-sizing: border-box;
+        padding:em(25px) em(20px);
+        justify-content: space-between;
+        margin-bottom: em(25px);
+    }
+    &__titulo {
+        font-size:em(15.5px);
+        margin-bottom:em(9px);
+        font-weight: bold;
+    }
+    &__direccion {
+        font-size: em(13px);
+        display: flex;
+        align-items: center;
+        svg {
+            margin:0;
+            margin-right:em(2px);
+            height:em(15px);
+            path {
+                fill: $azul-claro;
+            }
+        }
+    }
+    &__precio-container {
+        display:flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items:flex-end;
+    }
+    &__precio {
+        color:$azul-claro;
+        font-weight:bold;
+        margin-bottom:em(9px);
+    }
+    &__precio-criterio {
+        color:$azul-claro;
+        font-size:em(12px);
+        font-weight: bold;
+    }
+    &__descripcion {
+        background: #fff;
+        margin-top:em(25px);
+        padding: em(25px) em(20px);
+    }
+    &__descripcion-titulo {
+        font-weight:bold;
+        text-transform: uppercase;
+        font-size:em(20px);
+        margin-bottom:em(40px);
+        span {
+            font-weight:400;
+        }
+    }
+    &__descripcion-texto {
+        max-width: em(450px);
+        font-size: em(13px);
+        margin-bottom: em(40px);
+    }
+    &__mas-info {
+        font-size: em(15px);
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        text-align: center;
+        display:block;
+        margin-top:em(50px);
+        width:100%;
+        background:$azul-claro;
+        text-transform: uppercase;
+        text-decoration:none;
+        color:white;
+        padding: em(18px) 0;
+    }
+}
+
+
 
 .inmuebles {
     padding-top:0;
@@ -358,7 +458,8 @@ body {
 }
 // .buscador-aside es para la pagina inmuebles
 .buscador-aside {
-    margin: em(25px) auto;
+    font-size:0.9em;
+    margin: em(25px) auto 0 auto;
     padding: em(25px) em(20px);
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
@@ -416,6 +517,9 @@ body {
     max-height:em(190px);
     background:white;
     text-decoration:none;
+    &-index {
+        max-height:em(170px);  
+    }
     &--last {
         // el ultimo elemento no tiene margin
         margin-bottom: 0;
@@ -653,7 +757,8 @@ body {
         text-decoration: none;
     }
     &__imagen {
-        width:18%;
+        width:21%;
+        height:21%;
         object-fit: cover;
     }
     &__fecha {

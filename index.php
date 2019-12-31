@@ -105,7 +105,7 @@
         <h1 class="destacados__titulo-seccion">propiedades destacadas</h1>
         <div class="destacados__container container">
             <!-- propiedad 1 -->
-            <article class="propiedad">
+            <article class="propiedad propiedad-index">
                 <div class="propiedad__contenedor-imagen">
                     <span class="propiedad__badge-destacado">destacado</span>
                     <img src="<?php echo $img_path; ?>/1.jpg" class="propiedad__imagen" alt="imagen propiedad">
@@ -135,7 +135,7 @@
                 </div> 
             </article>
             <!-- fin propiedad 1 -->
-            <article class="propiedad">
+            <article class="propiedad propiedad-index">
                 <div class="propiedad__contenedor-imagen">
                     <span class="propiedad__badge-destacado">destacado</span>
                     <img src="<?php echo $img_path; ?>/1.jpg" class="propiedad__imagen" alt="imagen propiedad">
@@ -153,7 +153,7 @@
                             <img class="icon propiedad__icono" src="<?php echo $img_path; ?>/bed.svg" alt="icono cama"><span>3 Dormitorios</span>
                         </span>
                         <span class="propiedad__dato">
-                            <img class="icon propiedad__icono" src="<?php echo $img_path; ?>/toilet.svg" alt="icono baño"><span>2 Baños</span>
+                            <img class="icon propiedad__icono" src="<?php echo $img_path; ?>/shower.svg" alt="icono baño"><span>2 Baños</span>
                         </span>
                         <span class="propiedad__dato">
                             <img class="icon propiedad__icono" src="<?php echo $img_path; ?>/car.svg" alt="icono auto"><span>Garage</span>
@@ -164,7 +164,7 @@
                     </div>
                 </div> 
             </article>
-            <article class="propiedad">
+            <article class="propiedad propiedad-index">
                 <div class="propiedad__contenedor-imagen">
                     <span class="propiedad__badge-destacado">destacado</span>
                     <img src="<?php echo $img_path; ?>/1.jpg" class="propiedad__imagen" alt="imagen propiedad">
@@ -182,7 +182,7 @@
                             <img class="icon propiedad__icono" src="<?php echo $img_path; ?>/bed.svg" alt="icono cama"><span>3 Dormitorios</span>
                         </span>
                         <span class="propiedad__dato">
-                            <img class="icon propiedad__icono" src="<?php echo $img_path; ?>/toilet.svg" alt="icono baño"><span>2 Baños</span>
+                            <img class="icon propiedad__icono" src="<?php echo $img_path; ?>/shower.svg" alt="icono baño"><span>2 Baños</span>
                         </span>
                         <span class="propiedad__dato">
                             <img class="icon propiedad__icono" src="<?php echo $img_path; ?>/car.svg" alt="icono auto"><span>Garage</span>
@@ -193,7 +193,7 @@
                     </div>
                 </div> 
             </article>
-            <article class="propiedad propiedad--last">
+            <article class="propiedad propiedad-index propiedad--last">
                 <div class="propiedad__contenedor-imagen">
                     <span class="propiedad__badge-destacado">destacado</span>
                     <img src="<?php echo $img_path; ?>/1.jpg" class="propiedad__imagen" alt="imagen propiedad">
@@ -211,7 +211,7 @@
                             <img class="icon propiedad__icono" src="<?php echo $img_path; ?>/bed.svg" alt="icono cama"><span>3 Dormitorios</span>
                         </span>
                         <span class="propiedad__dato">
-                            <img class="icon propiedad__icono" src="<?php echo $img_path; ?>/toilet.svg" alt="icono baño"><span>2 Baños</span>
+                            <img class="icon propiedad__icono" src="<?php echo $img_path; ?>/shower.svg" alt="icono baño"><span>2 Baños</span>
                         </span>
                         <span class="propiedad__dato">
                             <img class="icon propiedad__icono" src="<?php echo $img_path; ?>/car.svg" alt="icono auto"><span>Garage</span>
