@@ -3,23 +3,26 @@
 <!-- footer -->
 <footer class="footer">
         <div class="footer__container container">
-            <div class="recientes">
+        <div class="recientes">
                 <h2 class="recientes__titulo">LO MÁS RECIENTE</h2>
                 <ul class="recientes__info">
-                    <?php
-                    // args
-                    $args2 = array(
-                    'posts_per_page' => 3,
-                    'post_type'		=> 'inm',
-                    'orderby'        => 'date',
+                <?php
+                    $args = array(
+                        'posts_per_page' => 3,
+                        'post_type'		=> 'inm',
+                        'order'   => 'DESC',
                     );
+                    // Para que ande la paginacion (esto reemplaza el wp_query original)
+                    //$wp_query = new WP_Query($args);
+
                     // query
-                    $the_query2 = new WP_Query( $args2 );
-                    ?>
-                    <?php if( $the_query2->have_posts() ): ?>
-		            <?php while ( $the_query2->have_posts() ) : $the_query2->the_post(); ?>
+                    global $the_query;
+                    $the_query = new WP_Query( $args );
+                ?>
+                <?php if( $the_query->have_posts() ): ?>
+                    <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
                     <li class="propiedad-reciente">
-                        <a href="#1" class="propiedad-reciente__link">
+                        <a href="<?php echo get_post_permalink();?>" class="propiedad-reciente__link">
                             <?php
                                 $image = get_field('imagen_principal');
                                 $size = 'full'; // (thumbnail, medium, large, full or custom size)
@@ -27,8 +30,7 @@
                                 if( $image ) {
                                     echo wp_get_attachment_image( $image, $size, false ,$class );
                                 }
-				            ?>
-                           
+                            ?>
                             <div class="propiedad-reciente__contenido">
                                 <h2 class="propiedad-reciente__titulo"><?php the_title();?></h2>
                                 <span class="propiedad-reciente__fecha"><?php echo get_the_date();?></span>
@@ -36,7 +38,7 @@
                             </div>
                         </a>
                     </li>
-                    <?php endwhile; endif;?>
+                <?php endwhile; endif;?>
                 </ul>
             </div>
             <div class="links">

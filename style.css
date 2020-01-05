@@ -872,8 +872,8 @@ body {
   text-decoration: none;
 }
 .propiedad-reciente__imagen {
-  width: 21%;
-  height: 21%;
+  width: 25%;
+  height: 25%;
   object-fit: cover;
 }
 .propiedad-reciente__fecha {

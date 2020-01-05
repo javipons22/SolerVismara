@@ -30,45 +30,42 @@ function my_pre_get_posts( $query ) {
 	}
 	
 	
-	// only modify queries for 'inm' post type
-	if( isset($query->query_vars['post_type']) && $query->query_vars['post_type'] == 'inm' ) {
-		if (!function_exists('setBusqueda')) {
-			function setBusqueda($key,$compare) {
-				if( isset($_GET[$key]) ) {
-					$operacion = array(
-						'key'=> $key,
-						'value'=> $_GET[$key],
-						'compare' => $compare
-					);
-					return $operacion;
-				}
+	// only modify queries for 'inm' post type 
+	// para que carge solo el query necesitado usamos una variable del query para que se modifique solo ese ($query->query_vars['posts_per_page'] == -1)
+	if( isset($query->query_vars['post_type']) && $query->query_vars['post_type'] == 'inm' && $query->query_vars['posts_per_page'] !== 3 ) { 
+		
+		function setCustomQuery($key,$compare) {
+			if( isset($_GET[$key]) ) {
+				$operacion = array(
+					'key'=> $key,
+					'value'=> $_GET[$key],
+					'compare' => $compare
+				);
+				return $operacion;
 			}
 		}
-		if($query->is_main_query()) {
-			if (isset($_GET['order'])) {
-				if ($_GET['order'] == 'bajo') {
-					$query->set('meta_key', 'precio' );
-					$query->set('orderby', array('meta_value_num' => 'ASC'));
-				} else if($_GET['order'] == 'alto') {
-					$query->set('meta_key', 'precio' );
-					$query->set('orderby', array('meta_value_num' => 'DESC'));
-				} else {
-					$query->set('orderby', array('date' => 'DESC'));
-				}
-				
+		if (isset($_GET['order'])) {
+			if ($_GET['order'] == 'bajo') {
+				$query->set('meta_key', 'precio' );
+				$query->set('orderby', array('meta_value' => 'ASC'));
+			} else if($_GET['order'] == 'alto') {
+				$query->set('meta_key', 'precio' );
+				$query->set('orderby', array('meta_value' => 'DESC'));
+			} else {
+				$query->set('orderby', array('date' => 'DESC'));
 			}
-			$query->set('meta_query', 
-				array(
-					'relation' =>'AND' ,
-					setBusqueda('operacion','='),
-					setBusqueda('banos','>='),
-					setBusqueda('dormitorios','>=')
-					)
-			); 
+			
 		}
+		$query->set('meta_query', 
+			array(
+				'relation' =>'AND' ,
+				setCustomQuery('operacion','='),
+				setCustomQuery('banos','>='),
+				setCustomQuery('dormitorios','>=')
+				)
+		); 
 		
 	}
-	
 	
 	// return
 	return $query;
