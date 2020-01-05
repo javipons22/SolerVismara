@@ -61,7 +61,8 @@ function my_pre_get_posts( $query ) {
 				'relation' =>'AND' ,
 				setCustomQuery('operacion','='),
 				setCustomQuery('banos','>='),
-				setCustomQuery('dormitorios','>=')
+				setCustomQuery('dormitorios','>='),
+				setCustomQuery('tipo','=')
 				)
 		); 
 		

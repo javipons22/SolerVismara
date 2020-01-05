@@ -14,37 +14,37 @@
     <section class="servicios">
         <ul class="servicios__contenedor container">
             <li class="servicios__elemento servicios__elemento--first">
-                <a href="#test" class="servicios__link">
+                <a href="/SV/inmuebles?tipo=departamento" class="servicios__link">
                     <img class="servicios__imagen icon" src="<?php echo $img_path; ?>/building.svg" alt="icono departamento">
                     <h2 class="servicios__titulo">DEPARTAMENTO</h2>
                 </a>
             </li>
             <li class="servicios__elemento">
-                <a href="#test" class="servicios__link">
+                <a href="/SV/inmuebles?tipo=casa" class="servicios__link">
                     <img class="servicios__imagen icon" src="<?php echo $img_path; ?>/home.svg" alt="icono casa">
                     <h2 class="servicios__titulo">CASA</h2>
                 </a>
             </li>
             <li class="servicios__elemento">
-                <a href="#test" class="servicios__link">
+                <a href="/SV/inmuebles?tipo=oficina" class="servicios__link">
                     <img class="servicios__imagen icon" src="<?php echo $img_path; ?>/building2.svg" alt="icono oficina">
                     <h2 class="servicios__titulo">OFICINA</h2>
                 </a>
             </li>
             <li class="servicios__elemento">
-                <a href="#test" class="servicios__link">
+                <a href="/SV/inmuebles?tipo=local" class="servicios__link">
                     <img class="servicios__imagen icon" src="<?php echo $img_path; ?>/shop.svg" alt="icono local">
                     <h2 class="servicios__titulo">LOCAL</h2>
                 </a>
             </li>
             <li class="servicios__elemento">
-                <a href="#test" class="servicios__link">
+                <a href="/SV/inmuebles?tipo=campo" class="servicios__link">
                     <img class="servicios__imagen icon" src="<?php echo $img_path; ?>/farm.svg" alt="icono campos">
                     <h2 class="servicios__titulo">CAMPO</h2>
                 </a>
             </li>
             <li class="servicios__elemento">
-                <a href="#test" class="servicios__link">
+                <a href="/SV/inmuebles?tipo=terreno" class="servicios__link">
                     <img class="servicios__imagen icon" src="<?php echo $img_path; ?>/terrain.svg" alt="icono terrenos">
                     <h2 class="servicios__titulo">TERRENO</h2>
                 </a>
@@ -58,18 +58,18 @@
             <img class="buscador__icono icon" src="<?php echo $img_path; ?>/magnifier.svg" alt="lupa icono">
             <span class="buscador__texto">buscar inmueble por caracteristicas</span>
         </button>
-        <form class="buscador__formulario container">
-            <select class="buscador__elemento-select">
+        <form method="GET" action="/SV/inmuebles" class="buscador__formulario container">
+            <select name="operacion" class="buscador__elemento-select">
                 <option value="" selected disabled hidden>Operación</option>
                 <option value="compra">Compra</option>
                 <option value="alquiler">Alquiler</option>
             </select>
-            <select class="buscador__elemento-select">
+            <select name="tipo" class="buscador__elemento-select">
                 <option value="" selected disabled hidden>Tipo de inmueble</option>
                 <option value="casa">Casa</option>
                 <option value="departamento">Departamento</option>
             </select>
-            <select class="buscador__elemento-select">
+            <select name="dormitorios" class="buscador__elemento-select">
                 <option value="" selected disabled hidden>Dormitorios</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -77,7 +77,7 @@
                 <option value="4">4</option>
                 <option value="5">5</option>
             </select>
-            <select class="buscador__elemento-select">
+            <select name="banos" class="buscador__elemento-select">
                 <option value="" selected disabled hidden>Baños</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -85,15 +85,15 @@
                 <option value="4">4</option>
                 <option value="5">5</option>
             </select>
-            <select class="buscador__elemento-select">
+            <select name="provincia" class="buscador__elemento-select">
                 <option value="" selected disabled hidden>Provincia</option>
                 <option value="Cordoba">Cordoba</option>
                 <option value="Buenos Aires">Buenos Aires</option>
             </select>
-            <select class="buscador__elemento-select">
+            <select name="area" class="buscador__elemento-select">
                 <option value="" selected disabled hidden>Metros Cuadrados</option>
             </select>
-            <select class="buscador__elemento-select">
+            <select name="precio" class="buscador__elemento-select">
                 <option value="" selected disabled hidden>Precio</option>
             </select>
             <button type="submit" class="buscador__elemento-boton">BUSCAR</button>
