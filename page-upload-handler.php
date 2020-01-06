@@ -27,6 +27,9 @@
 
 <?php
 
+// La funcion se ejecuta solo si se validan todos los campos
+function uploadPropiedad($postVariable) {
+
 	// Inicializamos las variables para usarlas en la pagina
 	$titulo = $_POST['titulo'];
 	$operacion = $_POST['operacion'];
@@ -39,6 +42,7 @@
 	$baños = $_POST['banos'];
 	$area = $_POST['area'];
 	$precio = $_POST['precio'];
+	$descripcion = $_POST['descripcion'];
 
 	$my_post = array(
 		'post_title' => $titulo,
@@ -46,17 +50,21 @@
 		'post_status' => 'publish',
 	);
 
-	// Insert the post into the database
 	$post_id = wp_insert_post($my_post);
 
-	$camposTodos = array('titulo','operacion','tipo','extras','provincia','barrio','direccion','dormitorios','area','precio');
+	// TODOS LOS CAMPOS PARA ITERAR
+	$camposTodos = array('titulo','operacion','tipo','extras','provincia','barrio','direccion','dormitorios','area','precio','descripcion');
 
-	// Controlamos que todas las variables tengan valor , si no es asi redireccionamos
+	// CAMPOS OBLIGATORIOS Controlamos que todas las variables tengan valor , si no es asi redireccionamos
 	$camposValidar = array('titulo','operacion','tipo','provincia','area','precio','direccion');
-	foreach ($_POST as $name => $val)
+
+	
+	foreach ($postVariable as $name => $val)
 	{
+		// Si no estan completos todos los campos redireccionar y salir
 		if (in_array($name,$camposValidar) && ($val == "0" || strlen($val) == 0))
 		{
+			wp_delete_post($post_id);
 			?>
 			<script>
 				document.getElementById("form-return").submit();
@@ -77,13 +85,12 @@
 			update_field($name, $extrasEndValue, $post_id);
 
 		} else {
-
 			update_field($name, $val, $post_id);
 
 		}
-		//update_field('imagen_principal', $attachment_id, $post_id);
 	}
-
+	return $post_id;
+}
 ?>
 
 <?php
@@ -110,8 +117,9 @@ if (
 	
 	if ( is_wp_error( $attachment_id ) ) {
         // There was an error uploading the image.
-        echo "Hubo un error al cargar la imagen.";
+		echo "Hubo un error al cargar la imagen.";
 	} else {
+		$post_id = uploadPropiedad($_POST);
 		// The image was uploaded successfully!
 		update_field('imagen_principal', $attachment_id, $post_id);
 		echo "SUCCESS: " . $attachment_id;
@@ -119,7 +127,6 @@ if (
 	}
 
 } else {
-
     // The security check failed, maybe show the user an error.
     echo "Error de seguridad.";
 }
@@ -151,5 +158,4 @@ if( 'POST' == $_SERVER['REQUEST_METHOD']  ) {
 	}
 	
 }
-
 ?>

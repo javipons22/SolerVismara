@@ -965,6 +965,9 @@ body {
   width: 100%;
 }
 .upload-form__elemento--boton-final {
+  display: block;
+  flex-basis: 100%;
+  width: 100%;
   border: none;
   padding-left: 0;
   padding-right: 0;

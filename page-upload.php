@@ -169,6 +169,13 @@ $query = new WP_Query($args);
             <br>
             $<input id="precio" type="number" name="precio">
         </div>
+        <div class="upload-form__elemento upload-form__elemento--descripcion">
+            <h2>DESCRIPCION</h2>
+            <span>Descripcion del inmueble</span>
+            <br>
+            <textarea rows="4" cols="50" name="descripcion">
+            </textarea>
+        </div>
         <div class="upload-form__elemento upload-form__elemento--imagen">
             <h2>IMAGEN PRINCIPAL(*)</h2>
             <span>Imagen principal</span>
@@ -178,7 +185,7 @@ $query = new WP_Query($args);
 	        <!-- <input id="submit_my_image_upload" name="submit_my_image_upload" type="submit" value="Upload" /> -->
         </div>
         <div class="upload-form__elemento upload-form__elemento--imagen">
-            <h2>IMAGENES EXTRA(*)</h2>
+            <h2>IMAGENES EXTRA</h2>
             <span>Imagenes extra</span>
             <input type="file" name="my_image_upload2[]" id="my_image_upload2[]"  multiple="multiple"/>
 	        <input type="hidden" name="post_id"2 id="post_id2" value="55" />

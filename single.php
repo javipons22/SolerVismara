@@ -50,7 +50,7 @@
 		</div>
 		<div class="info-inmueble__descripcion">
 			<h1 class="info-inmueble__descripcion-titulo">Información <span>del inmueble</span></h1>
-			<p class="info-inmueble__descripcion-texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet alias voluptate inventore consequuntur? Laudantium, repellendus at? Reiciendis doloribus optio voluptate aliquam, officia, officiis, cumque veniam laboriosam quo nobis praesentium atque!</p>
+			<p class="info-inmueble__descripcion-texto"><?php the_field('descripcion');?></p>
 			<div class="propiedad__caracteristicas propiedad__caracteristicas--sized">
 				<span class="propiedad__dato">
 					<img class="icon propiedad__icono" src="<?php echo $img_path; ?>/area.svg" alt="icono area"><span><?php the_field('area');?> m<sup>2</sup></span>
