@@ -1,6 +1,7 @@
 //@todo
-// Cambiar icono baños
 // agregar 'social' al footer
+// Ver max width del container en pantalla de 1024px
+// ver de hacer un condicional en las imagenes del slideshow para que no se repita la imagen principal
 
 
 body {
@@ -9,6 +10,19 @@ body {
     color:$negro-oscuro;
 }
 
+html, body {
+    width: 100%;
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+}
+
+.contenido-main {
+    flex-grow:1;
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+}
 
 .container {
     // Espacio de dos lados del contenedor
@@ -30,10 +44,10 @@ body {
 
 // TAMAÑOS
 .top-header {
-    font-size:23px;
+    font-size:em(23px);
 }
 .main-header {
-    font-size:17px;
+    font-size:em(17px);
 }
 
 #slider {
@@ -44,9 +58,6 @@ body {
     font-size: 1.25em;
 }
 
-.footer {
-    font-size:0.9em;
-}
 
 // FIN TAMAÑOS
 
@@ -318,11 +329,96 @@ body {
         justify-content: center;
     }
 }
-.pag-inmuebles , .pag-single{
+.pag-inmuebles , .pag-single,.pag-compania{
     display:flex;
     flex-direction:column;
     padding:em(40px) 0;
     margin:0 auto;
+}
+
+.pag-compania {
+    &__titulo {
+        font-size: em(22px);
+        text-transform: uppercase;
+        margin-bottom:em(20px);
+        border-bottom: 1px solid #ccc;
+        font-family: 'Open Sans', sans-serif;
+        span {
+            font-weight:bold;
+        }
+        &::after {
+            content:"";
+            margin-top: em(8px);
+            display:block;
+            height:em(3px);
+            width:em(30px);
+            background:$azul-claro;
+        }
+    }
+    &__info-principal {
+        font-family: 'Open Sans', sans-serif;
+        display:flex;
+        flex-direction: column;
+    }
+    &__imagen-contenedor {
+        width:80%;
+        overflow: hidden;
+        margin:0 auto;
+    }
+    &__imagen {
+        width:100%;
+        object-fit: cover;
+    }
+    &__descripcion {
+        font-size: em(15px);
+        padding: em(30px) em(20px);
+    }
+    
+}
+
+.staff {
+    &__contenedor {
+        margin: em(30px) 0 em(20px) 0;
+        width:100%;
+        height:em(150px);
+        background:white;
+        display:flex;
+        flex-direction:row;
+        justify-content: space-between;
+    }
+    &__contenedor-imagen {
+        width:36%;
+        height:100%;
+        overflow:hidden;
+    }
+    &__imagen {
+        height:120%;
+        object-fit: contain;
+    }
+    &__info {
+        display:flex;
+        flex-direction:column;
+        justify-content: space-between;
+        font-family: 'Open Sans', sans-serif;
+        flex-grow:1;
+        padding:em(17px) em(15px);
+    }
+    &__cargo {
+        display:block;
+        font-size: em(13px);
+    }
+    &__nombre {
+        font-size:em(18px);
+        margin-top:em(10px);
+        font-weight:bold;
+    }
+    &__datos-contenedor {
+        font-size:em(11px);
+        span {
+            margin-top:em(5px);
+            display:block;
+        }
+    }
 }
 
 .info-inmueble {

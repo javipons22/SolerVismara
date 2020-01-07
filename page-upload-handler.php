@@ -46,7 +46,7 @@ function uploadPropiedad($postVariable) {
 
 	$my_post = array(
 		'post_title' => $titulo,
-		'post_type' => 'inm',
+		'post_type' => 'inmuebles',
 		'post_status' => 'publish',
 	);
 

@@ -76,156 +76,185 @@
  * 74  | |         flex-direction:row;
  * 75  | |         position:relative;
  * 76  | |     }
- * 77  | |     .inmuebles{
- * 78  | |         flex-basis:61%;
- * 79  | |         &__titulo {
- * 80  | |             width:100%;
+ * 77  | |     .pag-compania {
+ * 78  | |         &__info-principal {
+ * 79  | |             display:flex;
+ * 80  | |             flex-direction: row;
  * 81  | |         }
- * 82  | |         &__icono {
- * 83  | |             width:em(40px);
- * 84  | |         }
- * 85  | |         &__top-bar {
- * 86  | |             margin-bottom: em(20px);
- * 87  | |         }
- * 88  | |     }
- * 89  | |     .buscador-aside {
- * 90  | |         position:sticky;
- * 91  | |         top:135px;
- * 92  | |         left:0;
- * 93  | |         margin-top:0;
- * 94  | |         margin: 0 0 0 em(15px);
- * 95  | |         border-radius: 0 7px 7px 0;
- * 96  | |         flex-shrink: 1;
- * 97  | |         height:100%;
- * 98  | |         &__formulario {
- * 99  | |             font-size: 0.9em;
- * 100 | |         }
- * 101 | | 
- * 102 | |     }
- * 103 | |     .tasaciones {
- * 104 | |         height: em(65px);
- * 105 | |         display:flex;
- * 106 | |         align-items: center;
- * 107 | |         &__contenedor {
- * 108 | |             max-width:700px;   
- * 109 | |         }
- * 110 | |         &__imagen {
- * 111 | |             height:130%;
- * 112 | |         }
- * 113 | |     }
- * 114 | |     .contacto,.links,.recientes {
- * 115 | |         flex-basis:40%;
- * 116 | |         padding-left:0;
- * 117 | |         padding-right:0;
- * 118 | |         padding-top:0;
- * 119 | |     }
- * 120 | | 
- * 121 | |     .navegacion {
- * 122 | |         display:flex;
- * 123 | |         background:none;
- * 124 | |         position:relative;
- * 125 | |         top:0;
- * 126 | |         right:0;
- * 127 | |         border:none;
- * 128 | |         padding:0;
- * 129 | |         margin:0;
- * 130 | |         width: auto;
- * 131 | |         &__contenedor {
- * 132 | |             display:flex;
- * 133 | |             flex-direction:row;
- * 134 | |             align-items: center;
- * 135 | |             flex-wrap:nowrap;
- * 136 | |             @include gradiente;
- * 137 | |             font-size:em(13px);
- * 138 | |             padding:0;
- * 139 | |             margin:0;
- * 140 | |             &::before {
- * 141 | |                 content:"";
- * 142 | |                 width: 0;
- * 143 | |                 height: 0;
- * 144 | |                 border-style: solid;
- * 145 | |                 border-width: 0 0 em(35px) em(35px);
- * 146 | |                 border-color: transparent transparent rgba(98,185,255,1) transparent;
- * 147 | |                 transform: translateX(-99%);
- * 148 | |             }
- * 149 | |         }
- * 150 | |         &__link {
- * 151 | |             text-decoration:none;
- * 152 | |             color:white;
- * 153 | |             padding: em(11px) em(25px);
- * 154 | |             border-right:1px solid rgba(255,255,255,0.3);
- * 155 | |         }
- * 156 | |         &__elemento {
- * 157 | |             display:flex;
- * 158 | |             justify-content: center;
- * 159 | |             margin:0;
- * 160 | |             padding:0;
- * 161 | |             font-size: em(12px);
- * 162 | |             display:flex;
- * 163 | |             justify-content: center;
- * 164 | |             flex-direction:row;
- * 165 | |             border:none;
- * 166 | |             width:auto;
- * 167 | |             &--first {
- * 168 | |                 margin-top: 0;
- * 169 | |                 justify-content: flex-start;
- * 170 | |             }
- * 171 | |             &:nth-child(2n) {
- * 172 | |                 background: none;
- * 173 | |             }
- * 174 | |             
- * 175 | |         }
- * 176 | |     }
- * 177 | |     .main-header__button {
- * 178 | |         display:none;
- * 179 | |     }
- * 180 | | 
- * 181 | |     .buscador {
- * 182 | |         &__formulario {
- * 183 | |             padding-top: em(20px);
+ * 82  | |         &__imagen-contenedor {
+ * 83  | |             width:47%;
+ * 84  | |             overflow: hidden;
+ * 85  | |             margin:0;
+ * 86  | |         }
+ * 87  | |         &__imagen {
+ * 88  | |             width:100%;
+ * 89  | |             object-fit: cover;
+ * 90  | |         }
+ * 91  | |         &__descripcion {
+ * 92  | |             width:47%;
+ * 93  | |             font-size: em(15px);
+ * 94  | |             padding: 0 em(20px);
+ * 95  | |         }
+ * 96  | |     }
+ * 97  | | 
+ * 98  | |     .staff {
+ * 99  | |         display:flex;
+ * 100 | |         flex-direction: row;
+ * 101 | |         justify-content: space-between;
+ * 102 | |         &__contenedor {
+ * 103 | |             width:49%;
+ * 104 | |         }
+ * 105 | |     }
+ * 106 | |     .inmuebles{
+ * 107 | |         flex-basis:61%;
+ * 108 | |         &__titulo {
+ * 109 | |             width:100%;
+ * 110 | |         }
+ * 111 | |         &__icono {
+ * 112 | |             width:em(40px);
+ * 113 | |         }
+ * 114 | |         &__top-bar {
+ * 115 | |             margin-bottom: em(20px);
+ * 116 | |         }
+ * 117 | |     }
+ * 118 | |     .buscador-aside {
+ * 119 | |         position:sticky;
+ * 120 | |         top:135px;
+ * 121 | |         left:0;
+ * 122 | |         margin-top:0;
+ * 123 | |         margin: 0 0 0 em(15px);
+ * 124 | |         border-radius: 0 7px 7px 0;
+ * 125 | |         flex-shrink: 1;
+ * 126 | |         height:100%;
+ * 127 | |         &__formulario {
+ * 128 | |             font-size: 0.9em;
+ * 129 | |         }
+ * 130 | | 
+ * 131 | |     }
+ * 132 | |     .tasaciones {
+ * 133 | |         height: em(65px);
+ * 134 | |         display:flex;
+ * 135 | |         align-items: center;
+ * 136 | |         &__contenedor {
+ * 137 | |             max-width:700px;   
+ * 138 | |         }
+ * 139 | |         &__imagen {
+ * 140 | |             height:130%;
+ * 141 | |         }
+ * 142 | |     }
+ * 143 | |     .contacto,.links,.recientes {
+ * 144 | |         flex-basis:40%;
+ * 145 | |         padding-left:0;
+ * 146 | |         padding-right:0;
+ * 147 | |         padding-top:0;
+ * 148 | |     }
+ * 149 | | 
+ * 150 | |     .navegacion {
+ * 151 | |         display:flex;
+ * 152 | |         background:none;
+ * 153 | |         position:relative;
+ * 154 | |         top:0;
+ * 155 | |         right:0;
+ * 156 | |         border:none;
+ * 157 | |         padding:0;
+ * 158 | |         margin:0;
+ * 159 | |         width: auto;
+ * 160 | |         &__contenedor {
+ * 161 | |             display:flex;
+ * 162 | |             flex-direction:row;
+ * 163 | |             align-items: center;
+ * 164 | |             flex-wrap:nowrap;
+ * 165 | |             @include gradiente;
+ * 166 | |             font-size:em(13px);
+ * 167 | |             padding:0;
+ * 168 | |             margin:0;
+ * 169 | |             &::before {
+ * 170 | |                 content:"";
+ * 171 | |                 width: 0;
+ * 172 | |                 height: 0;
+ * 173 | |                 border-style: solid;
+ * 174 | |                 border-width: 0 0 em(35px) em(35px);
+ * 175 | |                 border-color: transparent transparent rgba(98,185,255,1) transparent;
+ * 176 | |                 transform: translateX(-99%);
+ * 177 | |             }
+ * 178 | |         }
+ * 179 | |         &__link {
+ * 180 | |             text-decoration:none;
+ * 181 | |             color:white;
+ * 182 | |             padding: em(11px) em(25px);
+ * 183 | |             border-right:1px solid rgba(255,255,255,0.3);
  * 184 | |         }
- * 185 | |         &__elemento-select {
- * 186 | |             flex-basis: 23%;
- * 187 | |         }
- * 188 | |         &__elemento-boton { 
- * 189 | |             flex-basis: 23%;
- * 190 | |         }
- * 191 | |     }
- * 192 | |     .tasaciones {
- * 193 | |         &__contenido {
- * 194 | |             flex-direction: row;
- * 195 | |             align-items: center;
- * 196 | |             justify-content: space-between;
- * 197 | |         }
- * 198 | |         &__titulo {
- * 199 | |             flex-grow: 1;
- * 200 | |             text-align:center;
- * 201 | |             letter-spacing: em(1.85px);
- * 202 | |         }
- * 203 | |         &__cta {
- * 204 | |             margin:0;
- * 205 | |             padding:em(15px) em(35px);
- * 206 | |         }
- * 207 | |     }
- * 208 | |     .footer {
- * 209 | |         padding-top: em(50px);
- * 210 | |         &__container {
- * 211 | |             flex-direction: row;
- * 212 | |             justify-content: space-around;
+ * 185 | |         &__elemento {
+ * 186 | |             display:flex;
+ * 187 | |             justify-content: center;
+ * 188 | |             margin:0;
+ * 189 | |             padding:0;
+ * 190 | |             font-size: em(12px);
+ * 191 | |             display:flex;
+ * 192 | |             justify-content: center;
+ * 193 | |             flex-direction:row;
+ * 194 | |             border:none;
+ * 195 | |             width:auto;
+ * 196 | |             &--first {
+ * 197 | |                 margin-top: 0;
+ * 198 | |                 justify-content: flex-start;
+ * 199 | |             }
+ * 200 | |             &:nth-child(2n) {
+ * 201 | |                 background: none;
+ * 202 | |             }
+ * 203 | |             
+ * 204 | |         }
+ * 205 | |     }
+ * 206 | |     .main-header__button {
+ * 207 | |         display:none;
+ * 208 | |     }
+ * 209 | | 
+ * 210 | |     .buscador {
+ * 211 | |         &__formulario {
+ * 212 | |             padding-top: em(20px);
  * 213 | |         }
- * 214 | |     }
- * 215 | |     
- * 216 | |     .copyright {
- * 217 | |         margin-top: em(50px);
- * 218 | |     }
- * 219 | |     #slider {
- * 220 | |         font-size:0.8em;
- * 221 | |     }
- * 222 | |     .info-inmueble {
- * 223 | |         max-width:60%;
- * 224 | |         flex-grow:1;
- * 225 | |     }
- * 226 | \ }
+ * 214 | |         &__elemento-select {
+ * 215 | |             flex-basis: 23%;
+ * 216 | |         }
+ * 217 | |         &__elemento-boton { 
+ * 218 | |             flex-basis: 23%;
+ * 219 | |         }
+ * 220 | |     }
+ * 221 | |     .tasaciones {
+ * 222 | |         &__contenido {
+ * 223 | |             flex-direction: row;
+ * 224 | |             align-items: center;
+ * 225 | |             justify-content: space-between;
+ * 226 | |         }
+ * 227 | |         &__titulo {
+ * 228 | |             flex-grow: 1;
+ * 229 | |             text-align:center;
+ * 230 | |             letter-spacing: em(1.85px);
+ * 231 | |         }
+ * 232 | |         &__cta {
+ * 233 | |             margin:0;
+ * 234 | |             padding:em(15px) em(35px);
+ * 235 | |         }
+ * 236 | |     }
+ * 237 | |     .footer {
+ * 238 | |         padding-top: em(50px);
+ * 239 | |         &__container {
+ * 240 | |             flex-direction: row;
+ * 241 | |             justify-content: space-around;
+ * 242 | |         }
+ * 243 | |     }
+ * 244 | |     
+ * 245 | |     .copyright {
+ * 246 | |         margin-top: em(50px);
+ * 247 | |     }
+ * 248 | |     #slider {
+ * 249 | |         font-size:0.8em;
+ * 250 | |     }
+ * 251 | |     .info-inmueble {
+ * 252 | |         max-width:60%;
+ * 253 | |         flex-grow:1;
+ * 254 | |     }
+ * 255 | \ }
  *     '
  *   sass/partials/tablet.scss 1:1  root stylesheet */
 
@@ -237,5 +266,5 @@ body::before {
   padding: 1em;
   margin-bottom: 1em;
   border-bottom: 2px solid black;
-  content: "Error: Undefined mixin.\a     \2577 \a 1   \2502  \250c  @include mq('lg') {\a 2   \2502  \2502      // Cambiar tamaños en estas lineas\a 3   \2502  \2502      .buscador {\a 4   \2502  \2502          font-size:1.1em;\a 5   \2502  \2502      }\a 6   \2502  \2502      .banner {\a 7   \2502  \2502          font-size: 1.6em;\a 8   \2502  \2502      }\a 9   \2502  \2502      .top-header {\a 10  \2502  \2502          font-size:28px;\a 11  \2502  \2502      }\a 12  \2502  \2502      .main-header {\a 13  \2502  \2502          font-size:19px;\a 14  \2502  \2502      }\a 15  \2502  \2502      .tasaciones {\a 16  \2502  \2502          font-size: em(15px);\a 17  \2502  \2502      }\a 18  \2502  \2502      .propiedad__caracteristicas--sized {\a 19  \2502  \2502          font-size: 1.32em;\a 20  \2502  \2502      }\a 21  \2502  \2502      // Fin tamaños\a 22  \2502  \2502      .banner {\a 23  \2502  \2502          position:relative;\a 24  \2502  \2502          display:flex;\a 25  \2502  \2502          align-items: center;\a 26  \2502  \2502          justify-content: center;\a 27  \2502  \2502          &__imagen {\a 28  \2502  \2502              opacity:0.65;\a 29  \2502  \2502          }\a 30  \2502  \2502          &__info {\a 31  \2502  \2502              position:absolute;\a 32  \2502  \2502              display:flex;\a 33  \2502  \2502              flex-direction: column;\a 34  \2502  \2502              padding:0 em(45px);\a 35  \2502  \2502          }\a 36  \2502  \2502          &__titulo {\a 37  \2502  \2502              background:none;\a 38  \2502  \2502              display:inline-block;\a 39  \2502  \2502              padding:0;\a 40  \2502  \2502              margin:0;\a 41  \2502  \2502              color:white;\a 42  \2502  \2502          }\a 43  \2502  \2502          &__descripcion {\a 44  \2502  \2502              margin-top:em(30px);\a 45  \2502  \2502              display:inline-block;\a 46  \2502  \2502              color:white;\a 47  \2502  \2502              width:50%;\a 48  \2502  \2502              align-self:flex-end;\a 49  \2502  \2502              padding-left: em(30px);\a 50  \2502  \2502              border-left: 1px solid white;\a 51  \2502  \2502          }\a 52  \2502  \2502      }\a 53  \2502  \2502      .servicios {\a 54  \2502  \2502          &__contenedor {\a 55  \2502  \2502              flex-direction: row;\a 56  \2502  \2502              flex-wrap:nowrap;\a 57  \2502  \2502          }\a 58  \2502  \2502          &__elemento {\a 59  \2502  \2502              width:15.5%;\a 60  \2502  \2502          }\a 61  \2502  \2502      }\a 62  \2502  \2502      .destacados {\a 63  \2502  \2502          &__container {\a 64  \2502  \2502              display:flex;\a 65  \2502  \2502              flex-direction:row;\a 66  \2502  \2502              flex-wrap:wrap;\a 67  \2502  \2502              justify-content: space-between;\a 68  \2502  \2502          }\a 69  \2502  \2502      }\a 70  \2502  \2502      .propiedad {\a 71  \2502  \2502          flex-basis:49%;\a 72  \2502  \2502      }\a 73  \2502  \2502      .pag-inmuebles ,.pag-single{\a 74  \2502  \2502          flex-direction:row;\a 75  \2502  \2502          position:relative;\a 76  \2502  \2502      }\a 77  \2502  \2502      .inmuebles{\a 78  \2502  \2502          flex-basis:61%;\a 79  \2502  \2502          &__titulo {\a 80  \2502  \2502              width:100%;\a 81  \2502  \2502          }\a 82  \2502  \2502          &__icono {\a 83  \2502  \2502              width:em(40px);\a 84  \2502  \2502          }\a 85  \2502  \2502          &__top-bar {\a 86  \2502  \2502              margin-bottom: em(20px);\a 87  \2502  \2502          }\a 88  \2502  \2502      }\a 89  \2502  \2502      .buscador-aside {\a 90  \2502  \2502          position:sticky;\a 91  \2502  \2502          top:135px;\a 92  \2502  \2502          left:0;\a 93  \2502  \2502          margin-top:0;\a 94  \2502  \2502          margin: 0 0 0 em(15px);\a 95  \2502  \2502          border-radius: 0 7px 7px 0;\a 96  \2502  \2502          flex-shrink: 1;\a 97  \2502  \2502          height:100%;\a 98  \2502  \2502          &__formulario {\a 99  \2502  \2502              font-size: 0.9em;\a 100 \2502  \2502          }\a 101 \2502  \2502  \a 102 \2502  \2502      }\a 103 \2502  \2502      .tasaciones {\a 104 \2502  \2502          height: em(65px);\a 105 \2502  \2502          display:flex;\a 106 \2502  \2502          align-items: center;\a 107 \2502  \2502          &__contenedor {\a 108 \2502  \2502              max-width:700px;   \a 109 \2502  \2502          }\a 110 \2502  \2502          &__imagen {\a 111 \2502  \2502              height:130%;\a 112 \2502  \2502          }\a 113 \2502  \2502      }\a 114 \2502  \2502      .contacto,.links,.recientes {\a 115 \2502  \2502          flex-basis:40%;\a 116 \2502  \2502          padding-left:0;\a 117 \2502  \2502          padding-right:0;\a 118 \2502  \2502          padding-top:0;\a 119 \2502  \2502      }\a 120 \2502  \2502  \a 121 \2502  \2502      .navegacion {\a 122 \2502  \2502          display:flex;\a 123 \2502  \2502          background:none;\a 124 \2502  \2502          position:relative;\a 125 \2502  \2502          top:0;\a 126 \2502  \2502          right:0;\a 127 \2502  \2502          border:none;\a 128 \2502  \2502          padding:0;\a 129 \2502  \2502          margin:0;\a 130 \2502  \2502          width: auto;\a 131 \2502  \2502          &__contenedor {\a 132 \2502  \2502              display:flex;\a 133 \2502  \2502              flex-direction:row;\a 134 \2502  \2502              align-items: center;\a 135 \2502  \2502              flex-wrap:nowrap;\a 136 \2502  \2502              @include gradiente;\a 137 \2502  \2502              font-size:em(13px);\a 138 \2502  \2502              padding:0;\a 139 \2502  \2502              margin:0;\a 140 \2502  \2502              &::before {\a 141 \2502  \2502                  content:\"\";\a 142 \2502  \2502                  width: 0;\a 143 \2502  \2502                  height: 0;\a 144 \2502  \2502                  border-style: solid;\a 145 \2502  \2502                  border-width: 0 0 em(35px) em(35px);\a 146 \2502  \2502                  border-color: transparent transparent rgba(98,185,255,1) transparent;\a 147 \2502  \2502                  transform: translateX(-99%);\a 148 \2502  \2502              }\a 149 \2502  \2502          }\a 150 \2502  \2502          &__link {\a 151 \2502  \2502              text-decoration:none;\a 152 \2502  \2502              color:white;\a 153 \2502  \2502              padding: em(11px) em(25px);\a 154 \2502  \2502              border-right:1px solid rgba(255,255,255,0.3);\a 155 \2502  \2502          }\a 156 \2502  \2502          &__elemento {\a 157 \2502  \2502              display:flex;\a 158 \2502  \2502              justify-content: center;\a 159 \2502  \2502              margin:0;\a 160 \2502  \2502              padding:0;\a 161 \2502  \2502              font-size: em(12px);\a 162 \2502  \2502              display:flex;\a 163 \2502  \2502              justify-content: center;\a 164 \2502  \2502              flex-direction:row;\a 165 \2502  \2502              border:none;\a 166 \2502  \2502              width:auto;\a 167 \2502  \2502              &--first {\a 168 \2502  \2502                  margin-top: 0;\a 169 \2502  \2502                  justify-content: flex-start;\a 170 \2502  \2502              }\a 171 \2502  \2502              &:nth-child(2n) {\a 172 \2502  \2502                  background: none;\a 173 \2502  \2502              }\a 174 \2502  \2502              \a 175 \2502  \2502          }\a 176 \2502  \2502      }\a 177 \2502  \2502      .main-header__button {\a 178 \2502  \2502          display:none;\a 179 \2502  \2502      }\a 180 \2502  \2502  \a 181 \2502  \2502      .buscador {\a 182 \2502  \2502          &__formulario {\a 183 \2502  \2502              padding-top: em(20px);\a 184 \2502  \2502          }\a 185 \2502  \2502          &__elemento-select {\a 186 \2502  \2502              flex-basis: 23%;\a 187 \2502  \2502          }\a 188 \2502  \2502          &__elemento-boton { \a 189 \2502  \2502              flex-basis: 23%;\a 190 \2502  \2502          }\a 191 \2502  \2502      }\a 192 \2502  \2502      .tasaciones {\a 193 \2502  \2502          &__contenido {\a 194 \2502  \2502              flex-direction: row;\a 195 \2502  \2502              align-items: center;\a 196 \2502  \2502              justify-content: space-between;\a 197 \2502  \2502          }\a 198 \2502  \2502          &__titulo {\a 199 \2502  \2502              flex-grow: 1;\a 200 \2502  \2502              text-align:center;\a 201 \2502  \2502              letter-spacing: em(1.85px);\a 202 \2502  \2502          }\a 203 \2502  \2502          &__cta {\a 204 \2502  \2502              margin:0;\a 205 \2502  \2502              padding:em(15px) em(35px);\a 206 \2502  \2502          }\a 207 \2502  \2502      }\a 208 \2502  \2502      .footer {\a 209 \2502  \2502          padding-top: em(50px);\a 210 \2502  \2502          &__container {\a 211 \2502  \2502              flex-direction: row;\a 212 \2502  \2502              justify-content: space-around;\a 213 \2502  \2502          }\a 214 \2502  \2502      }\a 215 \2502  \2502      \a 216 \2502  \2502      .copyright {\a 217 \2502  \2502          margin-top: em(50px);\a 218 \2502  \2502      }\a 219 \2502  \2502      #slider {\a 220 \2502  \2502          font-size:0.8em;\a 221 \2502  \2502      }\a 222 \2502  \2502      .info-inmueble {\a 223 \2502  \2502          max-width:60%;\a 224 \2502  \2502          flex-grow:1;\a 225 \2502  \2502      }\a 226 \2502  \2514  }\a     \2575 \a   sass/partials/tablet.scss 1:1  root stylesheet";
+  content: "Error: Undefined mixin.\a     \2577 \a 1   \2502  \250c  @include mq('lg') {\a 2   \2502  \2502      // Cambiar tamaños en estas lineas\a 3   \2502  \2502      .buscador {\a 4   \2502  \2502          font-size:1.1em;\a 5   \2502  \2502      }\a 6   \2502  \2502      .banner {\a 7   \2502  \2502          font-size: 1.6em;\a 8   \2502  \2502      }\a 9   \2502  \2502      .top-header {\a 10  \2502  \2502          font-size:28px;\a 11  \2502  \2502      }\a 12  \2502  \2502      .main-header {\a 13  \2502  \2502          font-size:19px;\a 14  \2502  \2502      }\a 15  \2502  \2502      .tasaciones {\a 16  \2502  \2502          font-size: em(15px);\a 17  \2502  \2502      }\a 18  \2502  \2502      .propiedad__caracteristicas--sized {\a 19  \2502  \2502          font-size: 1.32em;\a 20  \2502  \2502      }\a 21  \2502  \2502      // Fin tamaños\a 22  \2502  \2502      .banner {\a 23  \2502  \2502          position:relative;\a 24  \2502  \2502          display:flex;\a 25  \2502  \2502          align-items: center;\a 26  \2502  \2502          justify-content: center;\a 27  \2502  \2502          &__imagen {\a 28  \2502  \2502              opacity:0.65;\a 29  \2502  \2502          }\a 30  \2502  \2502          &__info {\a 31  \2502  \2502              position:absolute;\a 32  \2502  \2502              display:flex;\a 33  \2502  \2502              flex-direction: column;\a 34  \2502  \2502              padding:0 em(45px);\a 35  \2502  \2502          }\a 36  \2502  \2502          &__titulo {\a 37  \2502  \2502              background:none;\a 38  \2502  \2502              display:inline-block;\a 39  \2502  \2502              padding:0;\a 40  \2502  \2502              margin:0;\a 41  \2502  \2502              color:white;\a 42  \2502  \2502          }\a 43  \2502  \2502          &__descripcion {\a 44  \2502  \2502              margin-top:em(30px);\a 45  \2502  \2502              display:inline-block;\a 46  \2502  \2502              color:white;\a 47  \2502  \2502              width:50%;\a 48  \2502  \2502              align-self:flex-end;\a 49  \2502  \2502              padding-left: em(30px);\a 50  \2502  \2502              border-left: 1px solid white;\a 51  \2502  \2502          }\a 52  \2502  \2502      }\a 53  \2502  \2502      .servicios {\a 54  \2502  \2502          &__contenedor {\a 55  \2502  \2502              flex-direction: row;\a 56  \2502  \2502              flex-wrap:nowrap;\a 57  \2502  \2502          }\a 58  \2502  \2502          &__elemento {\a 59  \2502  \2502              width:15.5%;\a 60  \2502  \2502          }\a 61  \2502  \2502      }\a 62  \2502  \2502      .destacados {\a 63  \2502  \2502          &__container {\a 64  \2502  \2502              display:flex;\a 65  \2502  \2502              flex-direction:row;\a 66  \2502  \2502              flex-wrap:wrap;\a 67  \2502  \2502              justify-content: space-between;\a 68  \2502  \2502          }\a 69  \2502  \2502      }\a 70  \2502  \2502      .propiedad {\a 71  \2502  \2502          flex-basis:49%;\a 72  \2502  \2502      }\a 73  \2502  \2502      .pag-inmuebles ,.pag-single{\a 74  \2502  \2502          flex-direction:row;\a 75  \2502  \2502          position:relative;\a 76  \2502  \2502      }\a 77  \2502  \2502      .pag-compania {\a 78  \2502  \2502          &__info-principal {\a 79  \2502  \2502              display:flex;\a 80  \2502  \2502              flex-direction: row;\a 81  \2502  \2502          }\a 82  \2502  \2502          &__imagen-contenedor {\a 83  \2502  \2502              width:47%;\a 84  \2502  \2502              overflow: hidden;\a 85  \2502  \2502              margin:0;\a 86  \2502  \2502          }\a 87  \2502  \2502          &__imagen {\a 88  \2502  \2502              width:100%;\a 89  \2502  \2502              object-fit: cover;\a 90  \2502  \2502          }\a 91  \2502  \2502          &__descripcion {\a 92  \2502  \2502              width:47%;\a 93  \2502  \2502              font-size: em(15px);\a 94  \2502  \2502              padding: 0 em(20px);\a 95  \2502  \2502          }\a 96  \2502  \2502      }\a 97  \2502  \2502  \a 98  \2502  \2502      .staff {\a 99  \2502  \2502          display:flex;\a 100 \2502  \2502          flex-direction: row;\a 101 \2502  \2502          justify-content: space-between;\a 102 \2502  \2502          &__contenedor {\a 103 \2502  \2502              width:49%;\a 104 \2502  \2502          }\a 105 \2502  \2502      }\a 106 \2502  \2502      .inmuebles{\a 107 \2502  \2502          flex-basis:61%;\a 108 \2502  \2502          &__titulo {\a 109 \2502  \2502              width:100%;\a 110 \2502  \2502          }\a 111 \2502  \2502          &__icono {\a 112 \2502  \2502              width:em(40px);\a 113 \2502  \2502          }\a 114 \2502  \2502          &__top-bar {\a 115 \2502  \2502              margin-bottom: em(20px);\a 116 \2502  \2502          }\a 117 \2502  \2502      }\a 118 \2502  \2502      .buscador-aside {\a 119 \2502  \2502          position:sticky;\a 120 \2502  \2502          top:135px;\a 121 \2502  \2502          left:0;\a 122 \2502  \2502          margin-top:0;\a 123 \2502  \2502          margin: 0 0 0 em(15px);\a 124 \2502  \2502          border-radius: 0 7px 7px 0;\a 125 \2502  \2502          flex-shrink: 1;\a 126 \2502  \2502          height:100%;\a 127 \2502  \2502          &__formulario {\a 128 \2502  \2502              font-size: 0.9em;\a 129 \2502  \2502          }\a 130 \2502  \2502  \a 131 \2502  \2502      }\a 132 \2502  \2502      .tasaciones {\a 133 \2502  \2502          height: em(65px);\a 134 \2502  \2502          display:flex;\a 135 \2502  \2502          align-items: center;\a 136 \2502  \2502          &__contenedor {\a 137 \2502  \2502              max-width:700px;   \a 138 \2502  \2502          }\a 139 \2502  \2502          &__imagen {\a 140 \2502  \2502              height:130%;\a 141 \2502  \2502          }\a 142 \2502  \2502      }\a 143 \2502  \2502      .contacto,.links,.recientes {\a 144 \2502  \2502          flex-basis:40%;\a 145 \2502  \2502          padding-left:0;\a 146 \2502  \2502          padding-right:0;\a 147 \2502  \2502          padding-top:0;\a 148 \2502  \2502      }\a 149 \2502  \2502  \a 150 \2502  \2502      .navegacion {\a 151 \2502  \2502          display:flex;\a 152 \2502  \2502          background:none;\a 153 \2502  \2502          position:relative;\a 154 \2502  \2502          top:0;\a 155 \2502  \2502          right:0;\a 156 \2502  \2502          border:none;\a 157 \2502  \2502          padding:0;\a 158 \2502  \2502          margin:0;\a 159 \2502  \2502          width: auto;\a 160 \2502  \2502          &__contenedor {\a 161 \2502  \2502              display:flex;\a 162 \2502  \2502              flex-direction:row;\a 163 \2502  \2502              align-items: center;\a 164 \2502  \2502              flex-wrap:nowrap;\a 165 \2502  \2502              @include gradiente;\a 166 \2502  \2502              font-size:em(13px);\a 167 \2502  \2502              padding:0;\a 168 \2502  \2502              margin:0;\a 169 \2502  \2502              &::before {\a 170 \2502  \2502                  content:\"\";\a 171 \2502  \2502                  width: 0;\a 172 \2502  \2502                  height: 0;\a 173 \2502  \2502                  border-style: solid;\a 174 \2502  \2502                  border-width: 0 0 em(35px) em(35px);\a 175 \2502  \2502                  border-color: transparent transparent rgba(98,185,255,1) transparent;\a 176 \2502  \2502                  transform: translateX(-99%);\a 177 \2502  \2502              }\a 178 \2502  \2502          }\a 179 \2502  \2502          &__link {\a 180 \2502  \2502              text-decoration:none;\a 181 \2502  \2502              color:white;\a 182 \2502  \2502              padding: em(11px) em(25px);\a 183 \2502  \2502              border-right:1px solid rgba(255,255,255,0.3);\a 184 \2502  \2502          }\a 185 \2502  \2502          &__elemento {\a 186 \2502  \2502              display:flex;\a 187 \2502  \2502              justify-content: center;\a 188 \2502  \2502              margin:0;\a 189 \2502  \2502              padding:0;\a 190 \2502  \2502              font-size: em(12px);\a 191 \2502  \2502              display:flex;\a 192 \2502  \2502              justify-content: center;\a 193 \2502  \2502              flex-direction:row;\a 194 \2502  \2502              border:none;\a 195 \2502  \2502              width:auto;\a 196 \2502  \2502              &--first {\a 197 \2502  \2502                  margin-top: 0;\a 198 \2502  \2502                  justify-content: flex-start;\a 199 \2502  \2502              }\a 200 \2502  \2502              &:nth-child(2n) {\a 201 \2502  \2502                  background: none;\a 202 \2502  \2502              }\a 203 \2502  \2502              \a 204 \2502  \2502          }\a 205 \2502  \2502      }\a 206 \2502  \2502      .main-header__button {\a 207 \2502  \2502          display:none;\a 208 \2502  \2502      }\a 209 \2502  \2502  \a 210 \2502  \2502      .buscador {\a 211 \2502  \2502          &__formulario {\a 212 \2502  \2502              padding-top: em(20px);\a 213 \2502  \2502          }\a 214 \2502  \2502          &__elemento-select {\a 215 \2502  \2502              flex-basis: 23%;\a 216 \2502  \2502          }\a 217 \2502  \2502          &__elemento-boton { \a 218 \2502  \2502              flex-basis: 23%;\a 219 \2502  \2502          }\a 220 \2502  \2502      }\a 221 \2502  \2502      .tasaciones {\a 222 \2502  \2502          &__contenido {\a 223 \2502  \2502              flex-direction: row;\a 224 \2502  \2502              align-items: center;\a 225 \2502  \2502              justify-content: space-between;\a 226 \2502  \2502          }\a 227 \2502  \2502          &__titulo {\a 228 \2502  \2502              flex-grow: 1;\a 229 \2502  \2502              text-align:center;\a 230 \2502  \2502              letter-spacing: em(1.85px);\a 231 \2502  \2502          }\a 232 \2502  \2502          &__cta {\a 233 \2502  \2502              margin:0;\a 234 \2502  \2502              padding:em(15px) em(35px);\a 235 \2502  \2502          }\a 236 \2502  \2502      }\a 237 \2502  \2502      .footer {\a 238 \2502  \2502          padding-top: em(50px);\a 239 \2502  \2502          &__container {\a 240 \2502  \2502              flex-direction: row;\a 241 \2502  \2502              justify-content: space-around;\a 242 \2502  \2502          }\a 243 \2502  \2502      }\a 244 \2502  \2502      \a 245 \2502  \2502      .copyright {\a 246 \2502  \2502          margin-top: em(50px);\a 247 \2502  \2502      }\a 248 \2502  \2502      #slider {\a 249 \2502  \2502          font-size:0.8em;\a 250 \2502  \2502      }\a 251 \2502  \2502      .info-inmueble {\a 252 \2502  \2502          max-width:60%;\a 253 \2502  \2502          flex-grow:1;\a 254 \2502  \2502      }\a 255 \2502  \2514  }\a     \2575 \a   sass/partials/tablet.scss 1:1  root stylesheet";
 }

@@ -158,6 +158,20 @@ body {
   color: rgba(0, 0, 0, 0.8);
 }
 
+html, body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.contenido-main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+}
+
 .container {
   width: 95%;
   margin: 0 auto;
@@ -172,11 +186,11 @@ body {
 }
 
 .top-header {
-  font-size: 23px;
+  font-size: 1.4375em;
 }
 
 .main-header {
-  font-size: 17px;
+  font-size: 1.0625em;
 }
 
 #slider {
@@ -185,10 +199,6 @@ body {
 
 .propiedad__caracteristicas--sized {
   font-size: 1.25em;
-}
-
-.footer {
-  font-size: 0.9em;
 }
 
 .top-header {
@@ -443,11 +453,91 @@ body {
   justify-content: center;
 }
 
-.pag-inmuebles, .pag-single {
+.pag-inmuebles, .pag-single, .pag-compania {
   display: flex;
   flex-direction: column;
   padding: 2.5em 0;
   margin: 0 auto;
+}
+
+.pag-compania__titulo {
+  font-size: 1.375em;
+  text-transform: uppercase;
+  margin-bottom: 1.25em;
+  border-bottom: 1px solid #ccc;
+  font-family: "Open Sans", sans-serif;
+}
+.pag-compania__titulo span {
+  font-weight: bold;
+}
+.pag-compania__titulo::after {
+  content: "";
+  margin-top: 0.5em;
+  display: block;
+  height: 0.1875em;
+  width: 1.875em;
+  background: #62b9ff;
+}
+.pag-compania__info-principal {
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+.pag-compania__imagen-contenedor {
+  width: 80%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.pag-compania__imagen {
+  width: 100%;
+  object-fit: cover;
+}
+.pag-compania__descripcion {
+  font-size: 0.9375em;
+  padding: 1.875em 1.25em;
+}
+
+.staff__contenedor {
+  margin: 1.875em 0 1.25em 0;
+  width: 100%;
+  height: 9.375em;
+  background: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.staff__contenedor-imagen {
+  width: 36%;
+  height: 100%;
+  overflow: hidden;
+}
+.staff__imagen {
+  height: 120%;
+  object-fit: contain;
+}
+.staff__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: "Open Sans", sans-serif;
+  flex-grow: 1;
+  padding: 1.0625em 0.9375em;
+}
+.staff__cargo {
+  display: block;
+  font-size: 0.8125em;
+}
+.staff__nombre {
+  font-size: 1.125em;
+  margin-top: 0.625em;
+  font-weight: bold;
+}
+.staff__datos-contenedor {
+  font-size: 0.6875em;
+}
+.staff__datos-contenedor span {
+  margin-top: 0.3125em;
+  display: block;
 }
 
 .info-inmueble {
@@ -1101,6 +1191,34 @@ body {
     position: relative;
   }
 
+  .pag-compania__info-principal {
+    display: flex;
+    flex-direction: row;
+  }
+  .pag-compania__imagen-contenedor {
+    width: 47%;
+    overflow: hidden;
+    margin: 0;
+  }
+  .pag-compania__imagen {
+    width: 100%;
+    object-fit: cover;
+  }
+  .pag-compania__descripcion {
+    width: 47%;
+    font-size: 0.9375em;
+    padding: 0 1.25em;
+  }
+
+  .staff {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .staff__contenedor {
+    width: 49%;
+  }
+
   .inmuebles {
     flex-basis: 61%;
   }
@@ -1407,6 +1525,29 @@ body {
 
   .info-inmueble {
     max-width: 60%;
+  }
+
+  .staff {
+    padding: 3.125em 0;
+  }
+  .staff__contenedor {
+    font-size: 1.1875em;
+  }
+
+  .pag-compania__titulo {
+    font-size: 1.5625em;
+    margin-bottom: 2.1875em;
+  }
+  .pag-compania__imagen-contenedor {
+    width: 30%;
+    overflow: hidden;
+    margin: 0;
+  }
+  .pag-compania__descripcion {
+    margin-left: 3.125em;
+  }
+  .pag-compania__info-principal {
+    border-right: 3px solid #62b9ff;
   }
 }
 @media (min-width: 2560px) {

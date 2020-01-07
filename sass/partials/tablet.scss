@@ -74,6 +74,35 @@
         flex-direction:row;
         position:relative;
     }
+    .pag-compania {
+        &__info-principal {
+            display:flex;
+            flex-direction: row;
+        }
+        &__imagen-contenedor {
+            width:47%;
+            overflow: hidden;
+            margin:0;
+        }
+        &__imagen {
+            width:100%;
+            object-fit: cover;
+        }
+        &__descripcion {
+            width:47%;
+            font-size: em(15px);
+            padding: 0 em(20px);
+        }
+    }
+
+    .staff {
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+        &__contenedor {
+            width:49%;
+        }
+    }
     .inmuebles{
         flex-basis:61%;
         &__titulo {

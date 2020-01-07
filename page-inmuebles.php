@@ -1,6 +1,6 @@
 <?php 
 /* 
-	Template Name: Inmuebles
+	Template Name: Todos Buscador
 */
 ?>
 <?php $img_path = get_site_url() . "/wp-content/uploads/img";?>
@@ -9,7 +9,7 @@
 // args
 $args = array(
 	'posts_per_page' => -1,
-	'post_type'		=> 'inm',
+	'post_type'		=> 'inmuebles',
 );
 // Para que ande la paginacion (esto reemplaza el wp_query original)
 //$wp_query = new WP_Query($args);
@@ -93,7 +93,7 @@ $the_query = new WP_Query( $args );
 				<div class="propiedad__info">
 					<div class="propiedad__contenedor-titulo">
 						<h1 class="propiedad__titulo"><?php the_title();?></h1>
-						<span class="propiedad__direccion"><img src="<?php echo $img_path; ?>/map.svg" alt="icono gps" class="propiedad__icono propiedad__icono--gps icon"><?php the_field('direccion')?> - <?php if(get_field('barrio')): echo ucfirst(get_field('barrio')); endif;?> - <?php if(get_field('provincia')): echo ucfirst(get_field('provincia')) ;endif;?></span>
+						<span class="propiedad__direccion"><img src="<?php echo $img_path; ?>/map.svg" alt="icono gps" class="propiedad__icono propiedad__icono--gps icon"><?php the_field('direccion')?><?php if(get_field('barrio')): echo " - " ;echo ucfirst(get_field('barrio')); endif;?><?php if(get_field('provincia')): echo " - " ;echo ucfirst(get_field('provincia')) ;endif;?></span>
 					</div>
 					<div class="propiedad__caracteristicas">
 						<span class="propiedad__dato">

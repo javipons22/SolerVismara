@@ -145,4 +145,29 @@
     .info-inmueble {
         max-width:60%;
     }
+    .staff {
+        padding: em(50px) 0;
+        &__contenedor {
+            //  tamaño de tarjetas del staff
+            font-size:em(19px);
+            //height:em(200px);
+        }
+    }
+    .pag-compania {
+        &__titulo {
+            font-size:em(25px);
+            margin-bottom: em(35px);
+        }
+        &__imagen-contenedor {
+            width:30%;
+            overflow: hidden;
+            margin:0;
+        }
+        &__descripcion {
+            margin-left: em(50px);
+        }
+        &__info-principal {
+            border-right: 3px solid $azul-claro;
+        }
+    }
 }

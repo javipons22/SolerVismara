@@ -9,7 +9,7 @@
                 <?php
                     $args = array(
                         'posts_per_page' => 3,
-                        'post_type'		=> 'inm',
+                        'post_type'		=> 'inmuebles',
                         'order'   => 'DESC',
                     );
                     // Para que ande la paginacion (esto reemplaza el wp_query original)
