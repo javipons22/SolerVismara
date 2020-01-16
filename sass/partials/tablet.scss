@@ -252,4 +252,30 @@
         max-width:60%;
         flex-grow:1;
     }
+    .pag-contacto {
+        &__wrapper {
+            display:flex;
+            flex-direction:row;
+            justify-content: space-between;;
+            box-sizing: border-box;
+        }
+        &__formulario , &__info-contacto {
+            width:40%;
+            box-sizing: border-box;
+        }
+        &__formulario input:first-child {
+            margin-top:0;
+        }
+        &__info-contacto {
+            background: white;
+            margin-top: 0;
+            font-size:em(15px);
+            padding: em(30px);
+            width:55%;
+        }
+        &__elemento-area {
+            resize:none;
+            height:100px;
+        }
+    }
 }

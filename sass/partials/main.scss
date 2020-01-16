@@ -2,6 +2,8 @@
 // agregar 'social' al footer
 // Ver max width del container en pantalla de 1024px
 // ver de hacer un condicional en las imagenes del slideshow para que no se repita la imagen principal
+// Mensaje en pagina inmuebles cuando no se encuentra ningun inmueble ( en el if del loop )
+// Pagina contacto modificar "otras formas.. "
 
 
 body {
@@ -417,6 +419,117 @@ html, body {
         span {
             margin-top:em(5px);
             display:block;
+        }
+    }
+}
+
+.pag-contacto {
+    padding:em(40px) 0;
+    margin:0 auto;
+    &__titulo {
+        font-size: em(22px);
+        text-transform: uppercase;
+        margin-bottom:em(20px);
+        border-bottom: 1px solid #ccc;
+        font-family: 'Open Sans', sans-serif;
+        font-weight:bold;
+        &::after {
+            content:"";
+            margin-top: em(8px);
+            display:block;
+            height:em(3px);
+            width:em(30px);
+            background:$azul-claro;
+        }
+        span {
+            font-weight:400;
+        }
+    }
+    &__info-contacto {
+        margin-top:60px;
+    }
+    &__wrapper {
+        display:flex;
+        flex-direction:column;
+    }
+    &__formulario {
+        display:flex;
+        flex-direction:column;
+    }
+    
+    &__elemento-input,&__elemento-area {
+        font-family: 'Open Sans', sans-serif;
+        color: #999;
+        border:1px solid #ccc;
+        padding: em(15px) em(15px);
+        margin: em(15px) 0 0 0;
+        font-size: em(12px);
+        &::placeholder {
+            color: #999;
+            
+        }
+    }
+    &__elemento-area {
+        resize:none;
+        margin: em(45px) 0 em(20px) 0;
+    }
+    &__elemento-boton {
+        font-size: em(15px);
+        background:$azul-claro;
+        font-family: 'Montserrat', sans-serif;
+        font-weight:600;
+        color: white;
+        border:none;
+        border-radius:5px;
+        padding: em(15px) 0;
+    }
+    &__social {
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 0 em(25px) 0;
+        font-size: em(15px);
+    }
+    &__social-elemento {
+        flex-basis:30%;
+        display:flex;
+        flex-direction:column;
+        justify-content: center;
+        align-items:center;
+    }
+    &__social-icon {
+        height:em(50px);
+        path,circle {
+            fill:$azul-claro;
+        }
+    }
+    &__telefono {
+        display:flex;
+        flex-direction:row;
+        align-items: center;
+        justify-content: flex-start;
+        padding:em(15px) em(40px) em(15px) em(40px);
+    }
+    &__telefono-icon {
+        vertical-align: middle;
+        padding:em(15px);
+        border:1px dashed $azul-claro;
+        border-radius:50%;
+        -moz-border-radius:50%;
+        -webkit-border-radius:50%;
+        height:em(30px);
+        width:em(30px);
+        path,circle {
+            fill:$azul-claro;
+        }
+    }
+    &__telefono-info {
+        display:flex;
+        flex-direction:column;
+        margin-left: em(15px);
+        span:nth-child(2) {
+            font-size: em(13px);
+            margin-top: em(10px);
         }
     }
 }

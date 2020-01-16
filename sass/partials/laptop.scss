@@ -170,4 +170,9 @@
             border-right: 3px solid $azul-claro;
         }
     }
+    .pag-contacto {
+        &__titulo {
+            font-size:em(25px);
+        }
+    }
 }

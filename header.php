@@ -45,7 +45,7 @@
                         <li class="navegacion__elemento navegacion__elemento--first"><a class="navegacion__link" href="/SV">INICIO</a></li>
                         <li class="navegacion__elemento"><a class="navegacion__link" href="/SV/inmuebles">INMUEBLES</a></li>
                         <li class="navegacion__elemento"><a class="navegacion__link" href="/SV/quienes-somos">QUIENES SOMOS</a></li>
-                        <li class="navegacion__elemento"><a class="navegacion__link" href="#">CONTACTO</a></li>
+                        <li class="navegacion__elemento"><a class="navegacion__link" href="/SV/contacto">CONTACTO</a></li>
                     </ul>
                 </nav>
                 <!-- fin nav -->
