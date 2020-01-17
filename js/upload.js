@@ -21,6 +21,7 @@ jQuery(document).ready(function($){
     
     // Si se hace submit con el boton "submit_form" cambiar el action y hacer submit
     // Si son otros botones hacer submit en la misma pagina
+    // Uno para upload form y otro para edit form
     $("#submit_form").click(function() {
         if (document.getElementById("upload-form")) {
             document.getElementById("upload-form").action = "/SV/upload-handler";

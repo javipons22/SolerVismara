@@ -21,10 +21,10 @@ $args = array(
 $query = new WP_Query($args);
     if($query->have_posts() ) : while($query ->have_posts()) : $query->the_post();  
         
-        $operaciones = explode(" ", get_field('operacion'));
-        $tipos = explode(" ", get_field('tipo'));
-        $extras = explode(" ", get_field('extras'));
-        $provincias = explode(" ", get_field('provincias'));
+        $operaciones = explode("-", get_field('operacion'));
+        $tipos = explode("-", get_field('tipo'));
+        $extras = explode("-", get_field('extras'));
+        $provincias = explode("-", get_field('provincias'));
 
     endwhile; endif; wp_reset_postdata(); ?>
     <?php
@@ -34,7 +34,7 @@ $query = new WP_Query($args);
         if(isset($_POST[$button])) {
             if(isset($_POST[$field . '-add']) && $_POST[$field . '-add'] != '' ){
                 array_push($array,$_POST[$field . '-add']);
-                $to_update= implode(" ",$array);
+                $to_update= implode("-",$array);
                 update_field($field, $to_update, 32);
             }
         }
