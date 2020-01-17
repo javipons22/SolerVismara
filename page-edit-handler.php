@@ -1,10 +1,10 @@
 <?php 
 /* 
-	Template Name: Upload-handler
+	Template Name: Edit-handler
 */
 ?>
 
-<form id="form-return" method="POST" action="/SV/upload?error=true">
+<form id="form-return" method="POST" action="/SV/edit?error=true&id=<?php echo $_POST['post_id'];?>">
 	<?php 
 		foreach ($_POST as $name => $val) 
 		{
@@ -44,13 +44,8 @@ function uploadPropiedad($postVariable) {
 	$precio = $_POST['precio'];
 	$descripcion = $_POST['descripcion'];
 
-	$my_post = array(
-		'post_title' => $titulo,
-		'post_type' => 'inmuebles',
-		'post_status' => 'publish',
-	);
 
-	$post_id = wp_insert_post($my_post);
+	$post_id = $_POST['post_id'];
 
 	// TODOS LOS CAMPOS PARA ITERAR
 	$camposTodos = array('titulo','operacion','tipo','extras','provincia','barrio','direccion','dormitorios','area','precio','descripcion');
@@ -82,7 +77,14 @@ function uploadPropiedad($postVariable) {
 			//echo $extrasEndValue;
 			update_field($name, $extrasEndValue, $post_id);
 
-		} else {
+		} else if ($name == 'titulo') {
+			// Para los titulos se modifica de otra manera ya que no se usa con ACF , se usa wp_update_post
+			$post_update = array(
+				'ID'         => $post_id,
+				'post_title' => $val
+			);
+			wp_update_post( $post_update );
+	 	} else {
 			update_field($name, $val, $post_id);
 
 		}
@@ -118,13 +120,9 @@ if (
 	
 	if ( is_wp_error( $attachment_id ) ) {
 		// Si hay un error subiendo la imagen principal redireccionar y borrar el post creado
-		wp_delete_post($post_id);
-		?>
-		<script>
-			document.getElementById("form-return").submit();
-		</script> 
-		<?php
-		exit();
+		//wp_delete_post($post_id);
+		echo "No se selecciono imagen";
+
 	} else {
 		// The image was uploaded successfully!
 		update_field('imagen_principal', $attachment_id, $post_id);

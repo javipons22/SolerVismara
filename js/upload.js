@@ -22,12 +22,17 @@ jQuery(document).ready(function($){
     // Si se hace submit con el boton "submit_form" cambiar el action y hacer submit
     // Si son otros botones hacer submit en la misma pagina
     $("#submit_form").click(function() {
-        document.getElementById("upload-form").action = "/SV/upload-handler";
-        $('#upload-form').submit();
+        if (document.getElementById("upload-form")) {
+            document.getElementById("upload-form").action = "/SV/upload-handler";
+            $('#upload-form').submit();
+        } else if (document.getElementById("edit-form")) {
+            document.getElementById("edit-form").action = "/SV/edit-handler";
+            $('#edit-form').submit();
+        }
     });
 
     let campos1 = ['operacion','tipo','extra','provincia'];
-    let campos2 = ['titulo','barrio','direccion','dormitorios','banos','area','precio'];
+    let campos2 = ['titulo','barrio','direccion','dormitorios','banos','area','precio','descripcion'];
     campos1.forEach(element => {
         checkRadio(element);
     });

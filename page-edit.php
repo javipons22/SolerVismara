@@ -1,6 +1,6 @@
 <?php 
 /* 
-	Template Name: Upload
+	Template Name: Edit
 */
 ?>
 <?php $img_path = get_site_url() . "/wp-content/uploads/img";?>
@@ -48,9 +48,25 @@ $query = new WP_Query($args);
 
     
     ?>
+<?php
+// Obtenemos el post id del query en el url
+$id = $_GET['id'];
+$datos_del_formulario = array();
+$camposTodos = array('titulo','operacion','tipo','extra','provincia','barrio','direccion','banos','dormitorios','area','precio','descripcion');
+foreach ($camposTodos as $campo){
+    if ($campo == 'titulo') {
+        $datos_del_formulario[$campo] = get_the_title($id);
+    } else {
+        $datos_del_formulario[$campo] = get_field($campo,$id);
+    }
+}
+
+// array(18) { ["titulo"]=> string(0) "" ["operacion"]=> string(1) "0" ["operacion-add"]=> string(0) "" ["tipo"]=> string(4) "casa" ["tipo-add"]=> string(0) "" ["extras-add"]=> string(0) "" ["provincia"]=> string(1) "0" ["provincias-add"]=> string(0) "" ["barrio"]=> string(0) "" ["direccion"]=> string(0) "" ["dormitorios"]=> string(1) "0" ["banos"]=> string(1) "0" ["area"]=> string(0) "" ["precio"]=> string(0) "" ["descripcion"]=> string(12) " " ["post_id"]=> string(2) "55" ["my_image_upload_nonce"]=> string(10) "b170dfce06" ["_wp_http_referer"]=> string(22) "/SV/upload/?error=true" }
+
+?>
 <div class="container">
     
-    <form method="POST" id="upload-form" class="upload-form" enctype="multipart/form-data">
+    <form method="POST" id="edit-form" class="upload-form" enctype="multipart/form-data">
         <?php if($_SERVER['QUERY_STRING'] == "error=true"): ?>
         <div class="error">
             <p><strong>Error:</strong> Completa todos los campos requeridos, marcados con (*)</p>
@@ -176,10 +192,10 @@ $query = new WP_Query($args);
             <textarea id="descripcion" rows="4" cols="50" name="descripcion"></textarea>
         </div>
         <div class="upload-form__elemento upload-form__elemento--imagen">
-            <h2>IMAGEN PRINCIPAL(*)</h2>
+            <h2>IMAGEN PRINCIPAL</h2>
             <span>Imagen principal</span>
             <input type="file" name="my_image_upload" id="my_image_upload" />
-	        <input type="hidden" name="post_id" id="post_id" value="55" />
+	        <input type="hidden" name="post_id" id="post_id" value="<?php echo $id;?>" />
 	        <?php wp_nonce_field( 'my_image_upload', 'my_image_upload_nonce' ); ?>
 	        <!-- <input id="submit_my_image_upload" name="submit_my_image_upload" type="submit" value="Upload" /> -->
         </div>
@@ -192,7 +208,7 @@ $query = new WP_Query($args);
 	        <!-- <input id="submit_my_image_upload" name="submit_my_image_upload" type="submit" value="Upload" /> -->
         </div>
         <div class="upload-form__elemento upload-form__elemento--boton-final">
-	        <input id="submit_form" name="submit_form" type="button" value="SUBIR PROPIEDAD" />
+	        <input id="submit_form" name="submit_form" type="button" value="MODIFICAR PROPIEDAD" />
         </div>
         
 
@@ -201,7 +217,7 @@ $query = new WP_Query($args);
 </div>
 
 <script type="text/javascript">
-    let seleccionados = <?php echo json_encode($_POST); ?>;
+    let seleccionados = <?php echo json_encode($datos_del_formulario); ?>;
     console.log(seleccionados);
 </script>
 <?php get_footer(); ?>
