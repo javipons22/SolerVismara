@@ -460,6 +460,19 @@ html, body {
   margin: 0 auto;
 }
 
+.link-subir {
+  background: green;
+  font-weight: bold;
+  letter-spacing: 0.125em;
+  width: 100%;
+  margin: 0.3125em;
+  color: white;
+  padding: 1.5625em 0;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 0.625em;
+}
+
 .pag-compania__titulo {
   font-size: 1.375em;
   text-transform: uppercase;
@@ -931,6 +944,22 @@ html, body {
   font-size: 0.5625em;
   border-top: 1px solid rgba(0, 0, 0, 0.16);
   padding-top: 0.625em;
+}
+.propiedad__borrar, .propiedad__modificar {
+  font-weight: bold;
+  font-size: 1.125em;
+  text-decoration: none;
+  background: red;
+  padding: 0.3125em 0.625em;
+  color: white;
+  border-radius: 0.3125em;
+  margin: 0.3125em 0.9375em;
+}
+.propiedad__borrar {
+  background: red;
+}
+.propiedad__modificar {
+  background: green;
 }
 
 .tasaciones {
@@ -1679,6 +1708,8 @@ html, body {
   }
   .pag-compania__descripcion {
     margin-left: 3.125em;
+    padding: 3.125em;
+    background: white;
   }
   .pag-compania__info-principal {
     border-right: 3px solid #62b9ff;

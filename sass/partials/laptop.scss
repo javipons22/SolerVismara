@@ -165,6 +165,8 @@
         }
         &__descripcion {
             margin-left: em(50px);
+            padding: em(50px);
+            background:white;
         }
         &__info-principal {
             border-right: 3px solid $azul-claro;

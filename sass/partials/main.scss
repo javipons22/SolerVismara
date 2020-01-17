@@ -4,6 +4,7 @@
 // ver de hacer un condicional en las imagenes del slideshow para que no se repita la imagen principal
 // Mensaje en pagina inmuebles cuando no se encuentra ningun inmueble ( en el if del loop )
 // Pagina contacto modificar "otras formas.. "
+// Arreglar links footer
 
 
 body {
@@ -336,6 +337,19 @@ html, body {
     flex-direction:column;
     padding:em(40px) 0;
     margin:0 auto;
+}
+
+.link-subir {
+    background: green;
+    font-weight:bold;
+    letter-spacing: em(2px);
+    width:100%;
+    margin: em(5px);
+    color:white;
+    padding: em(25px) 0;
+    text-decoration:none;
+    text-align: center;
+    border-radius: em(10px);
 }
 
 .pag-compania {
@@ -820,6 +834,22 @@ html, body {
         font-size:em(9px);
         border-top:1px solid $negro;
         padding-top:em(10px);
+    }
+    &__borrar, &__modificar {
+        font-weight:bold;
+        font-size: em(18px);
+        text-decoration: none;
+        background: red;
+        padding: em(5px) em(10px);
+        color:white;
+        border-radius: em(5px);
+        margin: em(5px) em(15px);
+    }
+    &__borrar {
+        background:red;
+    }
+    &__modificar {
+        background:green;
     }
 }
 
