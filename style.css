@@ -946,11 +946,12 @@ html, body {
   padding-top: 0.625em;
 }
 .propiedad__borrar, .propiedad__modificar {
+  width: 37%;
   font-weight: bold;
-  font-size: 1.125em;
+  font-size: 1.0625em;
   text-decoration: none;
   background: red;
-  padding: 0.3125em 0.625em;
+  padding: 0.9375em 0.625em;
   color: white;
   border-radius: 0.3125em;
   margin: 0.3125em 0.9375em;

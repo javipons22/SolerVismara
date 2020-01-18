@@ -836,11 +836,12 @@ html, body {
         padding-top:em(10px);
     }
     &__borrar, &__modificar {
+        width:37%;
         font-weight:bold;
-        font-size: em(18px);
+        font-size: em(17px);
         text-decoration: none;
         background: red;
-        padding: em(5px) em(10px);
+        padding: em(15px) em(10px);
         color:white;
         border-radius: em(5px);
         margin: em(5px) em(15px);

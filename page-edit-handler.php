@@ -137,6 +137,7 @@ if (
 
 $imagenes_multiples_subidas = "";
 
+
 if( 'POST' == $_SERVER['REQUEST_METHOD']  ) {
 	if ( $_FILES ) { 
 		$files = $_FILES["my_image_upload2"];  
@@ -154,11 +155,14 @@ if( 'POST' == $_SERVER['REQUEST_METHOD']  ) {
 					$newupload = my_handle_attachment($file,0); 
 					echo $newupload;
 					$imagenes_multiples_subidas .= $newupload . " ";
-				}
-				
+				}	
 			} 
-		} 
-		update_field('imagenes_extra', $imagenes_multiples_subidas, $post_id);
+		}
+		// Si no hay imagenes cargadas no hacer update del field porque sino se borran
+		if (strlen($_FILES['my_image_upload2']['name'][0]) != 0) {
+			update_field('imagenes_extra', $imagenes_multiples_subidas, $post_id);
+		}
+		
 	}
 	
 }
