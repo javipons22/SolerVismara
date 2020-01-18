@@ -8,7 +8,7 @@
                 <ul class="recientes__info">
                 <?php
                     $args = array(
-                        'posts_per_page' => 3,
+                        'posts_per_page' => 4,
                         'post_type'		=> 'inmuebles',
                         'order'   => 'DESC',
                     );

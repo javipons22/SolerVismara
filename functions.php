@@ -30,9 +30,9 @@ function my_pre_get_posts( $query ) {
 	}
 	
 	
-	// only modify queries for 'inm' post type 
+	// only modify queries for 'inmuebles' post type 
 	// para que carge solo el query necesitado usamos una variable del query para que se modifique solo ese ($query->query_vars['posts_per_page'] == -1)
-	if( isset($query->query_vars['post_type']) && $query->query_vars['post_type'] == 'inmuebles' && $query->query_vars['posts_per_page'] !== 3 ) { 
+	if( isset($query->query_vars['post_type']) && $query->query_vars['post_type'] == 'inmuebles' && $query->query_vars['posts_per_page'] !== 4 ) { 
 		
 		function setCustomQuery($key,$compare) {
 			if( isset($_GET[$key]) ) {

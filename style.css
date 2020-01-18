@@ -945,8 +945,8 @@ html, body {
   border-top: 1px solid rgba(0, 0, 0, 0.16);
   padding-top: 0.625em;
 }
-.propiedad__borrar, .propiedad__modificar {
-  width: 37%;
+.propiedad__borrar, .propiedad__modificar, .propiedad__destacar {
+  width: 20%;
   font-weight: bold;
   font-size: 1.0625em;
   text-decoration: none;
@@ -955,12 +955,16 @@ html, body {
   color: white;
   border-radius: 0.3125em;
   margin: 0.3125em 0.9375em;
+  text-align: center;
 }
 .propiedad__borrar {
   background: red;
 }
 .propiedad__modificar {
   background: green;
+}
+.propiedad__destacar {
+  background: #62b9ff;
 }
 
 .tasaciones {
@@ -988,7 +992,9 @@ html, body {
 }
 .tasaciones__cta {
   border: 1px solid white;
+  color: white;
   border-radius: 0.4375em;
+  text-decoration: none;
   font-size: 0.8125em;
   display: block;
   font-weight: bold;
@@ -1045,6 +1051,14 @@ html, body {
   width: 100%;
 }
 
+.recientes--dark .recientes {
+  color: black;
+}
+.recientes--dark .recientes__titulo, .recientes--dark .recientes__descripcion {
+  color: black;
+  margin-top: 2.1875em;
+}
+
 .links {
   display: none;
 }
@@ -1079,6 +1093,10 @@ html, body {
   flex-direction: column;
 }
 
+.recientes--dark .propiedad-reciente {
+  color: black;
+}
+
 .propiedad-reciente__link {
   width: 100%;
   display: flex;
@@ -1092,6 +1110,7 @@ html, body {
   margin-left: 1.5625em;
   display: flex;
   align-self: stretch;
+  width: 100%;
   flex-direction: column;
   justify-content: space-between;
 }
@@ -1110,6 +1129,15 @@ html, body {
 }
 .propiedad-reciente__precio {
   font-size: 1.1em;
+}
+.propiedad-reciente__borrar {
+  text-decoration: none;
+  display: block;
+  background: red;
+  color: white;
+  font-weight: 700;
+  padding: 0.9375em 0.625em;
+  width: 50%;
 }
 
 .copyright {
@@ -1320,9 +1348,16 @@ html, body {
     flex-wrap: wrap;
     justify-content: space-between;
   }
+  .destacados__container article {
+    display: inline-block;
+    flex-basis: 48%;
+  }
 
-  .propiedad {
-    flex-basis: 49%;
+  .propiedad-index {
+    width: 100%;
+    flex-basis: 100%;
+    height: 11.25em;
+    max-height: 11.25em;
   }
 
   .pag-inmuebles, .pag-single {
@@ -1646,7 +1681,8 @@ html, body {
     flex-basis: 32%;
   }
   .propiedad-index {
-    max-height: 9.0625em;
+    height: 11.25em;
+    max-height: 11.25em;
   }
 
   .inmuebles__icono {

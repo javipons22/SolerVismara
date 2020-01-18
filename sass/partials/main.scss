@@ -835,8 +835,8 @@ html, body {
         border-top:1px solid $negro;
         padding-top:em(10px);
     }
-    &__borrar, &__modificar {
-        width:37%;
+    &__borrar, &__modificar, &__destacar {
+        width:20%;
         font-weight:bold;
         font-size: em(17px);
         text-decoration: none;
@@ -845,12 +845,16 @@ html, body {
         color:white;
         border-radius: em(5px);
         margin: em(5px) em(15px);
+        text-align: center;
     }
     &__borrar {
         background:red;
     }
     &__modificar {
         background:green;
+    }
+    &__destacar {
+        background: $azul-claro;
     }
 }
 
@@ -878,7 +882,9 @@ html, body {
     }
     &__cta {
         border:1px solid white;
+        color:white;
         border-radius: em(7px);
+        text-decoration: none;
         font-size: em(13px);
         display:block;
         font-weight:bold;
@@ -936,6 +942,15 @@ html, body {
         width:100%;
     }
 }
+
+.recientes--dark .recientes {
+    color:black;
+    &__titulo, &__descripcion {
+        color:black;
+        margin-top: em(35px);
+    }
+}
+
 .links {
     display:none;
 
@@ -974,6 +989,10 @@ html, body {
     }
 }
 
+.recientes--dark .propiedad-reciente {
+    color:black;
+}
+
 .propiedad-reciente {
     &__link {
         width:100%;
@@ -988,6 +1007,7 @@ html, body {
         margin-left: em(25px);
         display:flex;
         align-self:stretch;
+        width:100%;
         flex-direction:column;
         justify-content: space-between;
     }
@@ -1006,6 +1026,15 @@ html, body {
     }
     &__precio {
         font-size:1.10em;
+    }
+    &__borrar {
+        text-decoration:none;
+        display:block;
+        background:red;
+        color:white;
+        font-weight:700;
+        padding: em(15px) em(10px);
+        width:50%;
     }
 
 }
