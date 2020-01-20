@@ -1093,6 +1093,12 @@ html, body {
         &:nth-child(2n) {
             background: #dde;
         }
+        &--dash a {
+            background:green;
+        }
+        &--cerrar a {
+            background:red;
+        }
     }
 }
 

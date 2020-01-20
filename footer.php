@@ -34,7 +34,6 @@
                             <div class="propiedad-reciente__contenido">
                                 <h2 class="propiedad-reciente__titulo"><?php the_title();?></h2>
                                 <span class="propiedad-reciente__fecha"><?php echo get_the_date();?></span>
-                                <span class="propiedad-reciente__precio">$<?php the_field('precio');?></span>
                             </div>
                         </a>
                     </li>

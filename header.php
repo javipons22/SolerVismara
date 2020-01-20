@@ -46,6 +46,11 @@
                         <li class="navegacion__elemento"><a class="navegacion__link" href="/SV/inmuebles">INMUEBLES</a></li>
                         <li class="navegacion__elemento"><a class="navegacion__link" href="/SV/quienes-somos">QUIENES SOMOS</a></li>
                         <li class="navegacion__elemento"><a class="navegacion__link" href="/SV/contacto">CONTACTO</a></li>
+                        <?php
+                        if ( is_user_logged_in() ) :?>
+                            <li class="navegacion__elemento navegacion__elemento--dash"><a class="navegacion__link" href="/SV/dashboard">ADMIN</a></li>
+                            <li class="navegacion__elemento navegacion__elemento--cerrar"><a class="navegacion__link" href="<?php echo wp_logout_url();?>">CERRAR SESIÓN</a></li>
+                        <?php endif; ?>
                     </ul>
                 </nav>
                 <!-- fin nav -->

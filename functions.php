@@ -91,3 +91,13 @@ function my_handle_attachment($file_handler,$post_id,$set_thu=false) {
 	return $attach_id;
 }
 ?>
+<?php
+// Que se vea la barra de wordpress (top bar) solo para admin
+add_action('after_setup_theme', 'remove_admin_bar');
+ 
+function remove_admin_bar() {
+	if (!current_user_can('administrator') && !is_admin()) {
+	show_admin_bar(false);
+	}
+}
+?>

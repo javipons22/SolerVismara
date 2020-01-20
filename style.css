@@ -1194,6 +1194,12 @@ html, body {
 .navegacion__elemento:nth-child(2n) {
   background: #dde;
 }
+.navegacion__elemento--dash a {
+  background: green;
+}
+.navegacion__elemento--cerrar a {
+  background: red;
+}
 
 .upload-form {
   display: flex;
