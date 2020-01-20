@@ -1408,6 +1408,9 @@ html, body {
   .inmuebles__top-bar {
     margin-bottom: 1.25em;
   }
+  .inmuebles__container article:last-child a {
+    margin-bottom: 0;
+  }
 
   .buscador-aside {
     position: sticky;

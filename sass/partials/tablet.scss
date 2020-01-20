@@ -121,6 +121,9 @@
         &__top-bar {
             margin-bottom: em(20px);
         }
+        &__container article:last-child a {
+            margin-bottom:0;
+        }
     }
     .buscador-aside {
         position:sticky;
