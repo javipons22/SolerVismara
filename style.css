@@ -414,6 +414,9 @@ html, body {
 .buscador__elemento-select option:hover, .buscador-aside__elemento-select option:hover {
   box-shadow: 0 0 10px 100px #1882A8 inset;
 }
+.buscador__elemento-select--area, .buscador-aside__elemento-select--area {
+  flex-basis: 22%;
+}
 .buscador__elemento-boton, .buscador-aside__elemento-boton {
   flex-basis: 47%;
   font-size: 0.8125em;

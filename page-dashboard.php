@@ -24,11 +24,11 @@
 
 				// query
 				$the_query2 = new WP_Query( $args2 );
-				$cantidad_destacados = 0;
+				$destacados_array = array();
 			?>
 			<?php if( $the_query2->have_posts() ): ?>
 				<?php while ( $the_query2->have_posts() ) : $the_query2->the_post(); ?>
-				<?php $cantidad_destacados++ ;?>
+				<?php array_push($destacados_array, get_the_ID());?>
 				<li class="propiedad-reciente">
 					<?php
 						$image = get_field('imagen_principal');
@@ -107,7 +107,7 @@
 						<?php endforeach;endif;?>
 					</div>
 					<div class="propiedad__fecha">
-						<?php if ($cantidad_destacados < 4) :?>
+						<?php if (count($destacados_array) < 4 && !in_array(get_the_ID(), $destacados_array) ) :?>
 							<a class="propiedad__destacar" href="/SV/dashboard-handler?action=agregar&id=<?php echo get_the_ID(); ?>">Destacar</a>
 						<?php endif;?>
                         <a class="propiedad__modificar" href="/SV/edit?id=<?php echo get_the_ID(); ?>">Modificar</a>

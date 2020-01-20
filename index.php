@@ -90,11 +90,11 @@
                 <option value="Cordoba">Cordoba</option>
                 <option value="Buenos Aires">Buenos Aires</option>
             </select>
-            <select name="area" class="buscador__elemento-select">
-                <option value="" selected disabled hidden>Metros Cuadrados</option>
+            <select name="areamin" class="buscador__elemento-select buscador__elemento-select--area">
+                <option value="" selected disabled hidden>Metros Cuadrados (mínimo)</option>
             </select>
             <select name="precio" class="buscador__elemento-select">
-                <option value="" selected disabled hidden>Precio</option>
+                <option value="" selected disabled hidden>Precio (mínimo)</option>
             </select>
             <button type="submit" class="buscador__elemento-boton">BUSCAR</button>
         </form>

@@ -292,6 +292,10 @@ html, body {
         }
     }
 
+    &__elemento-select--area {
+        flex-basis: 22%;
+    }
+
     &__elemento-boton {
         flex-basis:47%;
         font-size: em(13px);
