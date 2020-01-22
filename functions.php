@@ -32,25 +32,34 @@ function my_pre_get_posts( $query ) {
 	
 	// only modify queries for 'inmuebles' post type 
 	// para que carge solo el query necesitado usamos una variable del query para que se modifique solo ese ($query->query_vars['posts_per_page'] == -1)
-	if( isset($query->query_vars['post_type']) && $query->query_vars['post_type'] == 'inmuebles' && $query->query_vars['posts_per_page'] !== 4 ) { 
+	if( isset($query->query_vars['post_type']) && $query->query_vars['post_type'] == 'inmuebles' && ($query->query_vars['posts_per_page'] !== 4 && $query->query_vars['posts_per_page'] !== 200) ) { 
 		
 		function setCustomQuery($key,$compare) {
 			if( isset($_GET[$key]) ) {
-				$operacion = array(
-					'key'=> $key,
-					'value'=> $_GET[$key],
-					'compare' => $compare
-				);
-				return $operacion;
+				if ($_GET[$key] == 'precio' || $_GET[$key] == 'area') :
+					$operacion = array(
+						'key'=> $key,
+						'value'=> (int) $_GET[$key],
+						'compare' => $compare
+					);
+					return $operacion;
+				else: 
+					$operacion = array(
+						'key'=> $key,
+						'value'=> $_GET[$key],
+						'compare' => $compare
+					);
+					return $operacion;
+				endif;
 			}
 		}
 		if (isset($_GET['order'])) {
 			if ($_GET['order'] == 'bajo') {
 				$query->set('meta_key', 'precio' );
-				$query->set('orderby', array('meta_value' => 'ASC'));
+				$query->set('orderby', array('meta_value_num' => 'ASC'));
 			} else if($_GET['order'] == 'alto') {
 				$query->set('meta_key', 'precio' );
-				$query->set('orderby', array('meta_value' => 'DESC'));
+				$query->set('orderby', array('meta_value_num' => 'DESC'));
 			} else {
 				$query->set('orderby', array('date' => 'DESC'));
 			}
@@ -62,7 +71,11 @@ function my_pre_get_posts( $query ) {
 				setCustomQuery('operacion','='),
 				setCustomQuery('banos','>='),
 				setCustomQuery('dormitorios','>='),
-				setCustomQuery('tipo','=')
+				setCustomQuery('tipo','='),
+				setCustomQuery('provincia','='),
+				setCustomQuery('area','>='),
+				setCustomQuery('precio','>=')
+
 				)
 		); 
 		

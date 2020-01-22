@@ -112,15 +112,15 @@
                 <?php endforeach;?>
             </select>
             <select name="dormitorios" class="buscador__elemento-select">
-                <option value="" selected disabled hidden>Dormitorios</option>
+                <option value="" selected disabled hidden>Dormitorios (mínimo)</option>
                 <?php foreach ($dormitorios_array as $dormitorio): ?>
-                    <option value="<?php echo $dormitorio;?>"><?php echo $dormitorio;?></option>
+                    <option value="<?php echo $dormitorio;?>">dormitorios: <?php echo $dormitorio;?></option>
                 <?php endforeach;?>
             </select>
             <select name="banos" class="buscador__elemento-select">
-                <option value="" selected disabled hidden>Baños</option>
+                <option value="" selected disabled hidden>Baños (mínimo)</option>
                 <?php foreach ($banos_array as $bano): ?>
-                    <option value="<?php echo $bano;?>"><?php echo $bano;?></option>
+                    <option value="<?php echo $bano;?>">baños: <?php echo $bano;?></option>
                 <?php endforeach;?>
             </select>
             <select name="provincia" class="buscador__elemento-select">
@@ -129,16 +129,16 @@
                     <option value="<?php echo $provincia;?>"><?php echo $provincia;?></option>
                 <?php endforeach;?>
             </select>
-            <select name="areamin" class="buscador__elemento-select buscador__elemento-select--area">
+            <select name="area" class="buscador__elemento-select buscador__elemento-select--area">
                 <option value="" selected disabled hidden>Metros Cuadrados (mínimo)</option>
                 <?php foreach ($area_array as $area): ?>
-                    <option value="<?php echo $area;?>"><?php echo $area;?></option>
+                    <option value="<?php echo $area;?>">min: <?php echo $area;?> m2</option>
                 <?php endforeach;?>
             </select>
             <select name="precio" class="buscador__elemento-select">
                 <option value="" selected disabled hidden>Precio (mínimo)</option>
                 <?php foreach ($precio_array as $precio): ?>
-                    <option value="<?php echo $precio;?>"><?php echo $precio;?></option>
+                    <option value="<?php echo $precio;?>">min: $ <?php echo $precio;?></option>
                 <?php endforeach;?>
             </select>
             <button type="submit" class="buscador__elemento-boton">BUSCAR</button>

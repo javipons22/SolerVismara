@@ -1,8 +1,24 @@
 // Se agrega jQuery de este modo para wordpress
 jQuery(document).ready(function($){
 
+    // La funcion crea inputs para que al cambiar la opcion "Mas reciente.. etc.." en la pagina inmuebles , se haga un GET del query que existia previamente en la pagina
+    function crearInputs(urlParams) {
+
+        for (const [key, value] of urlParams.entries()) {
+            if (key !== 'order') {
+                var input = document.createElement("input");
+                input.setAttribute("type", "hidden");
+                input.setAttribute("name", key);
+                input.setAttribute("value", value);
+
+                document.getElementById("formulario-order").appendChild(input);
+            }        
+        }
+    }
+
     // Cambiar input de orden al recibir un query
     var urlParams = new URLSearchParams(window.location.search);
+    
     var query = urlParams.getAll('order');
     try{
         if(query) {
@@ -13,6 +29,7 @@ jQuery(document).ready(function($){
     }
     try {
         document.getElementById("formulario-order").addEventListener("change", function(){
+            crearInputs(urlParams);
             this.submit();
         });
     } catch(e) {
@@ -73,5 +90,16 @@ jQuery(document).ready(function($){
             document.getElementById(elemento).value = seleccion;
         }  
     }
+
+    function seleccionarCamposBuscador(urlParams) {
+
+        for (const [key, value] of urlParams.entries()) {
+            if (key !== 'order') {
+                let element = document.getElementById(key);
+                element.value = value;
+            }        
+        }
+    }
     
+    seleccionarCamposBuscador(urlParams);
 });

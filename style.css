@@ -459,7 +459,7 @@ html, body {
 .pag-inmuebles, .pag-single, .pag-compania {
   display: flex;
   flex-direction: column;
-  padding: 2.5em 0;
+  padding: 2.5em 0 4.375em 0;
   margin: 0 auto;
 }
 
