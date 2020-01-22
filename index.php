@@ -5,7 +5,7 @@
     <section class="banner">
         <img class="banner__imagen" src="<?php echo $img_path; ?>/banner.jpg" alt="imagen banner">
         <div class="banner__info">
-            <h1 class="banner__titulo"><strong>Capacidad</strong>, Transparencia, <strong>Eficiencia</strong>, Tranquilidad"</h1>
+            <h1 class="banner__titulo">Tus <strong>asesores inmobiliarios</strong> de confianza”, “Trabajamos por y para tu <strong>tranquilidad</strong>.</h1>
             <p class="banner__descripcion">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic id eveniet dolorem officia eum eaque eligendi officiis itaque nesciunt. Omnis?</p>    
         </div>
     </section>
@@ -198,7 +198,7 @@
 						<?php endif;?>
 						<?php 
 						$extras = get_field('extra');
-						$extrasArray = explode(" ",$extras);
+						$extrasArray = explode("-",$extras);
 						if ($extras):
 						foreach($extrasArray as $extra):?>
 						<span class="propiedad__dato">

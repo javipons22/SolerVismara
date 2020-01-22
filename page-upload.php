@@ -104,7 +104,7 @@ $query = new WP_Query($args);
             <div>
                 <?php
                 foreach ($extras as $extra) {
-                    echo '<input id="'. $extra .'" type="checkbox" name="extra[]" value=' . $extra .'>' . $extra . '<br>';
+                    echo '<input id="'. $extra .'" type="checkbox" name="extra[]" value="' . $extra .'">' . $extra . '<br>';
                 }   
                 ?>
             </div>

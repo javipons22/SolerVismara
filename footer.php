@@ -43,9 +43,9 @@
             <div class="links">
                 <h2 class="links__titulo">LINKS</h2>
                 <ul class="links__info">
-                    <li><a href="#">Inicio</a></li>
+                    <li><a href="/SV/">Inicio</a></li>
                     <li>
-                        <a href="#">Inmuebles</a>
+                        <a href="/SV/inmuebles">Inmuebles</a>
                         <ul>
                             <li>Departamento</li>
                             <li>Casa</li>
@@ -55,13 +55,13 @@
                             <li>Terreno</li>
                         </ul>
                     </li>
-                    <li><a href="#">Quienes Somos</a></li>
-                    <li><a href="#">Contacto</a></li>
+                    <li><a href="/SV/quienes-somos">Quienes Somos</a></li>
+                    <li><a href="/SV/contacto">Contacto</a></li>
                 </ul>
             </div>
             <div class="contacto">
                 <h2 class="contacto__titulo">CONTACTO</h2>
-                <p class="contacto__descripcion">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt aspernatur laboriosam hic, rerum molestias facilis quibusdam voluptate quis harum asperiores!</p>
+                <p class="contacto__descripcion"><strong>Optimizamos nuestro servicio</strong> a través de esta web para que te puedas asesorar más facilmente. El <strong>próximo paso</strong> es contactarnos y contarnos sobre el inmueble que te interesa.</p>
                 <ul class="contacto__info">
                     <li><img class="contacto__icono icon" src="<?php echo $img_path; ?>/map.svg" alt="icono gps">Av. Colon 168 - Piso 3 - Oficina G</li>
                     <li><img class="contacto__icono icon" src="<?php echo $img_path; ?>/envelope.svg" alt="icono gps">info@solervismara.com</li>

@@ -81,7 +81,6 @@ function uploadPropiedad($postVariable) {
 				$extrasArray[] = $extra;
 			}
 			$extrasEndValue = implode("-",$extrasArray);
-			//echo $extrasEndValue;
 			update_field($name, $extrasEndValue, $post_id);
 
 		} else {
@@ -166,4 +165,6 @@ if( 'POST' == $_SERVER['REQUEST_METHOD']  ) {
 	}
 	
 }
+
+header( "Location: " .get_site_url() . "/dashboard" );
 ?>

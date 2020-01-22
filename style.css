@@ -886,7 +886,7 @@ html, body {
   top: 0.625em;
 }
 .propiedad__info {
-  padding: 0.9375em 0.625em 0.625em 1.25em;
+  padding: 0.9375em 1.25em 0.625em 1.25em;
   flex-basis: 58%;
   display: flex;
   flex-direction: column;
@@ -1037,6 +1037,7 @@ html, body {
 .contacto__descripcion, .links__descripcion, .recientes__descripcion {
   font-size: 0.75em;
   padding: 0 0 1.875em 0;
+  line-height: 1.3125em;
 }
 .contacto__info, .links__info, .recientes__info {
   font-size: 0.6875em;
@@ -1110,7 +1111,7 @@ html, body {
 }
 .propiedad-reciente__contenido {
   font-size: 1.0625em;
-  margin-left: 1.5625em;
+  margin: 0.4375em 1.875em 0.4375em 1.5625em;
   display: flex;
   align-self: stretch;
   width: 100%;

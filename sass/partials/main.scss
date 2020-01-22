@@ -1,12 +1,10 @@
 //@todo
 // agregar 'social' al footer
-// Ver max width del container en pantalla de 1024px
 // Pagina contacto modificar "otras formas.. "
-// Arreglar links footer
 // Arreglar extras en edit handler que no anda
-// Cuando se selecciona el orden se borran los queries pasados(Arreglar)
 // Arreglar pagina cuando se agrega o edita un inmueble
-// Quiero mas informacion en single.php agregar link de contacto
+// Ver mayusculas de titulos y campos con text-transform
+// boton login
 
 
 body {
@@ -779,7 +777,7 @@ html, body {
         top: em(10px);
     }
     &__info {
-        padding:em(15px) em(10px) em(10px) em(20px);
+        padding:em(15px) em(20px) em(10px) em(20px);
         flex-basis: 58%;
         display:flex;
         flex-direction: column;
@@ -931,6 +929,7 @@ html, body {
     &__descripcion {
         font-size:em(12px);
         padding: 0 0 em(30px) 0;
+        line-height: em(21px);
     }
     &__info {
         font-size:em(11px);
@@ -1010,7 +1009,7 @@ html, body {
     }
     &__contenido {
         font-size:em(17px);
-        margin-left: em(25px);
+        margin: em(7px) em(30px) em(7px) em(25px);
         display:flex;
         align-self:stretch;
         width:100%;

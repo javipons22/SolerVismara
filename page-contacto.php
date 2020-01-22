@@ -13,7 +13,7 @@
             <input class="pag-contacto__elemento-input" type="text" name="apellido" placeholder="Escribe tu apellido">
             <input class="pag-contacto__elemento-input" type="email" name="email" placeholder="Escribe tu e-mail">
             <input class="pag-contacto__elemento-input" type="text" name="telefono" placeholder="Escribe tu teléfono">
-            <textarea class="pag-contacto__elemento-area" name="mensaje" placeholder="Escribe el mensaje"></textarea>
+            <textarea class="pag-contacto__elemento-area" id="msg" name="mensaje" placeholder="Escribe el mensaje"></textarea>
             <button type="submit" class="pag-contacto__elemento-boton">ENVIAR MENSAJE</button>
         </form>
         <div class="pag-contacto__info-contacto">

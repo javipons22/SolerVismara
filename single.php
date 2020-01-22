@@ -6,7 +6,9 @@
 <?php  while ( have_posts() ) : the_post(); 
 	$main_image_id = get_field('imagen_principal');
 	$images_ids = get_field('imagenes_extra'); 
-	$images_ids_array = explode(" ",$images_ids);?>
+	$images_ids_array = explode(" ",$images_ids);
+	$titulo = get_the_title();
+	?>
 	<div class="info-inmueble">
 		<div class="info-inmueble__heading">
 			<div class="info-inmueble__titulo-container">
@@ -75,7 +77,7 @@
 				</span>
 				<?php endforeach;endif;?>
 			</div>
-			<a href="#" class="info-inmueble__mas-info">Quiero más información</a>
+			<a href="/SV/contacto?msg=Quiero%20más%20información%20sobre:%20<?php echo $titulo;?>" class="info-inmueble__mas-info">Quiero más información</a>
 		</div>
 	</div>
 	

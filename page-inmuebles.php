@@ -153,7 +153,7 @@ $the_query = new WP_Query( $args );
 						<?php endif;?>
 						<?php 
 						$extras = get_field('extra');
-						$extrasArray = explode(" ",$extras);
+						$extrasArray = explode("-",$extras);
 						if ($extras):
 						foreach($extrasArray as $extra):?>
 						<span class="propiedad__dato">
