@@ -992,6 +992,7 @@ html, body {
 }
 .tasaciones__imagen {
   height: 100%;
+  z-index: 1;
 }
 .tasaciones__cta {
   border: 1px solid white;
@@ -1147,7 +1148,7 @@ html, body {
 .copyright {
   font-family: "Open Sans", sans-serif;
   color: rgba(255, 255, 255, 0.8);
-  font-size: 0.6875em;
+  font-size: 0.8125em;
   text-align: center;
   border-top: 1px solid #888;
   margin: 0 14px;

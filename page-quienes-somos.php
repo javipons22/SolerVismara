@@ -12,7 +12,13 @@
             <img class="pag-compania__imagen" src="<?php echo $img_path?>/fotos oficina/1.jpg">
         </div>
         <div class="pag-compania__descripcion">
-            <p><strong>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit sint eligendi nemo, labore recusandae fuga numquam.</strong><br></br> Velit consequuntur accusantium aliquam, veritatis distinctio, dicta sint suscipit reiciendis ipsum ad alias voluptate. Doloribus, soluta. Debitis alias itaque aliquam architecto hic sequi et iste saepe sed rem molestiae incidunt aspernatur quibusdam, enim impedit ab inventore sit cupiditate suscipit exercitationem corrupti expedita ipsum, modi aperiam? Quod fugiat quam consectetur sit non id impedit, nulla quis atque tempore magnam labore rem incidunt placeat nobis aut ut in debitis, beatae eius architecto. Earum voluptatibus, quo similique laborum ratione quaerat quibusdam exercitationem ipsa consectetur beatae sit quod, a distinctio facilis laudantium. Minima, in fuga. Amet, quos qui.</p>
+            <p><strong>Somos una empresa inmobiliaria joven orientada a la captación y comercialización de inmuebles que presenten gran potencial para el desarrollo de proyectos inmobiliarios , a fin de satisfacer la creciente demanda de todo tipo de inversores.</strong><br><br>
+
+Nuestros servicios abarcan la coordinación y la unión entre la oferta y la demanda , y la compra-venta de inmuebles, hasta el desarrollo de la publicidad del emprendimiento dotándolo de las mejores posibilidades para arribar a un exitoso proceso de venta.<br><br>
+
+Nuestra misión es ser referentes en nuestro mercado inmobiliario, transformando pequeñas oportunidades en grandes proyectos de inversión. Buscamos personalizar nuestros servicios articulando los requerimientos de los clientes a las ofertas de un mercado en constante transformación.<br><br>
+
+Nuestros valores son el compromiso: con el trabajo, con nuestros clientes. Dedicación: trabajando con pasión , respeto y profesionalismo. Credibilidad: el cumplimiento de la palabra dada sustenta nuestra confianza.</p>
         </div>  
     </div>
     <div class="staff">
@@ -22,12 +28,15 @@
             </div>
             <div class="staff__info">
                 <div class="staff__titulo-contenedor">
-                    <span class="staff__cargo">Martillero Público</span>
                     <span class="staff__nombre">RICARDO SOLER</span>
+                    <span class="staff__cargo">Titulo Universitario otorgado por la UES Siglo XXI</span>
+                    <span class="staff__cargo">Martillero Público MP:053360</span>
+                    <span class="staff__cargo">Martillero Judicial MP:01-2741</span>
+                    <span class="staff__cargo">Corredor Público MP:045039</span>
                 </div>
                 <div class="staff__datos-contenedor">
-                    <span class="staff__email"><strong>Email:</strong> ricardosoler@gmail.com</span>
-                    <span class="staff__tel"><strong>Cel:</strong> +54 351 5 309656</span>
+                    <span class="staff__email"><strong>Email:</strong> ricardosolermartillero@gmail.com</span>
+                    <span class="staff__tel"><strong>Cel:</strong> +54 351 6 879439</span>
                 </div>
             </div>
         </article>
@@ -37,12 +46,14 @@
             </div>
             <div class="staff__info">
                 <div class="staff__titulo-contenedor">
-                    <span class="staff__cargo">Martillero Público</span>
                     <span class="staff__nombre">SANTIAGO VISMARA</span>
+                    <span class="staff__cargo">Titulo Universitario otorgado por la UNC</span>
+                    <span class="staff__cargo">Martillero Judicial MP:01-2746</span>
+                    <span class="staff__cargo">Corredor Público MP:04-4578</span>
                 </div>
                 <div class="staff__datos-contenedor">
-                    <span class="staff__email"><strong>Email:</strong> santiagovismara@gmail.com</span>
-                    <span class="staff__tel"><strong>Cel:</strong> +54 351 5 151705</span>
+                    <span class="staff__email"><strong>Email:</strong> santivismara66@gmail.com</span>
+                    <span class="staff__tel"><strong>Cel:</strong> +54 351 5 390280</span>
                 </div>
             </div>
         </article>

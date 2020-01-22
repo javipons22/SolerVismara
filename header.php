@@ -15,13 +15,14 @@
         <div class="top-header">
             <div class="top-header__container container">
                     <ul class="top-header__contact-info">
-                        <li><a href="#"><img src="<?php echo $img_path; ?>/telephone.svg" alt="telephone icon" class="icon top-header__icon">351 6 8794439</a></li>
-                        <li><a href="#"><img src="<?php echo $img_path; ?>/envelope.svg" alt="email icon" class="icon top-header__icon top-header__icon--envelope" >info@solervismara.com</a></li>
+                        <li><a href="#"><img src="<?php echo $img_path; ?>/telephone.svg" alt="telephone icon" class="icon top-header__icon">351 6 879439</a></li>
+                        <li><a href="#"><img src="<?php echo $img_path; ?>/telephone.svg" alt="telephone icon" class="icon top-header__icon">351 5 390280</a></li>
+                        <li><a href="#"><img src="<?php echo $img_path; ?>/envelope.svg" alt="email icon" class="icon top-header__icon top-header__icon--envelope">soler.vismara@gmail.com</a></li>
                     </ul>
                     <ul class="top-header__contact-info top-header__contact-info--last">
-                        <li><a href="#"><img src="<?php echo $img_path; ?>/facebook (1).svg" alt="facebook icon" class="icon top-header__icon"></a></li>
-                        <li><a href="#"><img src="<?php echo $img_path; ?>/twitter.svg" alt="twitter icon" class="icon top-header__icon top-header__icon--twitter"></a></li>
-                        <li><a href="#"><img src="<?php echo $img_path; ?>/instagram (1).svg" alt="instagram icon" class="icon top-header__icon top-header__icon--instagram"></a></li>
+                        <li><a href="/solervismarabienesinmuebles"><img src="<?php echo $img_path; ?>/facebook (1).svg" alt="facebook icon" class="icon top-header__icon"></a></li>
+                        <li><a href="@solervismara"><img src="<?php echo $img_path; ?>/twitter.svg" alt="twitter icon" class="icon top-header__icon top-header__icon--twitter"></a></li>
+                        <li><a href="https://instagram.com/soler_vismara_bienes_inmuebles"><img src="<?php echo $img_path; ?>/instagram (1).svg" alt="instagram icon" class="icon top-header__icon top-header__icon--instagram"></a></li>
                     </ul>
             </div>
         </div>

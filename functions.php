@@ -114,3 +114,10 @@ function remove_admin_bar() {
 	}
 }
 ?>
+<?php
+add_action('wp_logout','ps_redirect_after_logout');
+function ps_redirect_after_logout(){
+         wp_redirect( get_site_url() );
+         exit();
+}
+?>

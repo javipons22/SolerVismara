@@ -129,7 +129,7 @@
                     <option value="<?php echo $provincia;?>"><?php echo $provincia;?></option>
                 <?php endforeach;?>
             </select>
-            <select name="area" class="buscador__elemento-select buscador__elemento-select--area">
+            <select name="area" class="buscador__elemento-select">
                 <option value="" selected disabled hidden>Metros Cuadrados (mínimo)</option>
                 <?php foreach ($area_array as $area): ?>
                     <option value="<?php echo $area;?>">min: <?php echo $area;?> m2</option>

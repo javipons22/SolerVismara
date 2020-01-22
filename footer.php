@@ -61,11 +61,12 @@
             </div>
             <div class="contacto">
                 <h2 class="contacto__titulo">CONTACTO</h2>
-                <p class="contacto__descripcion"><strong>Optimizamos nuestro servicio</strong> a través de esta web para que te puedas asesorar más facilmente. El <strong>próximo paso</strong> es contactarnos y contarnos sobre el inmueble que te interesa.</p>
+                <p class="contacto__descripcion"><strong>Optimizamos nuestro servicio</strong> a través de esta web para que te puedas asesorar más fácilmente. El <strong>próximo paso</strong> es contactarnos y contarnos sobre el inmueble que te interesa.</p>
                 <ul class="contacto__info">
                     <li><img class="contacto__icono icon" src="<?php echo $img_path; ?>/map.svg" alt="icono gps">Av. Colon 168 - Piso 3 - Oficina G</li>
-                    <li><img class="contacto__icono icon" src="<?php echo $img_path; ?>/envelope.svg" alt="icono gps">info@solervismara.com</li>
-                    <li><img class="contacto__icono icon" src="<?php echo $img_path; ?>/telephone.svg" alt="icono gps">0351 4589652</li>
+                    <li><img class="contacto__icono icon" src="<?php echo $img_path; ?>/envelope.svg" alt="icono gps">soler.vismara@gmail.com</li>
+                    <li><img class="contacto__icono icon" src="<?php echo $img_path; ?>/telephone.svg" alt="icono gps">351 6 879439</li>
+                    <li><img class="contacto__icono icon" src="<?php echo $img_path; ?>/telephone.svg" alt="icono gps">351 5 390280</li>
                 </ul>
                 <iframe  class="contacto__mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3405.0428677821155!2d-64.18736968445977!3d-31.412944981405214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a2829c01190d%3A0xb3dbb12bee9d3a8f!2sAv.%20Col%C3%B3n%20168%2C%20X5022%20C%C3%B3rdoba!5e0!3m2!1sen!2sar!4v1576180339294!5m2!1sen!2sar" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
             </div>

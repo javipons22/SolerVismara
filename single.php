@@ -12,7 +12,7 @@
 	<div class="info-inmueble">
 		<div class="info-inmueble__heading">
 			<div class="info-inmueble__titulo-container">
-				<h1 class="info-inmueble__titulo"><?php the_title();?></h1>
+				<h1 class="info-inmueble__titulo"><?php ucfirst(the_title());?></h1>
 				<span class="info-inmueble__direccion">
 					<img src="<?php echo $img_path; ?>/map.svg" alt="icono gps" class="propiedad__icono propiedad__icono--gps icon">
 					<?php echo ucfirst(get_field('direccion')); if(get_field('barrio')) : echo " - " ; echo ucfirst(get_field('barrio')); endif;if(get_field('provincia')) : echo " - " ; echo ucfirst(get_field('provincia')); endif;?>
@@ -69,7 +69,7 @@
 				<?php endif;?>
 				<?php 
 				$extras = get_field('extra');
-				$extrasArray = explode(" ",$extras);
+				$extrasArray = explode("-",$extras);
 				if ($extras):
 				foreach($extrasArray as $extra):?>
 				<span class="propiedad__dato">
