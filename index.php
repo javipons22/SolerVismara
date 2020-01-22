@@ -52,6 +52,46 @@
         </ul>
     </section>
     <!-- fin servicios -->
+
+    <!-- hacemos query de inmuebles para obtener los valores de los campos del buscador -->
+    <?php
+        // arrays a los que se van a cargar los valores de los campos
+
+        $campos = array('operacion','tipo','dormitorios','banos', 'provincia','area','precio');
+        $campos_to_order = array('dormitorios', 'banos','area','precio');
+
+        $operacion_array = array();
+        $tipo_array = array();
+        $dormitorios_array = array();
+        $banos_array = array();
+        $provincia_array = array();
+        $area_array = array();
+        $precio_array = array();
+
+        // args
+        $args = array(
+            'posts_per_page' => -1,
+            'post_type'		=> 'inmuebles',
+        );
+        
+        // query
+        global $the_query;
+        $the_query = new WP_Query( $args );
+        if( $the_query->have_posts() ): while ( $the_query->have_posts() ) : $the_query->the_post(); 
+            
+            foreach ($campos as $campo) {
+                // Si el valor no esta en el array agregar con array_push
+                if (!in_array(get_field($campo),${$campo . "_array"})):
+                    array_push(${$campo . "_array"}, get_field($campo));
+                endif;
+            }
+        
+        endwhile; endif;
+
+        foreach ($campos_to_order as $array) {
+            asort(${$array . "_array"});
+        }
+    ?>
     <!-- buscador index -->
     <section class="buscador">
         <button class="buscador__boton">
@@ -61,40 +101,45 @@
         <form method="GET" action="/SV/inmuebles" class="buscador__formulario container">
             <select name="operacion" class="buscador__elemento-select">
                 <option value="" selected disabled hidden>Operación</option>
-                <option value="compra">Compra</option>
-                <option value="alquiler">Alquiler</option>
+                <?php foreach ($operacion_array as $operacion): ?>
+                    <option value="<?php echo $operacion;?>"><?php echo $operacion;?></option>
+                <?php endforeach;?>
             </select>
             <select name="tipo" class="buscador__elemento-select">
                 <option value="" selected disabled hidden>Tipo de inmueble</option>
-                <option value="casa">Casa</option>
-                <option value="departamento">Departamento</option>
+                <?php foreach ($tipo_array as $tipo): ?>
+                    <option value="<?php echo $tipo;?>"><?php echo $tipo;?></option>
+                <?php endforeach;?>
             </select>
             <select name="dormitorios" class="buscador__elemento-select">
                 <option value="" selected disabled hidden>Dormitorios</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
+                <?php foreach ($dormitorios_array as $dormitorio): ?>
+                    <option value="<?php echo $dormitorio;?>"><?php echo $dormitorio;?></option>
+                <?php endforeach;?>
             </select>
             <select name="banos" class="buscador__elemento-select">
                 <option value="" selected disabled hidden>Baños</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
+                <?php foreach ($banos_array as $bano): ?>
+                    <option value="<?php echo $bano;?>"><?php echo $bano;?></option>
+                <?php endforeach;?>
             </select>
             <select name="provincia" class="buscador__elemento-select">
                 <option value="" selected disabled hidden>Provincia</option>
-                <option value="Cordoba">Cordoba</option>
-                <option value="Buenos Aires">Buenos Aires</option>
+                <?php foreach ($provincia_array as $provincia): ?>
+                    <option value="<?php echo $provincia;?>"><?php echo $provincia;?></option>
+                <?php endforeach;?>
             </select>
             <select name="areamin" class="buscador__elemento-select buscador__elemento-select--area">
                 <option value="" selected disabled hidden>Metros Cuadrados (mínimo)</option>
+                <?php foreach ($area_array as $area): ?>
+                    <option value="<?php echo $area;?>"><?php echo $area;?></option>
+                <?php endforeach;?>
             </select>
             <select name="precio" class="buscador__elemento-select">
                 <option value="" selected disabled hidden>Precio (mínimo)</option>
+                <?php foreach ($precio_array as $precio): ?>
+                    <option value="<?php echo $precio;?>"><?php echo $precio;?></option>
+                <?php endforeach;?>
             </select>
             <button type="submit" class="buscador__elemento-boton">BUSCAR</button>
         </form>

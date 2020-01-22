@@ -44,6 +44,8 @@ function uploadPropiedad($postVariable) {
 	$precio = $_POST['precio'];
 	$descripcion = $_POST['descripcion'];
 
+	echo $provincia;
+
 	$my_post = array(
 		'post_title' => $titulo,
 		'post_type' => 'inmuebles',
@@ -78,7 +80,7 @@ function uploadPropiedad($postVariable) {
 			foreach ($val as $extra) {
 				$extrasArray[] = $extra;
 			}
-			$extrasEndValue = implode(" ",$extrasArray);
+			$extrasEndValue = implode("-",$extrasArray);
 			//echo $extrasEndValue;
 			update_field($name, $extrasEndValue, $post_id);
 

@@ -121,7 +121,7 @@ $query = new WP_Query($args);
                 <input name="provincia" value="0" type="hidden">
                 <?php 
                 foreach ($provincias as $provincia) {
-                    echo '<input id="'. $provincia .'" type="radio" name="provincia" value=' . $provincia .'>' . $provincia . '<br>';
+                    echo '<input id="'. $provincia .'" type="radio" name="provincia" value="' . $provincia . '">' . $provincia . '<br>';
                 }   
                 ?>
             </div>
