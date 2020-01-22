@@ -56,6 +56,11 @@ $camposTodos = array('titulo','operacion','tipo','extra','provincia','barrio','d
 foreach ($camposTodos as $campo){
     if ($campo == 'titulo') {
         $datos_del_formulario[$campo] = get_the_title($id);
+    }elseif ($campo == 'extra') {
+        $extra_seleccionados = explode("-", get_field($campo,$id));
+        foreach ($extra_seleccionados as $elemento) {
+            $datos_del_formulario[$campo][] = $elemento;
+        }
     } else {
         $datos_del_formulario[$campo] = get_field($campo,$id);
     }
