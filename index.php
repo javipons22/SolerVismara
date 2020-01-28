@@ -6,7 +6,7 @@
         <img class="banner__imagen" src="<?php echo $img_path; ?>/banner.jpg" alt="imagen banner">
         <div class="banner__info">
             <h1 class="banner__titulo">Tus <strong>asesores inmobiliarios</strong> de confianza”, “Trabajamos por y para tu <strong>tranquilidad</strong>.</h1>
-            <p class="banner__descripcion">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic id eveniet dolorem officia eum eaque eligendi officiis itaque nesciunt. Omnis?</p>    
+            <p class="banner__descripcion"></p>    
         </div>
     </section>
     <!-- fin banner -->
@@ -14,37 +14,37 @@
     <section class="servicios">
         <ul class="servicios__contenedor container">
             <li class="servicios__elemento servicios__elemento--first">
-                <a href="/SV/inmuebles?tipo=departamento" class="servicios__link">
+                <a href="/inmuebles?tipo=departamento" class="servicios__link">
                     <img class="servicios__imagen icon" src="<?php echo $img_path; ?>/building.svg" alt="icono departamento">
                     <h2 class="servicios__titulo">DEPARTAMENTO</h2>
                 </a>
             </li>
             <li class="servicios__elemento">
-                <a href="/SV/inmuebles?tipo=casa" class="servicios__link">
+                <a href="/inmuebles?tipo=casa" class="servicios__link">
                     <img class="servicios__imagen icon" src="<?php echo $img_path; ?>/home.svg" alt="icono casa">
                     <h2 class="servicios__titulo">CASA</h2>
                 </a>
             </li>
             <li class="servicios__elemento">
-                <a href="/SV/inmuebles?tipo=oficina" class="servicios__link">
+                <a href="/inmuebles?tipo=oficina" class="servicios__link">
                     <img class="servicios__imagen icon" src="<?php echo $img_path; ?>/building2.svg" alt="icono oficina">
                     <h2 class="servicios__titulo">OFICINA</h2>
                 </a>
             </li>
             <li class="servicios__elemento">
-                <a href="/SV/inmuebles?tipo=local" class="servicios__link">
+                <a href="/inmuebles?tipo=local" class="servicios__link">
                     <img class="servicios__imagen icon" src="<?php echo $img_path; ?>/shop.svg" alt="icono local">
                     <h2 class="servicios__titulo">LOCAL</h2>
                 </a>
             </li>
             <li class="servicios__elemento">
-                <a href="/SV/inmuebles?tipo=campo" class="servicios__link">
+                <a href="/inmuebles?tipo=campo" class="servicios__link">
                     <img class="servicios__imagen icon" src="<?php echo $img_path; ?>/farm.svg" alt="icono campos">
                     <h2 class="servicios__titulo">CAMPO</h2>
                 </a>
             </li>
             <li class="servicios__elemento">
-                <a href="/SV/inmuebles?tipo=terreno" class="servicios__link">
+                <a href="/inmuebles?tipo=terreno" class="servicios__link">
                     <img class="servicios__imagen icon" src="<?php echo $img_path; ?>/terrain.svg" alt="icono terrenos">
                     <h2 class="servicios__titulo">TERRENO</h2>
                 </a>
@@ -98,7 +98,7 @@
             <img class="buscador__icono icon" src="<?php echo $img_path; ?>/magnifier.svg" alt="lupa icono">
             <span class="buscador__texto">buscar inmueble por caracteristicas</span>
         </button>
-        <form method="GET" action="/SV/inmuebles" class="buscador__formulario container">
+        <form method="GET" action="/inmuebles" class="buscador__formulario container">
             <select name="operacion" class="buscador__elemento-select">
                 <option value="" selected disabled hidden>Operación</option>
                 <?php foreach ($operacion_array as $operacion): ?>
@@ -254,7 +254,7 @@
             <img class="tasaciones__imagen" src="<?php echo $img_path; ?>/logo.svg" alt="logo empresa">
             <div class="tasaciones__contenido">
                 <h2 class="tasaciones__titulo">¿Estas buscando <strong>vender</strong> tu propiedad?</h2>
-                <a href="/SV/contacto" class="tasaciones__cta">CONTACTANOS</a>
+                <a href="/contacto" class="tasaciones__cta">CONTACTANOS</a>
             </div>
         </div>
     </section>

@@ -8,7 +8,7 @@
 
 <div class="pag-inmuebles container">
     <aside class="buscador-aside">
-        <a class="link-subir" href="/SV/upload">CARGAR INMUEBLE AL SISTEMA</a>
+        <a class="link-subir" href="/upload">CARGAR INMUEBLE AL SISTEMA</a>
 		<div class="recientes recientes--dark">
 			<h2 class="recientes__titulo">DESTACADOS EN PAGINA INICIO</h2>
 			<ul class="recientes__info">
@@ -41,7 +41,7 @@
 					<div class="propiedad-reciente__contenido">
 						<h2 class="propiedad-reciente__titulo"><?php the_title();?></h2>
 						<span class="propiedad-reciente__fecha"><?php echo get_the_date();?></span>
-						<a class="propiedad-reciente__borrar" href="/SV/dashboard-handler?action=borrar&id=<?php echo get_the_ID(); ?>">QUITAR DE DESTACADOS</a>
+						<a class="propiedad-reciente__borrar" href="/dashboard-handler?action=borrar&id=<?php echo get_the_ID(); ?>">QUITAR DE DESTACADOS</a>
 					</div>
 				</li>
 			<?php endwhile; endif;?>
@@ -108,10 +108,10 @@
 					</div>
 					<div class="propiedad__fecha">
 						<?php if (count($destacados_array) < 4 && !in_array(get_the_ID(), $destacados_array) ) :?>
-							<a class="propiedad__destacar" href="/SV/dashboard-handler?action=agregar&id=<?php echo get_the_ID(); ?>">Destacar</a>
+							<a class="propiedad__destacar" href="/dashboard-handler?action=agregar&id=<?php echo get_the_ID(); ?>">Destacar</a>
 						<?php endif;?>
-                        <a class="propiedad__modificar" href="/SV/edit?id=<?php echo get_the_ID(); ?>">Modificar</a>
-                        <a class="propiedad__borrar" href="/SV/delete?id=<?php echo get_the_ID(); ?>">Eliminar</a>
+                        <a class="propiedad__modificar" href="/edit?id=<?php echo get_the_ID(); ?>">Modificar</a>
+                        <a class="propiedad__borrar" href="/delete?id=<?php echo get_the_ID(); ?>">Eliminar</a>
 						<img class="icon propiedad__icono propiedad__icono--fecha" src="<?php echo $img_path; ?>/calendar.svg" alt="icono fecha"><span><?php echo get_the_date();?></span>
 					</div>
 				</div>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title><?php wp_title(); ?></title>
+    <title>Soler Vismara | Bienes Inmuebles <?php wp_title(); ?></title>
     <?php wp_head(); ?>
 </head>
 <?php $img_path = get_site_url() . "/wp-content/uploads/img";?>
@@ -17,12 +17,12 @@
                     <ul class="top-header__contact-info">
                         <li><a href="#"><img src="<?php echo $img_path; ?>/telephone.svg" alt="telephone icon" class="icon top-header__icon">351 6 879439</a></li>
                         <li><a href="#"><img src="<?php echo $img_path; ?>/telephone.svg" alt="telephone icon" class="icon top-header__icon">351 5 390280</a></li>
-                        <li><a href="#"><img src="<?php echo $img_path; ?>/envelope.svg" alt="email icon" class="icon top-header__icon top-header__icon--envelope">soler.vismara@gmail.com</a></li>
+                        <li><a href="mailto:soler.vismara@gmail.com"><img src="<?php echo $img_path; ?>/envelope.svg" alt="email icon" class="icon top-header__icon top-header__icon--envelope">soler.vismara@gmail.com</a></li>
                     </ul>
                     <ul class="top-header__contact-info top-header__contact-info--last">
-                        <li><a href="/solervismarabienesinmuebles"><img src="<?php echo $img_path; ?>/facebook (1).svg" alt="facebook icon" class="icon top-header__icon"></a></li>
-                        <li><a href="@solervismara"><img src="<?php echo $img_path; ?>/twitter.svg" alt="twitter icon" class="icon top-header__icon top-header__icon--twitter"></a></li>
-                        <li><a href="https://instagram.com/soler_vismara_bienes_inmuebles"><img src="<?php echo $img_path; ?>/instagram (1).svg" alt="instagram icon" class="icon top-header__icon top-header__icon--instagram"></a></li>
+                        <li><a href="https://www.facebook.com/SolerVismara/"><img src="<?php echo $img_path; ?>/facebook (1).svg" alt="facebook icon" class="icon top-header__icon"></a></li>
+                        <li><a href="https://twitter.com/solervismara"><img src="<?php echo $img_path; ?>/twitter.svg" alt="twitter icon" class="icon top-header__icon top-header__icon--twitter"></a></li>
+                        <li><a href="https://www.instagram.com/soler_vismara_bienes_inmuebles/"><img src="<?php echo $img_path; ?>/instagram (1).svg" alt="instagram icon" class="icon top-header__icon top-header__icon--instagram"></a></li>
                     </ul>
             </div>
         </div>
@@ -43,13 +43,13 @@
                 <!-- inicio nav -->
                 <nav class="navegacion">
                     <ul class="navegacion__contenedor">
-                        <li class="navegacion__elemento navegacion__elemento--first"><a class="navegacion__link" href="/SV">INICIO</a></li>
-                        <li class="navegacion__elemento"><a class="navegacion__link" href="/SV/inmuebles">INMUEBLES</a></li>
-                        <li class="navegacion__elemento"><a class="navegacion__link" href="/SV/quienes-somos">QUIENES SOMOS</a></li>
-                        <li class="navegacion__elemento"><a class="navegacion__link" href="/SV/contacto">CONTACTO</a></li>
+                        <li class="navegacion__elemento navegacion__elemento--first"><a class="navegacion__link" href="/">INICIO</a></li>
+                        <li class="navegacion__elemento"><a class="navegacion__link" href="/inmuebles">INMUEBLES</a></li>
+                        <li class="navegacion__elemento"><a class="navegacion__link" href="/quienes-somos">QUIENES SOMOS</a></li>
+                        <li class="navegacion__elemento"><a class="navegacion__link" href="/contacto">CONTACTO</a></li>
                         <?php
                         if ( is_user_logged_in() ) :?>
-                            <li class="navegacion__elemento navegacion__elemento--dash"><a class="navegacion__link" href="/SV/dashboard">ADMIN</a></li>
+                            <li class="navegacion__elemento navegacion__elemento--dash"><a class="navegacion__link" href="/dashboard">ADMIN</a></li>
                             <li class="navegacion__elemento navegacion__elemento--cerrar"><a class="navegacion__link" href="<?php echo wp_logout_url();?>">CERRAR SESIÓN</a></li>
                         <?php endif; ?>
                     </ul>

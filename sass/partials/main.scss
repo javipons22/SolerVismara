@@ -1,9 +1,5 @@
 //@todo
-// agregar 'social' al footer
-// Pagina contacto modificar "otras formas.. "
-// Arreglar pagina cuando se agrega o edita un inmueble
 // boton login
-// links de telefonos en header completar
 
 
 body {
@@ -424,7 +420,7 @@ html, body {
     }
     &__cargo {
         display:block;
-        font-size: em(13px);
+        font-size: em(10px);
     }
     &__nombre {
         font-size:em(18px);
@@ -684,7 +680,7 @@ html, body {
 }
 // .buscador-aside es para la pagina inmuebles
 .buscador-aside {
-    font-size:0.9em;
+    font-size:0.8em;
     margin: em(25px) auto 0 auto;
     padding: em(25px) em(20px);
     -webkit-box-shadow: none;
@@ -1178,4 +1174,31 @@ html, body {
         background:rgba(255, 0, 0,0.3);
 
     }
+}
+
+.upload {
+    height:50vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+#form-login {
+    > p {
+        margin: em(15px) 0;
+    }
+    > p > label {
+        display:block;
+    }
+    > p > input {
+        display:block;
+        font-size: 2em;
+    }
+}
+#wp-submit {
+    display:block;
+    color:white;
+    font-weight:bold;
+    background-color: $azul-claro;
+    padding: em(8px) em(25px);
+    margin: em(15px) 0;
 }

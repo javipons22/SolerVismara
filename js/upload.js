@@ -41,10 +41,10 @@ jQuery(document).ready(function($){
     // Uno para upload form y otro para edit form
     $("#submit_form").click(function() {
         if (document.getElementById("upload-form")) {
-            document.getElementById("upload-form").action = "/SV/upload-handler";
+            document.getElementById("upload-form").action = "/upload-handler";
             $('#upload-form').submit();
         } else if (document.getElementById("edit-form")) {
-            document.getElementById("edit-form").action = "/SV/edit-handler";
+            document.getElementById("edit-form").action = "/edit-handler";
             $('#edit-form').submit();
         }
     });
@@ -67,9 +67,14 @@ jQuery(document).ready(function($){
         }
         
             if (Array.isArray(seleccion)) {
-                seleccion.forEach(e => {
-                    document.getElementById(e).checked = true;
-            });
+                try {
+                        seleccion.forEach(e => {
+                        document.getElementById(e).checked = true;
+                    });
+                } catch (e) {
+                    console.log(e.message);
+                }
+                
         } else {
             if(seleccion && document.getElementById(seleccion)) {
                 document.getElementById(seleccion).checked = true;
@@ -95,8 +100,13 @@ jQuery(document).ready(function($){
 
         for (const [key, value] of urlParams.entries()) {
             if (key !== 'order') {
-                let element = document.getElementById(key);
-                element.value = value;
+                try {
+                    let element = document.getElementById(key);
+                    element.value = value;
+                } catch (e) {
+                    console.log(e.message);
+                }
+                
             }        
         }
     }

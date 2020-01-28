@@ -4,7 +4,7 @@
 */
 ?>
 
-<form id="form-return" method="POST" action="/SV/edit?error=true&id=<?php echo $_POST['post_id'];?>">
+<form id="form-return" method="POST" action="/edit?error=true&id=<?php echo $_POST['post_id'];?>">
 	<?php 
 		foreach ($_POST as $name => $val) 
 		{
@@ -152,8 +152,7 @@ if( 'POST' == $_SERVER['REQUEST_METHOD']  ) {
 				); 
 				$_FILES = array ("my_image_upload2" => $file); 
 				foreach ($_FILES as $file => $array) {              
-					$newupload = my_handle_attachment($file,0); 
-					echo $newupload;
+					$newupload = my_handle_attachment($file,0);
 					$imagenes_multiples_subidas .= $newupload . " ";
 				}	
 			} 

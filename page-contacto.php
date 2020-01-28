@@ -20,27 +20,34 @@
             <h1 class="pag-contacto__titulo">OTRA FORMA DE <span>CONTACTARNOS</span></h1>
             <div class="pag-contacto__social">
                 <div class="pag-contacto__social-elemento">
-                    <a href="www.facebook.com"><img src="<?php echo $img_path; ?>/facebook (1).svg" alt="facebook icon" class="icon pag-contacto__social-icon"></a>
+                    <a href="https://www.facebook.com/SolerVismara/"><img src="<?php echo $img_path; ?>/facebook (1).svg" alt="facebook icon" class="icon pag-contacto__social-icon"></a>
                 </div>  
                 <div class="pag-contacto__social-elemento">
-                    <a href="www.twitter.com"><img src="<?php echo $img_path; ?>/twitter.svg" alt="twitter icon" class="icon pag-contacto__social-icon"></a>
+                    <a href="https://twitter.com/solervismara"><img src="<?php echo $img_path; ?>/twitter.svg" alt="twitter icon" class="icon pag-contacto__social-icon"></a>
                 </div>  
                 <div class="pag-contacto__social-elemento">
-                    <a href="www.instagram.com"><img src="<?php echo $img_path; ?>/instagram (1).svg" alt="instagram icon" class="icon pag-contacto__social-icon"></a>
+                    <a href="https://www.instagram.com/soler_vismara_bienes_inmuebles/"><img src="<?php echo $img_path; ?>/instagram (1).svg" alt="instagram icon" class="icon pag-contacto__social-icon"></a>
                 </div>  
             </div>
             <div class="pag-contacto__telefono">
                 <a href="#"><img src="<?php echo $img_path; ?>/telephone.svg" alt="phone icon" class="icon pag-contacto__telefono-icon"></a>
                 <div class="pag-contacto__telefono-info">
                     <span><strong>Teléfono de contacto:</strong></span>
-                    <span>351 5 309656</span>
+                    <span>351 6 879439</span>
+                </div>
+            </div>
+            <div class="pag-contacto__telefono">
+                <a href="#"><img src="<?php echo $img_path; ?>/telephone.svg" alt="phone icon" class="icon pag-contacto__telefono-icon"></a>
+                <div class="pag-contacto__telefono-info">
+                    <span><strong>Teléfono de contacto:</strong></span>
+                    <span>351 5 390280</span>
                 </div>
             </div>
             <div class="pag-contacto__telefono">
                 <a href="#"><img src="<?php echo $img_path; ?>/envelope.svg" alt="email icon" class="icon pag-contacto__telefono-icon"></a>
                 <div class="pag-contacto__telefono-info">
                     <span><strong>Email de contacto:</strong></span>
-                    <span>info@solervismara.com</span>
+                    <span>soler.vismara@gmail.com</span>
                 </div>
             </div>
         </div>

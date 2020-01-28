@@ -4,7 +4,7 @@
 */
 ?>
 
-<form id="form-return" method="POST" action="/SV/upload?error=true">
+<form id="form-return" method="POST" action="/upload?error=true">
 	<?php 
 		foreach ($_POST as $name => $val) 
 		{
@@ -154,14 +154,16 @@ if( 'POST' == $_SERVER['REQUEST_METHOD']  ) {
 				); 
 				$_FILES = array ("my_image_upload2" => $file); 
 				foreach ($_FILES as $file => $array) {              
-					$newupload = my_handle_attachment($file,0); 
-					echo $newupload;
+					$newupload = my_handle_attachment($file,0);
 					$imagenes_multiples_subidas .= $newupload . " ";
 				}
 				
 			} 
 		} 
-		update_field('imagenes_extra', $imagenes_multiples_subidas, $post_id);
+		// Si no hay imagenes cargadas no hacer update del field porque sino se borran
+		if (strlen($_FILES['my_image_upload2']['name'][0]) != 0) {
+			update_field('imagenes_extra', $imagenes_multiples_subidas, $post_id);
+		}
 	}
 	
 }

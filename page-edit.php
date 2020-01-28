@@ -35,7 +35,7 @@ $query = new WP_Query($args);
             if(isset($_POST[$field . '-add']) && $_POST[$field . '-add'] != '' ){
                 array_push($array,$_POST[$field . '-add']);
                 $to_update= implode("-",$array);
-                update_field($field, $to_update, 32);
+                update_field($field, $to_update, 47);
             }
         }
 

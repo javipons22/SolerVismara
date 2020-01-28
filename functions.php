@@ -89,7 +89,15 @@ function my_pre_get_posts( $query ) {
 add_action('pre_get_posts', 'my_pre_get_posts');
 
 ?>
-
+<?php 
+function hs_image_editor_default_to_gd( $editors ) {
+	$gd_editor = 'WP_Image_Editor_GD';
+	$editors = array_diff( $editors, array( $gd_editor ) );
+	array_unshift( $editors, $gd_editor );
+	return $editors;
+}
+add_filter( 'wp_image_editors', 'hs_image_editor_default_to_gd' );
+?>
 <?php 
 // Imagenes Multiples funcion
 function my_handle_attachment($file_handler,$post_id,$set_thu=false) {
@@ -120,4 +128,5 @@ function ps_redirect_after_logout(){
          wp_redirect( get_site_url() );
          exit();
 }
+
 ?>

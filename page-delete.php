@@ -5,6 +5,6 @@
 */
 $id = $_GET['id']; 
 wp_delete_post($id);
-header( "Location: /SV/dashboard" );
+header( "Location: /dashboard" );
 
 ?>

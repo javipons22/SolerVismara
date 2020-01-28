@@ -19,9 +19,12 @@
 				</span>
 			</div>
 			<div class="info-inmueble__precio-container">
-				<span class="info-inmueble__precio">$<?php the_field('precio');?></span>
+				
 				<?php if(get_field('operacion') == 'alquiler'):?>
+				<span class="info-inmueble__precio">$ <?php the_field('precio');?></span>
 				<span class="info-inmueble__precio-criterio">Por mes</span>
+				<?php else:?>
+				<span class="info-inmueble__precio">U$S <?php the_field('precio');?></span>
 				<?php endif;?>
 			</div>
 		</div>

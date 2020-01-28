@@ -541,7 +541,7 @@ html, body {
 }
 .staff__cargo {
   display: block;
-  font-size: 0.8125em;
+  font-size: 0.625em;
 }
 .staff__nombre {
   font-size: 1.125em;
@@ -796,7 +796,7 @@ html, body {
 }
 
 .buscador-aside {
-  font-size: 0.9em;
+  font-size: 0.8em;
   margin: 1.5625em auto 0 auto;
   padding: 1.5625em 1.25em;
   -webkit-box-shadow: none;
@@ -1279,6 +1279,33 @@ html, body {
   background: rgba(255, 0, 0, 0.3);
 }
 
+.upload {
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#form-login > p {
+  margin: 0.9375em 0;
+}
+#form-login > p > label {
+  display: block;
+}
+#form-login > p > input {
+  display: block;
+  font-size: 2em;
+}
+
+#wp-submit {
+  display: block;
+  color: white;
+  font-weight: bold;
+  background-color: #62b9ff;
+  padding: 0.5em 1.5625em;
+  margin: 0.9375em 0;
+}
+
 @media (max-width: 375px) {
   html {
     font-size: 0.8em;
@@ -1298,7 +1325,7 @@ html, body {
   }
 
   .top-header {
-    font-size: 28px;
+    font-size: 25px;
   }
 
   .main-header {
