@@ -90,7 +90,7 @@ $the_query = new WP_Query( $args );
                 <?php endforeach;?>
 			</select>
 			<select id="area" name="area" class="buscador-aside__elemento-select">
-				<option value="" selected disabled hidden>Metros Cuadrados (mínimo)</option>
+				<option value="" selected disabled hidden>Metros Cuad (mínimo)</option>
 				<?php foreach ($area_array as $area): ?>
                     <option value="<?php echo $area;?>">min: <?php echo $area;?> m2</option>
                 <?php endforeach;?>

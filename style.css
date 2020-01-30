@@ -1126,7 +1126,7 @@ html, body {
 }
 .propiedad-reciente__imagen {
   width: 25%;
-  height: 25%;
+  height: 50px;
   object-fit: cover;
 }
 .propiedad-reciente__fecha {

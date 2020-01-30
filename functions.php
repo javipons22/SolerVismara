@@ -36,11 +36,13 @@ function my_pre_get_posts( $query ) {
 		
 		function setCustomQuery($key,$compare) {
 			if( isset($_GET[$key]) ) {
-				if ($_GET[$key] == 'precio' || $_GET[$key] == 'area') :
+				if ($key == 'precio' || $key == 'area') :
 					$operacion = array(
 						'key'=> $key,
-						'value'=> (int) $_GET[$key],
+						'value'=> intval($_GET[$key]),
+						'type' => 'numeric',
 						'compare' => $compare
+						
 					);
 					return $operacion;
 				else: 
