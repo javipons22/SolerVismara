@@ -4,7 +4,7 @@
 */
 ?>
 
-<form id="form-return" method="POST" action="/edit?error=true&id=<?php echo $_POST['post_id'];?>">
+<form id="form-return" method="POST" action="<?php echo get_site_url(); ?>/edit?error=true&id=<?php echo $_POST['post_id'];?>">
 	<?php 
 		foreach ($_POST as $name => $val) 
 		{

@@ -66,8 +66,6 @@ foreach ($camposTodos as $campo){
     }
 }
 
-// array(18) { ["titulo"]=> string(0) "" ["operacion"]=> string(1) "0" ["operacion-add"]=> string(0) "" ["tipo"]=> string(4) "casa" ["tipo-add"]=> string(0) "" ["extras-add"]=> string(0) "" ["provincia"]=> string(1) "0" ["provincias-add"]=> string(0) "" ["barrio"]=> string(0) "" ["direccion"]=> string(0) "" ["dormitorios"]=> string(1) "0" ["banos"]=> string(1) "0" ["area"]=> string(0) "" ["precio"]=> string(0) "" ["descripcion"]=> string(12) " " ["post_id"]=> string(2) "55" ["my_image_upload_nonce"]=> string(10) "b170dfce06" ["_wp_http_referer"]=> string(22) "/SV/upload/?error=true" }
-
 ?>
 <div class="container">
     
@@ -223,6 +221,6 @@ foreach ($camposTodos as $campo){
 
 <script type="text/javascript">
     let seleccionados = <?php echo json_encode($datos_del_formulario); ?>;
-    console.log(seleccionados);
+    let sitioLink = "<?php echo get_site_url(); ?>";
 </script>
 <?php get_footer(); ?>

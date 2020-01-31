@@ -4,7 +4,7 @@
 */
 ?>
 
-<form id="form-return" method="POST" action="/upload?error=true">
+<form id="form-return" method="POST" action="<?php echo get_site_url(); ?>/upload?error=true">
 	<?php 
 		foreach ($_POST as $name => $val) 
 		{

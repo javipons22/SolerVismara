@@ -98,7 +98,7 @@
             <img class="buscador__icono icon" src="<?php echo $img_path; ?>/magnifier.svg" alt="lupa icono">
             <span class="buscador__texto">buscar inmueble por caracteristicas</span>
         </button>
-        <form method="GET" action="/inmuebles" class="buscador__formulario container">
+        <form method="GET" action="<?php echo get_site_url(); ?>/inmuebles" class="buscador__formulario container">
             <select name="operacion" class="buscador__elemento-select">
                 <option value="" selected disabled hidden>Operación</option>
                 <?php foreach ($operacion_array as $operacion): ?>
@@ -214,35 +214,6 @@
 		</article>
         <?php 
         endwhile;  endif;?>
-            <!-- <article class="propiedad propiedad-index">
-                <div class="propiedad__contenedor-imagen">
-                    <span class="propiedad__badge-destacado">destacado</span>
-                    <img src="<?php //echo $img_path; ?>/1.jpg" class="propiedad__imagen" alt="imagen propiedad">
-                </div>
-                <div class="propiedad__info">
-                    <div class="propiedad__contenedor-titulo">
-                        <h1 class="propiedad__titulo">Beautiful Single Home</h1>
-                        <span class="propiedad__direccion"><img src="<?php //echo $img_path; ?>/map.svg" alt="icono gps" class="propiedad__icono propiedad__icono--gps icon">Av.Colón 168 - Centro Cordoba</span>
-                    </div>
-                    <div class="propiedad__caracteristicas">
-                        <span class="propiedad__dato">
-                            <img class="icon propiedad__icono" src="<?php //echo $img_path; ?>/area.svg" alt="icono area"><span>120m<sup>2</sup></span>
-                        </span>
-                        <span class="propiedad__dato">
-                            <img class="icon propiedad__icono" src="<?php //echo $img_path; ?>/bed.svg" alt="icono cama"><span>3 Dormitorios</span>
-                        </span>
-                        <span class="propiedad__dato">
-                            <img class="icon propiedad__icono" src="<?php //echo $img_path; ?>/shower.svg" alt="icono baño"><span>2 Baños</span>
-                        </span>
-                        <span class="propiedad__dato">
-                            <img class="icon propiedad__icono" src="<?php //echo $img_path; ?>/car.svg" alt="icono auto"><span>Garage</span>
-                        </span>
-                    </div>
-                    <div class="propiedad__fecha">
-                        <img class="icon propiedad__icono propiedad__icono--fecha" src="<?php //echo $img_path; ?>/calendar.svg" alt="icono fecha"><span>Hace 5 días</span>
-                    </div>
-                </div> 
-            </article> -->
         <!-- fin destacados container -->
         </div>
         <!-- fin destacados container -->
@@ -254,7 +225,7 @@
             <img class="tasaciones__imagen" src="<?php echo $img_path; ?>/logo.svg" alt="logo empresa">
             <div class="tasaciones__contenido">
                 <h2 class="tasaciones__titulo">¿Estas buscando <strong>vender</strong> tu propiedad?</h2>
-                <a href="/contacto" class="tasaciones__cta">CONTACTANOS</a>
+                <a href="<?php echo get_site_url(); ?>/contacto" class="tasaciones__cta">CONTACTANOS</a>
             </div>
         </div>
     </section>

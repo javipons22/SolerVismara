@@ -9,12 +9,12 @@ $accion = $_GET['action'];
 if ($accion == 'borrar')
 {
     update_field('destacado', false , $id);
-    header( "Location: /dashboard" );
+    header( "Location: ". get_site_url() ."/dashboard" );
 }
 else if ($accion == 'agregar')
 {
     update_field('destacado', true , $id);
-    header( "Location: /dashboard" );
+    header( "Location: ". get_site_url() ."/dashboard" );
 }
 
 

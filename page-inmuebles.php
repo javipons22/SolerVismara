@@ -58,7 +58,7 @@ $the_query = new WP_Query( $args );
 				asort(${$array . "_array"});
 			}
 		?>
-		<form method="GET" action="/inmuebles" class="buscador-aside__formulario">
+		<form method="GET" action="<?php echo get_site_url(); ?>/inmuebles" class="buscador-aside__formulario">
 			<select id="operacion" name="operacion" class="buscador-aside__elemento-select">
 				<option value="" selected disabled hidden>Operación</option>
 				<?php foreach ($operacion_array as $operacion): ?>

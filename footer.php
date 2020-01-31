@@ -43,9 +43,9 @@
             <div class="links">
                 <h2 class="links__titulo">LINKS</h2>
                 <ul class="links__info">
-                    <li><a href="/">Inicio</a></li>
+                    <li><a href="<?php echo get_site_url(); ?>/">Inicio</a></li>
                     <li>
-                        <a href="/inmuebles">Inmuebles</a>
+                        <a href="<?php echo get_site_url(); ?>/inmuebles">Inmuebles</a>
                         <ul>
                             <li>Departamento</li>
                             <li>Casa</li>
@@ -55,9 +55,9 @@
                             <li>Terreno</li>
                         </ul>
                     </li>
-                    <li><a href="/quienes-somos">Quienes Somos</a></li>
-                    <li><a href="/contacto">Contacto</a></li>
-                    <li><a href="/login">Login</a></li>
+                    <li><a href="<?php echo get_site_url(); ?>/quienes-somos">Quienes Somos</a></li>
+                    <li><a href="<?php echo get_site_url(); ?>/contacto">Contacto</a></li>
+                    <li><a href="<?php echo get_site_url(); ?>/login">Login</a></li>
                 </ul>
             </div>
             <div class="contacto">

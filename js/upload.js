@@ -41,10 +41,10 @@ jQuery(document).ready(function($){
     // Uno para upload form y otro para edit form
     $("#submit_form").click(function() {
         if (document.getElementById("upload-form")) {
-            document.getElementById("upload-form").action = "/upload-handler";
+            document.getElementById("upload-form").action = sitioLink + "/upload-handler";
             $('#upload-form').submit();
         } else if (document.getElementById("edit-form")) {
-            document.getElementById("edit-form").action = "/edit-handler";
+            document.getElementById("edit-form").action = sitioLink + "/edit-handler";
             $('#edit-form').submit();
         }
     });

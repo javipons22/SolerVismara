@@ -43,13 +43,13 @@
                 <!-- inicio nav -->
                 <nav class="navegacion">
                     <ul class="navegacion__contenedor">
-                        <li class="navegacion__elemento navegacion__elemento--first"><a class="navegacion__link" href="/">INICIO</a></li>
-                        <li class="navegacion__elemento"><a class="navegacion__link" href="/inmuebles">INMUEBLES</a></li>
-                        <li class="navegacion__elemento"><a class="navegacion__link" href="/quienes-somos">QUIENES SOMOS</a></li>
-                        <li class="navegacion__elemento"><a class="navegacion__link" href="/contacto">CONTACTO</a></li>
+                        <li class="navegacion__elemento navegacion__elemento--first"><a class="navegacion__link" href="<?php echo get_site_url(); ?>/">INICIO</a></li>
+                        <li class="navegacion__elemento"><a class="navegacion__link" href="<?php echo get_site_url(); ?>/inmuebles">INMUEBLES</a></li>
+                        <li class="navegacion__elemento"><a class="navegacion__link" href="<?php echo get_site_url(); ?>/quienes-somos">QUIENES SOMOS</a></li>
+                        <li class="navegacion__elemento"><a class="navegacion__link" href="<?php echo get_site_url(); ?>/contacto">CONTACTO</a></li>
                         <?php
                         if ( is_user_logged_in() ) :?>
-                            <li class="navegacion__elemento navegacion__elemento--dash"><a class="navegacion__link" href="/dashboard">ADMIN</a></li>
+                            <li class="navegacion__elemento navegacion__elemento--dash"><a class="navegacion__link" href="<?php echo get_site_url(); ?>/dashboard">ADMIN</a></li>
                             <li class="navegacion__elemento navegacion__elemento--cerrar"><a class="navegacion__link" href="<?php echo wp_logout_url();?>">CERRAR SESIÓN</a></li>
                         <?php endif; ?>
                     </ul>

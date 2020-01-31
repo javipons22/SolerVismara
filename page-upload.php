@@ -202,6 +202,7 @@ $query = new WP_Query($args);
 
 <script type="text/javascript">
     let seleccionados = <?php echo json_encode($_POST); ?>;
-    console.log(seleccionados);
+    let sitioLink = "<?php echo get_site_url(); ?>";
+    console.log(sitioLink);
 </script>
 <?php get_footer(); ?>

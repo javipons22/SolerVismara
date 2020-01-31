@@ -149,27 +149,13 @@ a.control_next {
 .slider__imagen {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 body {
   font-family: "Montserrat", sans-serif;
   background: whitesmoke;
   color: rgba(0, 0, 0, 0.8);
-}
-
-html, body {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.contenido-main {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: space-between;
 }
 
 .container {
@@ -1011,6 +997,7 @@ html, body {
   background: rgba(0, 0, 0, 0.8);
 }
 .footer__container {
+  position: relative;
   display: flex;
   flex-direction: column;
 }
