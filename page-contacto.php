@@ -8,7 +8,7 @@
 <div class="pag-contacto container">
     <h1 class="pag-contacto__titulo">CONTACTANOS</h1>
     <div class="pag-contacto__wrapper">
-        <form class="pag-contacto__formulario">
+        <form class="pag-contacto__formulario" method="POST" action="<?php echo get_site_url(); ?>/mail">
             <input class="pag-contacto__elemento-input" type="text" name="nombre" placeholder="Escribe tu nombre">
             <input class="pag-contacto__elemento-input" type="text" name="apellido" placeholder="Escribe tu apellido">
             <input class="pag-contacto__elemento-input" type="email" name="email" placeholder="Escribe tu e-mail">
