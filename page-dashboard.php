@@ -65,7 +65,8 @@
 		$the_query = new WP_Query( $args );
 		?>
 		<?php if( $the_query->have_posts() ): ?>
-		<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+		<?php while ( $the_query->have_posts() ) : $the_query->the_post(); $myCount = $the_query->found_posts;?>
+		<span class="cantidad">Cantidad de inmuebles: <?php echo $myCount;?></span>
 		<article class="propiedad">
 				<div class="propiedad__contenedor-imagen">
 				<?php

@@ -845,6 +845,9 @@ body {
     }
 }
 
+.cantidad {
+    margin-bottom: em(25px);
+}
 .tasaciones {
     background:$azul;
     color:white;
@@ -1155,14 +1158,24 @@ body {
             cursor:pointer;
         }
     }
-    .error {
-        width:100%;
-        padding: em(30px) em(15px);
-        margin: 5px;
-        color:red;
-        background:rgba(255, 0, 0,0.3);
+    
+}
 
-    }
+.error {
+    width:100%;
+    padding: em(30px) em(15px);
+    margin: 5px;
+    color:red;
+    background:rgba(255, 0, 0,0.3);
+
+}
+.no-error {
+    width:100%;
+    padding: em(30px) em(15px);
+    margin: 5px;
+    color:green;
+    background:rgba(0, 255, 0,0.3);
+
 }
 
 .upload {

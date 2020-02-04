@@ -956,6 +956,10 @@ body {
   background: #62b9ff;
 }
 
+.cantidad {
+  margin-bottom: 1.5625em;
+}
+
 .tasaciones {
   background: #1C3680;
   color: white;
@@ -1258,12 +1262,21 @@ body {
   width: 100%;
   cursor: pointer;
 }
-.upload-form .error {
+
+.error {
   width: 100%;
   padding: 1.875em 0.9375em;
   margin: 5px;
   color: red;
   background: rgba(255, 0, 0, 0.3);
+}
+
+.no-error {
+  width: 100%;
+  padding: 1.875em 0.9375em;
+  margin: 5px;
+  color: green;
+  background: rgba(0, 255, 0, 0.3);
 }
 
 .upload {
