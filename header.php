@@ -6,6 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Soler Vismara | Bienes Inmuebles <?php wp_title(); ?></title>
     <?php wp_head(); ?>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-157892971-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-157892971-1');
+</script>
+<!-- fin analytics -->
 </head>
 <?php $img_path = get_site_url() . "/wp-content/uploads/img";?>
 <body <?php body_class();?>>

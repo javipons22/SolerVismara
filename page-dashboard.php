@@ -52,6 +52,7 @@
             <div class="inmuebles__top-bar">
                 <img class="icon inmuebles__icono" src="<?php echo $img_path; ?>/list.svg" alt="icono lista">
                 <h1 class="inmuebles__titulo">Administrador de Inmuebles</h1>
+				
 			</div>
 					<?php
 		// args
@@ -64,9 +65,10 @@
 
 		$the_query = new WP_Query( $args );
 		?>
-		<?php if( $the_query->have_posts() ): ?>
-		<?php while ( $the_query->have_posts() ) : $the_query->the_post(); $myCount = $the_query->found_posts;?>
+		<?php if( $the_query->have_posts() ): $myCount = $the_query->found_posts;?>
 		<span class="cantidad">Cantidad de inmuebles: <?php echo $myCount;?></span>
+		<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+		
 		<article class="propiedad">
 				<div class="propiedad__contenedor-imagen">
 				<?php
@@ -123,6 +125,7 @@
 						No hay resultados
 	<?php endif;?>
         </div>
+	
     </section>
 </div>
 <?php get_footer(); ?>

@@ -127,6 +127,7 @@
     }
     .buscador-aside {
         position:sticky;
+        position: -webkit-sticky; /* Safari */
         top:135px;
         left:0;
         margin-top:0;

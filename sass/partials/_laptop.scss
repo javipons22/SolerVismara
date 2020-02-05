@@ -138,6 +138,7 @@
     .buscador-aside {
         font-size:1em;
         position:sticky;
+        position: -webkit-sticky; /* Safari */
         top:155px;
     }
     #slider {

@@ -44,7 +44,7 @@ $mensaje = $_POST['mensaje'];
 $errorMSG = "";
 
 // TELEFONO
-if (empty($nombre) || empty($pais) || empty($email) || empty($mensaje)) {
+if (empty($nombre) || empty($telefono) || empty($email) || empty($mensaje)) {
     $errorMSG = "1";
 }
 
@@ -87,11 +87,12 @@ $headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
 if ($nombre1 === false || $apellido1 === false || $email1 === false || $mensaje1 === false || $telefono1 === false) {
     header( "Location: " .get_site_url() . "/contacto?error=true" );
 } else {
-    // Si se paso la MEDIDA DE SEGURIDAD 1 enviar email
-    $success = mail($EmailTo, $Subject, $Body, $headers);
-    // $response = array();
-
-    if ($success) {
+    if ($errorMSG == ""){
+        // Si se paso la MEDIDA DE SEGURIDAD 1 enviar email
+        $success = mail($EmailTo, $Subject, $Body, $headers);
+        // $response = array();
+    }
+    if ($success && $errorMSG == "") {
         header( "Location: " .get_site_url() . "/contacto?error=false" );
         // $response['status'] = 'success';
         // $response['message'] = 'Tu mensaje fue enviado con exito!!';
