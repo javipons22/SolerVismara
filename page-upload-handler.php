@@ -55,7 +55,7 @@ function uploadPropiedad($postVariable) {
 	$post_id = wp_insert_post($my_post);
 
 	// TODOS LOS CAMPOS PARA ITERAR
-	$camposTodos = array('titulo','operacion','tipo','extras','provincia','barrio','direccion','dormitorios','area','precio','descripcion');
+	$camposTodos = array('titulo','operacion','tipo','extras','provincia','barrio','direccion','dormitorios','area','precio','descripcion','localidad');
 
 	// CAMPOS OBLIGATORIOS Controlamos que todas las variables tengan valor , si no es asi redireccionamos
 	$camposValidar = array('titulo','operacion','tipo','provincia','area','precio','direccion');

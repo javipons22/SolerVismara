@@ -49,7 +49,7 @@ jQuery(document).ready(function($){
         }
     });
 
-    let campos1 = ['operacion','tipo','extra','provincia'];
+    let campos1 = ['operacion','tipo','extra','provincia','localidad'];
     let campos2 = ['titulo','barrio','direccion','dormitorios','banos','area','precio','descripcion'];
     campos1.forEach(element => {
         checkRadio(element);

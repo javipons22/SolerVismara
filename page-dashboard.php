@@ -83,7 +83,7 @@
 				<div class="propiedad__info">
 					<div class="propiedad__contenedor-titulo">
 						<h1 class="propiedad__titulo"><?php the_title();?></h1>
-						<span class="propiedad__direccion"><img src="<?php echo $img_path; ?>/map.svg" alt="icono gps" class="propiedad__icono propiedad__icono--gps icon"><?php the_field('direccion')?><?php if(get_field('barrio')): echo " - " ;echo ucfirst(get_field('barrio')); endif;?><?php if(get_field('provincia')): echo " - " ;echo ucfirst(get_field('provincia')) ;endif;?></span>
+						<span class="propiedad__direccion"><img src="<?php echo $img_path; ?>/map.svg" alt="icono gps" class="propiedad__icono propiedad__icono--gps icon"><?php the_field('direccion');?><?php if(get_field('barrio')): echo " - " ;echo ucfirst(get_field('barrio')); endif;?><?php if(get_field('localidad')): echo " - " ;echo ucfirst(get_field('localidad')); endif;?><?php if(get_field('provincia')): echo " - " ;echo ucfirst(get_field('provincia')) ;endif;?></span>
 					</div>
 					<div class="propiedad__caracteristicas">
 						<span class="propiedad__dato">

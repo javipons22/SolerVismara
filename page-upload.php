@@ -25,6 +25,7 @@ $query = new WP_Query($args);
         $tipos = explode("-", get_field('tipo'));
         $extras = explode("-", get_field('extras'));
         $provincias = explode("-", get_field('provincias'));
+        $localidades = explode("-", get_field('localidad'));
 
     endwhile; endif; wp_reset_postdata(); ?>
     <?php
@@ -35,7 +36,12 @@ $query = new WP_Query($args);
             if(isset($_POST[$field . '-add']) && $_POST[$field . '-add'] != '' ){
                 array_push($array,$_POST[$field . '-add']);
                 $to_update= implode("-",$array);
-                update_field($field, $to_update, 47);
+                if (get_site_url() == "http://localhost/SV")
+                {
+                    update_field($field, $to_update, 32);  
+                } else {
+                    update_field($field, $to_update, 47);
+                }
             }
         }
 
@@ -45,6 +51,7 @@ $query = new WP_Query($args);
     addFieldValue('button2',$tipos,'tipo');
     addFieldValue('button3',$extras,'extras');
     addFieldValue('button4',$provincias,'provincias');
+    addFieldValue('button5',$localidades,'localidad');
 
     
     ?>
@@ -128,6 +135,23 @@ $query = new WP_Query($args);
             <div>
                 <input type="text" name="provincias-add" placeholder="Agregar nueva opción...">
                 <input type="submit" name="button4" value="+">
+            </div>
+        </div>
+        <div class="upload-form__elemento upload-form__elemento--provincia">
+            <h2>LOCALIDAD</h2>
+            <span>Elige la localidad</span>
+            <br>
+            <div>
+                <input name="localidad" value="0" type="hidden">
+                <?php 
+                foreach ($localidades as $localidad) {
+                    echo '<input id="'. $localidad .'" type="radio" name="localidad" value="' . $localidad . '">' . $localidad . '<br>';
+                }   
+                ?>
+            </div>
+            <div>
+                <input type="text" name="localidad-add" placeholder="Agregar nueva opción...">
+                <input type="submit" name="button5" value="+">
             </div>
         </div>
         <div class="upload-form__elemento upload-form__elemento--barrio">

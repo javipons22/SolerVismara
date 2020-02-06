@@ -22,6 +22,12 @@ jQuery(document).ready(function($){
         } else {
             $('.buscador__boton').show();
             $('.buscador__formulario').hide();
+            try {
+                $('.info-inmueble__mas-info').attr("href","https://wa.me/5493516879439?text=Quiero%20más%20información%20sobre:%20"+titulo);
+            } catch (e) {
+                console.log(e.message);
+            }
+            
         }
         // Cuando hacemos resize que tambien cambie el espacio del top del sitio
         var height1 = $('.main-header').height();

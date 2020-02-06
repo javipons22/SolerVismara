@@ -57,7 +57,7 @@
     <?php
         // arrays a los que se van a cargar los valores de los campos
 
-        $campos = array('operacion','tipo','dormitorios','banos', 'provincia','area','precio');
+        $campos = array('tipo','dormitorios','banos', 'provincia','area','precio','localidad');
         $campos_to_order = array('dormitorios', 'banos','area','precio');
 
         $operacion_array = array();
@@ -67,6 +67,7 @@
         $provincia_array = array();
         $area_array = array();
         $precio_array = array();
+        $localidad_array = array();
 
         // args
         $args = array(
@@ -81,7 +82,7 @@
             
             foreach ($campos as $campo) {
                 // Si el valor no esta en el array agregar con array_push
-                if (!in_array(get_field($campo),${$campo . "_array"})):
+                if (!in_array(get_field($campo),${$campo . "_array"}) && get_field($campo)):
                     array_push(${$campo . "_array"}, get_field($campo));
                 endif;
             }
@@ -99,44 +100,51 @@
             <span class="buscador__texto">buscar inmueble por caracteristicas</span>
         </button>
         <form method="GET" action="<?php echo get_site_url(); ?>/inmuebles" class="buscador__formulario container">
-            <select name="operacion" class="buscador__elemento-select">
-                <option value="" selected disabled hidden>Operación</option>
-                <?php foreach ($operacion_array as $operacion): ?>
-                    <option value="<?php echo $operacion;?>"><?php echo $operacion;?></option>
-                <?php endforeach;?>
-            </select>
             <select name="tipo" class="buscador__elemento-select">
                 <option value="" selected disabled hidden>Tipo de inmueble</option>
+                <option value="">Ninguno</option>
                 <?php foreach ($tipo_array as $tipo): ?>
                     <option value="<?php echo $tipo;?>"><?php echo $tipo;?></option>
                 <?php endforeach;?>
             </select>
             <select name="dormitorios" class="buscador__elemento-select">
                 <option value="" selected disabled hidden>Dormitorios (mínimo)</option>
+                <option value="">Ninguno</option>
                 <?php foreach ($dormitorios_array as $dormitorio): ?>
                     <option value="<?php echo $dormitorio;?>">dormitorios: <?php echo $dormitorio;?></option>
                 <?php endforeach;?>
             </select>
             <select name="banos" class="buscador__elemento-select">
                 <option value="" selected disabled hidden>Baños (mínimo)</option>
+                <option value="">Ninguno</option>
                 <?php foreach ($banos_array as $bano): ?>
                     <option value="<?php echo $bano;?>">baños: <?php echo $bano;?></option>
                 <?php endforeach;?>
             </select>
             <select name="provincia" class="buscador__elemento-select">
                 <option value="" selected disabled hidden>Provincia</option>
+                <option value="">Ninguno</option>
                 <?php foreach ($provincia_array as $provincia): ?>
                     <option value="<?php echo $provincia;?>"><?php echo $provincia;?></option>
                 <?php endforeach;?>
             </select>
+            <select name="localidad" class="buscador__elemento-select">
+                <option value="" selected disabled hidden>Localidad</option>
+                <option value="">Ninguno</option>
+                <?php foreach ($localidad_array as $localidad): ?>
+                    <option value="<?php echo $localidad;?>"><?php echo $localidad;?></option>
+                <?php endforeach;?>
+            </select>
             <select name="area" class="buscador__elemento-select">
                 <option value="" selected disabled hidden>Metros Cuadrados (mínimo)</option>
+                <option value="">Ninguno</option>
                 <?php foreach ($area_array as $area): ?>
                     <option value="<?php echo $area;?>">min: <?php echo $area;?> m2</option>
                 <?php endforeach;?>
             </select>
             <select name="precio" class="buscador__elemento-select">
                 <option value="" selected disabled hidden>Precio (mínimo)</option>
+                <option value="">Ninguno</option>
                 <?php foreach ($precio_array as $precio): ?>
                     <option value="<?php echo $precio;?>">min: $ <?php echo $precio;?></option>
                 <?php endforeach;?>
@@ -180,7 +188,7 @@
 				<div class="propiedad__info">
 					<div class="propiedad__contenedor-titulo">
 						<h1 class="propiedad__titulo"><?php the_title();?></h1>
-						<span class="propiedad__direccion"><img src="<?php echo $img_path; ?>/map.svg" alt="icono gps" class="propiedad__icono propiedad__icono--gps icon"><?php the_field('direccion')?><?php if(get_field('barrio')): echo " - " ;echo ucfirst(get_field('barrio')); endif;?><?php if(get_field('provincia')): echo " - " ;echo ucfirst(get_field('provincia')) ;endif;?></span>
+						<span class="propiedad__direccion"><img src="<?php echo $img_path; ?>/map.svg" alt="icono gps" class="propiedad__icono propiedad__icono--gps icon"><?php the_field('direccion');?><?php if(get_field('barrio')): echo " - " ;echo ucfirst(get_field('barrio')); endif;?><?php if(get_field('localidad')): echo " - " ;echo ucfirst(get_field('localidad')); endif;?><?php if(get_field('provincia')): echo " - " ;echo ucfirst(get_field('provincia')) ;endif;?></span>
 					</div>
 					<div class="propiedad__caracteristicas">
 						<span class="propiedad__dato">

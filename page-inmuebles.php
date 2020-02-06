@@ -25,7 +25,7 @@ $the_query = new WP_Query( $args );
 		<?php
 			// arrays a los que se van a cargar los valores de los campos
 
-			$campos = array('operacion','tipo','dormitorios','banos', 'provincia','area','precio');
+			$campos = array('operacion','tipo','dormitorios','banos', 'provincia','area','precio','localidad');
 			$campos_to_order = array('dormitorios', 'banos','area','precio');
 
 			$operacion_array = array();
@@ -35,6 +35,7 @@ $the_query = new WP_Query( $args );
 			$provincia_array = array();
 			$area_array = array();
 			$precio_array = array();
+			$localidad_array = array();
 
 			// args
 			$args2 = array(
@@ -47,7 +48,7 @@ $the_query = new WP_Query( $args );
 				
 				foreach ($campos as $campo) {
 					// Si el valor no esta en el array agregar con array_push
-					if (!in_array(get_field($campo),${$campo . "_array"})):
+					if (!in_array(get_field($campo),${$campo . "_array"}) && get_field($campo)):
 						array_push(${$campo . "_array"}, get_field($campo));
 					endif;
 				}
@@ -59,44 +60,51 @@ $the_query = new WP_Query( $args );
 			}
 		?>
 		<form method="GET" action="<?php echo get_site_url(); ?>/inmuebles" class="buscador-aside__formulario">
-			<select id="operacion" name="operacion" class="buscador-aside__elemento-select">
-				<option value="" selected disabled hidden>Operación</option>
-				<?php foreach ($operacion_array as $operacion): ?>
-                    <option value="<?php echo $operacion;?>"><?php echo $operacion;?></option>
-                <?php endforeach;?>
-			</select>
 			<select id="tipo" name="tipo" class="buscador-aside__elemento-select">
 				<option value="" selected disabled hidden>Tipo de inmueble</option>
+				<option value="">Ninguno</option>
 				<?php foreach ($tipo_array as $tipo): ?>
                     <option value="<?php echo $tipo;?>"><?php echo $tipo;?></option>
                 <?php endforeach;?>
 			</select>
 			<select id="dormitorios" name="dormitorios" class="buscador-aside__elemento-select">
 				<option value="" selected disabled hidden>Dormitorios (mínimo)</option>
+				<option value="">Ninguno</option>
 				<?php foreach ($dormitorios_array as $dormitorios): ?>
                     <option value="<?php echo $dormitorios;?>">dormitorios: <?php echo $dormitorios;?></option>
                 <?php endforeach;?>
 			</select>
 			<select id="banos" name="banos" class="buscador-aside__elemento-select">
 				<option value="" selected disabled hidden>Baños (mínimo)</option>
+				<option value="">Ninguno</option>
 				<?php foreach ($banos_array as $banos): ?>
                     <option value="<?php echo $banos;?>">baños: <?php echo $banos;?></option>
                 <?php endforeach;?>
 			</select>
 			<select id="provincia" name="provincia" class="buscador-aside__elemento-select">
 				<option value="" selected disabled hidden>Provincia</option>
+				<option value="">Ninguno</option>
 				<?php foreach ($provincia_array as $provincia): ?>
                     <option value="<?php echo $provincia;?>"><?php echo $provincia;?></option>
                 <?php endforeach;?>
 			</select>
+			<select name="localidad" class="buscador-aside__elemento-select">
+                <option value="" selected disabled hidden>Localidad</option>
+                <option value="">Ninguno</option>
+                <?php foreach ($localidad_array as $localidad): ?>
+                    <option value="<?php echo $localidad;?>"><?php echo $localidad;?></option>
+                <?php endforeach;?>
+            </select>
 			<select id="area" name="area" class="buscador-aside__elemento-select">
 				<option value="" selected disabled hidden>Metros Cuad (mínimo)</option>
+				<option value="">Ninguno</option>
 				<?php foreach ($area_array as $area): ?>
                     <option value="<?php echo $area;?>">min: <?php echo $area;?> m2</option>
                 <?php endforeach;?>
 			</select>
 			<select id="precio" name="precio" class="buscador-aside__elemento-select">
 				<option value="" selected disabled hidden>Precio (mínimo)</option>
+				<option value="">Ninguno</option>
 				<?php foreach ($precio_array as $precio): ?>
                     <option value="<?php echo $precio;?>">min: $<?php echo $precio;?></option>
                 <?php endforeach;?>
@@ -135,7 +143,7 @@ $the_query = new WP_Query( $args );
 				<div class="propiedad__info">
 					<div class="propiedad__contenedor-titulo">
 						<h1 class="propiedad__titulo"><?php the_title();?></h1>
-						<span class="propiedad__direccion"><img src="<?php echo $img_path; ?>/map.svg" alt="icono gps" class="propiedad__icono propiedad__icono--gps icon"><?php the_field('direccion')?><?php if(get_field('barrio')): echo " - " ;echo ucfirst(get_field('barrio')); endif;?><?php if(get_field('provincia')): echo " - " ;echo ucfirst(get_field('provincia')) ;endif;?></span>
+						<span class="propiedad__direccion"><img src="<?php echo $img_path; ?>/map.svg" alt="icono gps" class="propiedad__icono propiedad__icono--gps icon"><?php the_field('direccion');?><?php if(get_field('barrio')): echo " - " ;echo ucfirst(get_field('barrio')); endif;?><?php if(get_field('localidad')): echo " - " ;echo ucfirst(get_field('localidad')); endif;?><?php if(get_field('provincia')): echo " - " ;echo ucfirst(get_field('provincia')) ;endif;?></span>
 					</div>
 					<div class="propiedad__caracteristicas">
 						<span class="propiedad__dato">

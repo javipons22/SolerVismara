@@ -25,6 +25,7 @@ $query = new WP_Query($args);
         $tipos = explode("-", get_field('tipo'));
         $extras = explode("-", get_field('extras'));
         $provincias = explode("-", get_field('provincias'));
+        $localidades = explode("-", get_field('localidad'));
 
     endwhile; endif; wp_reset_postdata(); ?>
     <?php
@@ -35,7 +36,13 @@ $query = new WP_Query($args);
             if(isset($_POST[$field . '-add']) && $_POST[$field . '-add'] != '' ){
                 array_push($array,$_POST[$field . '-add']);
                 $to_update= implode("-",$array);
-                update_field($field, $to_update, 47);
+                if (get_site_url() == "http://localhost/SV")
+                {
+                    update_field($field, $to_update, 32);  
+                } else {
+                    update_field($field, $to_update, 47);
+                }
+                
             }
         }
 
@@ -45,14 +52,16 @@ $query = new WP_Query($args);
     addFieldValue('button2',$tipos,'tipo');
     addFieldValue('button3',$extras,'extras');
     addFieldValue('button4',$provincias,'provincias');
+    addFieldValue('button5',$localidades,'localidad');
 
     
     ?>
 <?php
+
 // Obtenemos el post id del query en el url
 $id = $_GET['id'];
 $datos_del_formulario = array();
-$camposTodos = array('titulo','operacion','tipo','extra','provincia','barrio','direccion','banos','dormitorios','area','precio','descripcion');
+$camposTodos = array('titulo','operacion','tipo','extra','provincia','barrio','direccion','banos','dormitorios','area','precio','descripcion','localidad');
 foreach ($camposTodos as $campo){
     if ($campo == 'titulo') {
         $datos_del_formulario[$campo] = get_the_title($id);
@@ -70,7 +79,7 @@ foreach ($camposTodos as $campo){
 <div class="container">
     
     <form method="POST" id="edit-form" class="upload-form" enctype="multipart/form-data">
-        <?php if($_SERVER['QUERY_STRING'] == "error=true"): ?>
+        <?php if($_SERVER['QUERY_STRING'] == "error=true"):?>
         <div class="error">
             <p><strong>Error:</strong> Completa todos los campos requeridos, marcados con (*)</p>
         </div>
@@ -149,6 +158,23 @@ foreach ($camposTodos as $campo){
                 <input type="submit" name="button4" value="+">
             </div>
         </div>
+        <div class="upload-form__elemento upload-form__elemento--provincia">
+            <h2>LOCALIDAD</h2>
+            <span>Elige la localidad</span>
+            <br>
+            <div>
+                <input name="localidad" value="0" type="hidden">
+                <?php 
+                foreach ($localidades as $localidad) {
+                    echo '<input id="'. $localidad .'" type="radio" name="localidad" value="' . $localidad . '">' . $localidad . '<br>';
+                }   
+                ?>
+            </div>
+            <div>
+                <input type="text" name="localidad-add" placeholder="Agregar nueva opción...">
+                <input type="submit" name="button5" value="+">
+            </div>
+        </div>
         <div class="upload-form__elemento upload-form__elemento--barrio">
             <h2>BARRIO</h2>
             <span>Escribe el barrio en el que se ubica el inmueble</span>
@@ -217,10 +243,13 @@ foreach ($camposTodos as $campo){
 
         
     </form>
+    <?php  
+            echo get_site_url(); ?>
 </div>
 
 <script type="text/javascript">
     let seleccionados = <?php echo json_encode($datos_del_formulario); ?>;
     let sitioLink = "<?php echo get_site_url(); ?>";
+    console.log(seleccionados);
 </script>
 <?php get_footer(); ?>
