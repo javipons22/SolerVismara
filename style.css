@@ -78,6 +78,10 @@ button, input[type=submit], input[type=reset] {
   outline: inherit;
 }
 
+select {
+  -webkit-appearance: none;
+}
+
 #slider {
   position: relative;
   overflow: hidden;

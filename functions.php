@@ -35,7 +35,7 @@ function my_pre_get_posts( $query ) {
 	if( isset($query->query_vars['post_type']) && $query->query_vars['post_type'] == 'inmuebles' && ($query->query_vars['posts_per_page'] !== 4 && $query->query_vars['posts_per_page'] !== 200) ) { 
 		
 		function setCustomQuery($key,$compare) {
-			if( isset($_GET[$key]) ) {
+			if( isset($_GET[$key]) && strlen($_GET[$key]) > 0) {
 				if ($key == 'precio' || $key == 'area') :
 					$operacion = array(
 						'key'=> $key,
