@@ -108,14 +108,14 @@
                 <?php endforeach;?>
             </select>
             <select name="dormitorios" class="buscador__elemento-select">
-                <option value="" selected disabled hidden>Dormitorios (mínimo)</option>
+                <option value="" selected disabled hidden>Dormitorios</option>
                 <option value="">Ninguno</option>
                 <?php foreach ($dormitorios_array as $dormitorio): ?>
                     <option value="<?php echo $dormitorio;?>">dormitorios: <?php echo $dormitorio;?></option>
                 <?php endforeach;?>
             </select>
             <select name="banos" class="buscador__elemento-select">
-                <option value="" selected disabled hidden>Baños (mínimo)</option>
+                <option value="" selected disabled hidden>Baños</option>
                 <option value="">Ninguno</option>
                 <?php foreach ($banos_array as $bano): ?>
                     <option value="<?php echo $bano;?>">baños: <?php echo $bano;?></option>
@@ -238,5 +238,16 @@
         </div>
     </section>
     <!-- fin seccion tasaciones -->
+    <!-- modal emergencia publica -->
+    <div class="modal-container">
+        <div class="modal">
+            <h2 class="modal__titulo">EMERGENCIA PÚBLICA</h2>
+            <p class="modal__texto">Decreto de Necesidad y Urgencia Nº 320/2020</br></br><strong>ALQUILERES</strong></p>
+            <a href="https://drive.google.com/file/d/1jvlJXiLPABq60zE9D8emQ-_fjtHE24tq/view" class="modal__link">VER DECRETO</a>
+            <a class="modal__boton-cerrar">X</a>
+        </div>
+    </div>
+    
+    <!-- fin modal emergencia publica -->
 
 <?php get_footer(); ?>

@@ -136,14 +136,14 @@
                 <?php endforeach;?>
 			</select>
 			<select id="dormitorios" name="dormitorios" class="buscador-aside__elemento-select">
-				<option value="" selected disabled hidden>Dormitorios (mínimo)</option>
+				<option value="" selected disabled hidden>Dormitorios</option>
 				<option value="">Ninguno</option>
 				<?php foreach ($dormitorios_array as $dormitorios): ?>
                     <option value="<?php echo $dormitorios;?>">dormitorios: <?php echo $dormitorios;?></option>
                 <?php endforeach;?>
 			</select>
 			<select id="banos" name="banos" class="buscador-aside__elemento-select">
-				<option value="" selected disabled hidden>Baños (mínimo)</option>
+				<option value="" selected disabled hidden>Baños</option>
 				<option value="">Ninguno</option>
 				<?php foreach ($banos_array as $banos): ?>
                     <option value="<?php echo $banos;?>">baños: <?php echo $banos;?></option>

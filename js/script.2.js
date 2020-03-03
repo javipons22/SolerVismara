@@ -36,4 +36,7 @@ jQuery(document).ready(function($){
 
     }).resize();
 
+    $('.modal__boton-cerrar').on('click', function() {
+        $('.modal-container').hide();
+    });     
 });
