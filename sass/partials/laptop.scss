@@ -1,0 +1,181 @@
+@include mq('xl') {
+    // Cambiar tamaños en estas lineas
+    .buscador {
+        font-size:1.2em;
+    }
+    .destacados,.inmuebles {
+        font-size: 1.15em;
+    }
+    .banner {
+        font-size: 2em;
+    }
+    .servicios {
+        font-size: 1.1em;
+    }
+    .top-header {
+        font-size:28px;
+    }
+    .main-header {
+        font-size:21px;
+    }
+    .tasaciones {
+        font-size: em(15px);
+    }
+    .contacto,.links,.recientes {
+        font-size: 1.15em;
+    }
+    .container {
+        // Espacio de dos lados del contenedor
+        //margin: 0 em(11px);
+        width:100%;
+        max-width:$container-width;
+        margin:0 auto;
+    }
+    .main-header {
+        font-weight:600;
+        background:$blanco;
+        height:auto;
+        -webkit-box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.16);
+        -moz-box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.16);
+        box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.16);
+        &__logo {
+            img {
+                height:em(50px);
+                margin: em(5px) 0 ;
+                position:relative;
+                transform:translateX(-7%);
+            }
+        }
+        &__container {
+            height:auto;
+        }
+    }
+    .banner {
+        height:90vh;
+        &__info {
+            max-width:$container-width;
+        }
+        &__titulo {
+            padding:0;
+            font-size: em(18px);
+            max-width:75%;
+        }
+        &__descripcion {
+            font-size:em(9px);
+        }
+    }
+    .servicios {
+        &__contenedor {
+            justify-content: space-between;
+        }
+        &__elemento {
+            font-size:1.1em;
+            width:16.6%;
+            border:none;
+            border-radius:0;
+            border-right:1px solid white;
+            &--first {
+                border-left:1px solid white;
+            }
+        }
+        &__link {
+            width:100%;
+        }
+    }
+
+    .destacados {
+        padding:60px 0;
+        &__titulo-seccion {
+            font-size:em(21px);
+            padding-bottom:40px;
+            &::after {
+                content:'';
+                height:2px;
+                width:5%;
+            }
+        }
+    }
+    .propiedad {
+        margin-bottom:em(30px);
+        max-height:em(195px);
+        &__dato {
+            flex-basis: 32%;
+        }
+        &-index {
+            height: em(180px);
+            max-height: em(180px);
+        }
+    }
+    .inmuebles{
+        &__icono {
+            padding:em(15px) em(10px);
+        }
+    }
+    .tasaciones {
+        &__titulo {
+            font-size: em(20px);
+        }
+        &__cta {
+            font-size: em(16px);
+        }
+    }
+    .links {
+        display:flex;
+        border-right: 1px solid #888;
+        border-left: 1px solid #888;
+        margin-right: em(50px);
+        padding-left: em(50px);
+    }
+    .contacto {
+        padding-left:0;
+        padding-right:0;
+    }
+    .propiedad-reciente {
+        &__contenido {
+            font-size: 0.95em;
+        }
+    }
+    .buscador-aside {
+        font-size:1em;
+        position:sticky;
+        top:155px;
+    }
+    #slider {
+        font-size:1.17em;
+    }
+    .info-inmueble {
+        max-width:60%;
+    }
+    .staff {
+        padding: em(50px) 0;
+        &__contenedor {
+            //  tamaño de tarjetas del staff
+            font-size:em(19px);
+            //height:em(200px);
+        }
+    }
+    .pag-compania {
+        &__titulo {
+            font-size:em(25px);
+            margin-bottom: em(35px);
+        }
+        &__imagen-contenedor {
+            width:30%;
+            overflow: hidden;
+            margin:0;
+        }
+        &__descripcion {
+            margin-left: em(50px);
+            padding: em(50px);
+            background:white;
+        }
+        &__info-principal {
+            border-right: 3px solid $azul-claro;
+        }
+    }
+    .pag-contacto {
+        &__titulo {
+            font-size:em(25px);
+        }
+    }
+}
